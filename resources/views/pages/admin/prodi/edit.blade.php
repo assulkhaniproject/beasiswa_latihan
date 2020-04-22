@@ -1,0 +1,69 @@
+@extends('templates.admin')
+
+@section('content')
+
+    <div class="row layout-top-spacing">
+
+        <div id="basic" class="col-lg-12 layout-spacing">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                            <h4>Edit Data</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <form class="simple-example" action="{{route('prodi.update',$data->id)}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        {{method_field('patch')}}
+                        <div class="form-row">
+                            <div class="col-md-12 mb-4">
+                                <label for="fullName">Nama</label>
+                                <input name="nama" type="text" class="form-control {{$errors->has('nama')?'is-invalid':''}}"
+                                       placeholder="Nama" value="{{$data->nama}}" required>
+                                @if ($errors->has('nama'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('nama') }}</b></p>
+                                        </span>
+                                @endif
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label for="fullName">Email</label>
+                                <input name="email" type="email" class="form-control" readonly value="{{$data->email}}">
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label for="fullName">Password</label>
+                                <input name="password" type="password" class="form-control {{$errors->has('password')?'is-invalid':''}}"
+                                       placeholder="Password" value="" required>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('password') }}</b></p>
+                                        </span>
+                                @endif
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label for="fullName">Program Study</label>
+                                <input name="program_study" type="text" class="form-control {{$errors->has('program_study')?'is-invalid':''}}"
+                                       placeholder="Program Study" value="{{$data->program_study}}" required>
+                                @if ($errors->has('program_study'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('program_Study') }}</b></p>
+                                        </span>
+                                @endif
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <img id="output" class="img-fluid" height="100" width="100" src="{{asset('uploads/admin prodi/'.$data->logo)}}">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary submit-fn mt-2 float-right" type="submit">Update</button>
+                        <button class="btn btn-warning submit-fn mt-2 mr-2 float-right"  type="button" onclick="history.back()">Cancel</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
