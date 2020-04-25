@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
     Route::get('/', function () {
-    return view('welcome');})->name('admin.landingpage');
+    return view('welcome');});
 
 
 Route::group(['prefix' => 'admin'], function (){
@@ -24,10 +24,8 @@ Route::group(['prefix' => 'admin'], function (){
     Route::post('/logout','admin\AuthAdminController@logout')->name('admin.logout');
     Route::get('dashboard', 'admin\DashboardController@index')->name('admin.dashboard');
 
-
    Route::get('mahasiswa', 'admin\MahasiswaController@index')->name('mahasiswa.index');
    Route::get('mahasiswa/create', 'admin\MahasiswaController@create')->name('mahasiswa.create');
-
 
    Route::get('prodi', 'admin\ProdiController@index')->name('prodi.index');
    Route::get('prodi/create','admin\ProdiController@create')->name('prodi.create');
@@ -50,5 +48,9 @@ Route::group(['prefix' => 'prodi'], function (){
 
 Route::group(['prefix' => 'mahasiswa'], function (){
 
-    Route::get('dashboard', 'mahasiswa\DashboardController@index')->name('dashboard.index');
+    Route::get('/login', 'mahasiswa\AuthMahasiswaController@showLogin')->name('mahasiswa.show.login');
+    Route::post('/login', 'mahasiswa\AuthMahasiswaController@login')->name('mahasiswa.login');
+    Route::post('/logout', 'mahasiswa\AuthMahasiswaController@logout')->name('mahasiswa.logout');
+    Route::get('dashboard', 'mahasiswa\DashboardController@index')->name('mahasiswa.dashboard');
+
 });

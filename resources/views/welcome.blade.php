@@ -69,7 +69,9 @@
               </ul> -->
                 <ul class="navbar-nav absolute-right">
                     <li class="nav-item">
-                        <a href="{{ route('admin.login') }}" class="nav-link text-secondary">LOGIN  <i class="fa fa-arrow-right"></i></a>
+                        <a href="{{route('mahasiswa.show.login')}}" class="nav-link text-secondary">LOGIN
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <!-- <a href="#" class="nav-link">Register</a> -->

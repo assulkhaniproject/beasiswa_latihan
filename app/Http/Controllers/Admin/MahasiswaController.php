@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mahasiswa;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -18,7 +19,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-       return view('pages.admin.mahasiswa.index');
+        $datas = Mahasiswa::all();
+       return view('pages.admin.mahasiswa.index', compact('datas'));
     }
 
     /**
