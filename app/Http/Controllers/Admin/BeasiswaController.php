@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Prodi;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Mahasiswa;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class BeasiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $datas = Mahasiswa::all();
-        return view('pages.prodi.mahasiswa.index', compact('datas'));
+        return view('pages.admin.beasiswa.index');
     }
 
     /**

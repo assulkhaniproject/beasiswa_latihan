@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MahasiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/AuthMahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/AuthMahasiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MahasiswaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MahasiswaSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/admin_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/admin_login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/mahasiswa_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/mahasiswa_login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Prodi/MahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Prodi/MahasiswaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/mahasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/mahasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -146,6 +143,7 @@
   <component name="ProjectId" id="1a3BwM9AqHlREyBFQ5TjmH4Fwp8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages" />
@@ -208,7 +206,11 @@
       <workItem from="1587423077649" duration="3233000" />
       <workItem from="1587641001733" duration="2786000" />
       <workItem from="1587658392195" duration="34000" />
-      <workItem from="1587784704907" duration="9492000" />
+      <workItem from="1587784704907" duration="14988000" />
+      <workItem from="1587977630705" duration="2730000" />
+      <workItem from="1588000995022" duration="25000" />
+      <workItem from="1588073176919" duration="668000" />
+      <workItem from="1588084892164" duration="774000" />
     </task>
     <servers />
   </component>

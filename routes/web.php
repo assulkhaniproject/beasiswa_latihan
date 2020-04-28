@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin'], function (){
    Route::patch('prodi/update/{id}','admin\ProdiController@update')->name('prodi.update');
    Route::get('prodi/destroy/{id}','admin\ProdiController@destroy')->name('prodi.destroy');
 
+   Route::get('beasiswa','admin\BeasiswaController@index')->name('beasiswa.index');
+
 });
 Route::group(['prefix' => 'prodi'], function (){
 

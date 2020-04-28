@@ -21,7 +21,7 @@
                         <tr>
                             <th>ID Prodi</th>
                             <th>NIM</th>
-                            <th>Nama</th>
+                            <th>Nama </th>
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
