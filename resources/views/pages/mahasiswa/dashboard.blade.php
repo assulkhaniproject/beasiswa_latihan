@@ -63,8 +63,12 @@
 {{--                                </div>--}}
 {{--                                <input type="text" class="form-control" placeholder="Let's find your question in fast way" aria-label="Username" aria-describedby="basic-addon1">--}}
 {{--                            </div>--}}
-                            <div class="field-wrapper mt-2">
-                                <p href="{{route('mahasiswa.detail')}}" class="btn btn-light-danger px-5 p-3 text-primary">DETAIL DATA</p>
+                            <div class="mt-3">
+                                <div class="icon-container">
+                                    <a href="{{route('mahasiswa.detail')}}" class="btn btn-outline-white px-5 py-3 text-primary text-lg">
+                                        DETAIL DATA
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
