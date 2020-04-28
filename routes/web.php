@@ -55,4 +55,6 @@ Route::group(['prefix' => 'mahasiswa'], function (){
     Route::post('/logout', 'mahasiswa\AuthMahasiswaController@logout')->name('mahasiswa.logout');
     Route::get('dashboard', 'mahasiswa\DashboardController@index')->name('mahasiswa.dashboard');
 
+    Route::get('detail', 'mahasiswa\DetailController@index')->name('mahasiswa.detail');
+
 });
