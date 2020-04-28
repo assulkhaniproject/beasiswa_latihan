@@ -29,7 +29,7 @@ class AuthProdiController extends Controller
     }
 
     public function logout(){
-//        Auth::guard('prodi')->logout();
-//        return redirect()->route('prodi.landingpage');
+        Auth::guard('prodi')->logout();
+        return redirect()->route('prodi.login');
     }
 }
