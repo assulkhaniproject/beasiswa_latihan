@@ -74,7 +74,7 @@
 
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="text-white">{{Auth::guard('admin')->user()->nama}}</span>
+                    <span class="text-white">{{Auth::guard('prodi')->user()->nama}}</span>
                     <img src="{{asset('prodi/assets/img/boy.png')}}" alt="avatar">
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
