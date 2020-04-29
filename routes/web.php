@@ -19,42 +19,42 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin'], function (){
 
-    Route::get('/login','admin\AuthAdminController@showLogin')->name('admin.show.login');
-    Route::post('/login','admin\AuthAdminController@login')->name('admin.login');
-    Route::post('/logout','admin\AuthAdminController@logout')->name('admin.logout');
-    Route::get('dashboard', 'admin\DashboardController@index')->name('admin.dashboard');
+    Route::get('/login','Admin\AuthAdminController@showLogin')->name('admin.show.login');
+    Route::post('/login','Admin\AuthAdminController@login')->name('admin.login');
+    Route::post('/logout','Admin\AuthAdminController@logout')->name('admin.logout');
+    Route::get('dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
 
-   Route::get('mahasiswa', 'admin\MahasiswaController@index')->name('mahasiswa.index');
-   Route::get('mahasiswa/create', 'admin\MahasiswaController@create')->name('mahasiswa.create');
+   Route::get('mahasiswa', 'Admin\MahasiswaController@index')->name('mahasiswa.index');
+   Route::get('mahasiswa/create', 'Admin\MahasiswaController@create')->name('mahasiswa.create');
 
-   Route::get('prodi', 'admin\ProdiController@index')->name('prodi.index');
-   Route::get('prodi/create','admin\ProdiController@create')->name('prodi.create');
-   Route::post('prodi/store', 'admin\ProdiController@store')->name('prodi.store');
-   Route::get('prodi/edit/{id}','admin\ProdiController@edit')->name('prodi.edit');
-   Route::patch('prodi/update/{id}','admin\ProdiController@update')->name('prodi.update');
-   Route::get('prodi/destroy/{id}','admin\ProdiController@destroy')->name('prodi.destroy');
+   Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');
+   Route::get('prodi/create','Admin\ProdiController@create')->name('prodi.create');
+   Route::post('prodi/store', 'Admin\ProdiController@store')->name('prodi.store');
+   Route::get('prodi/edit/{id}','Admin\ProdiController@edit')->name('prodi.edit');
+   Route::patch('prodi/update/{id}','Admin\ProdiController@update')->name('prodi.update');
+   Route::get('prodi/destroy/{id}','Admin\ProdiController@destroy')->name('prodi.destroy');
 
-   Route::get('beasiswa','admin\BeasiswaController@index')->name('beasiswa.index');
+   Route::get('beasiswa','Admin\BeasiswaController@index')->name('beasiswa.index');
 
 });
 Route::group(['prefix' => 'prodi'], function (){
 
-    Route::get('/login', 'prodi\AuthProdiController@showLogin')->name('prodi.show.login');
-    Route::post('/login', 'prodi\AuthProdiController@login')->name('prodi.login');
-    Route::post('/logout', 'prodi\AuthProdiController@logout')->name('prodi.logout');
-    Route::get('dashboard', 'prodi\DashboardController@index')->name('prodi.dashboard');
+    Route::get('/login', 'Prodi\AuthProdiController@showLogin')->name('prodi.show.login');
+    Route::post('/login', 'Prodi\AuthProdiController@login')->name('prodi.login');
+    Route::post('/logout', 'Prodi\AuthProdiController@logout')->name('prodi.logout');
+    Route::get('dashboard', 'Prodi\DashboardController@index')->name('prodi.dashboard');
 
-    Route::get('mahasiswa', 'prodi\MahasiswaController@index')->name('mahasiswas.index');
+    Route::get('mahasiswa', 'Prodi\MahasiswaController@index')->name('mahasiswas.index');
 
 });
 
 Route::group(['prefix' => 'mahasiswa'], function (){
 
-    Route::get('/login', 'mahasiswa\AuthMahasiswaController@showLogin')->name('mahasiswa.show.login');
-    Route::post('/login', 'mahasiswa\AuthMahasiswaController@login')->name('mahasiswa.login');
-    Route::post('/logout', 'mahasiswa\AuthMahasiswaController@logout')->name('mahasiswa.logout');
-    Route::get('dashboard', 'mahasiswa\DashboardController@index')->name('mahasiswa.dashboard');
+    Route::get('/login', 'Mahasiswa\AuthMahasiswaController@showLogin')->name('mahasiswa.show.login');
+    Route::post('/login', 'Mahasiswa\AuthMahasiswaController@login')->name('mahasiswa.login');
+    Route::post('/logout', 'Mahasiswa\AuthMahasiswaController@logout')->name('mahasiswa.logout');
+    Route::get('dashboard', 'Mahasiswa\DashboardController@index')->name('mahasiswa.dashboard');
 
-    Route::get('detail', 'mahasiswa\DetailController@index')->name('mahasiswa.detail');
+    Route::get('detail', 'Mahasiswa\DetailController@index')->name('mahasiswa.detail');
 
 });
