@@ -4,7 +4,7 @@
 </head>
 @section('content')
     <div class="row layout-top-spacing">
-        <div class="col-lg-12 layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
@@ -21,12 +21,11 @@
                 </div>
                 <div class="widget-content widget-content-area">
                     <div class="table-responsive mb-4">
-                        <table id="style-3" class="table style-3  table-hover">
+                        <table id="style-3" class="table style-3 table-hover">
                             <thead>
                             <tr>
                                 <th class="checkbox-column text-center"> No</th>
                                 <th class="text-center">Image</th>
-                                <th>Nama</th>
                                 <th>Email</th>
                                 <th>Program Study</th>
                                 <th class="text-center">Action</th>
@@ -40,7 +39,6 @@
                                         <span><img src="{{asset('uploads/admin prodi/'.$data->logo)}}" class="profile-img" height="75" width="75"
                                                    alt="avatar"></span>
                                     </td>
-                                    <td>{{$data->nama}}</td>
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->program_study}}</td>
                                     <td>

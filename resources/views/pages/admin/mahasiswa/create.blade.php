@@ -14,51 +14,75 @@
                 </div>
                 <div class="widget-content widget-content-area">
                     <form>
-                        <div class="form-row mb-12">
-                            <div class="form-group col-md-12">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Nomor Induk Mahasiswa</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
                             </div>
                         </div>
-                        <div class="form-group mb-4">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                        </div>
-                        <div class="form-row mb-4">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity">
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Nama Lengkap</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Tempat Lahir</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Tanggal Lahir</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Alamat</label>
+                            <div class="col-sm-8">
+                                <textarea type="" class="form-control form-control-sm" id="colFormLabelSm" placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Program Study</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-small">
+                                    <option selected="selected">...</option>
+                                    <option>Teknik Informatika</option>
+                                    <option>Teknik Komputer</option>
+                                    <option>Teknik Mesin</option>
+                                    <option>Teknik Elektro</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-2">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Angkatan</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-check pl-0">
-                                <div class="custom-control custom-checkbox checkbox-info">
-                                    <input type="checkbox" class="custom-control-input" id="gridCheck">
-                                    <label class="custom-control-label" for="gridCheck">Check me out</label>
-                                </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Semester</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
+                            </div>
                         </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">No. Hp</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Email</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
+                            </div>
+                        </div>
+
                         <button type="submit" class="btn btn-primary mt-2 float-right">Save</button>
-                        <button class="btn btn-warning submit-fn mt-2 float-right"  type="button" onclick="history.back()">Cancel</button>
-                            </div>
+                        <button class="btn btn-warning submit-fn mt-2 mr-2 float-right"  type="button" onclick="history.back()">Cancel</button>
                     </form>
                 </div>
             </div>
