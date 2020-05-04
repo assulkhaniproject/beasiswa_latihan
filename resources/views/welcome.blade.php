@@ -29,7 +29,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            {{--<div class="collapse navbar-collapse navbar-light" id="navbarsExample05">--}}
                 <!-- <ul class="navbar-nav mx-auto">
                   <li class="nav-item">
                     <a class="nav-link active" href="/">Home</a>
@@ -67,16 +67,16 @@
                   <a class="nav-link" href="#">Contact</a>
                 </li>
               </ul> -->
-                <ul class="navbar-nav absolute-right">
+                {{--<ul class="navbar-nav absolute-right">
                     <li class="nav-item">
-                        <a href="{{route('mahasiswa.show.login')}}" class="nav-link text-secondary">LOGIN
+                        <a href="#" class="nav-link text-secondary">LOGIN
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <!-- <a href="#" class="nav-link">Register</a> -->
                     </li>
-                </ul>
+                </ul>--}}
 
             </div>
         </div>
@@ -93,14 +93,10 @@
                     <h1>
                         <a class="text-danger">Politeknik</a>
                         <a class="text-primary">Harapan Bersama Tegal</a>
-                        <!-- <font color="red">Politeknik</font>
-                        <font color="blue">Harapan bersama Tegal</font> -->
                     </h1>
                     <p class="lead">THE TRUE VOCATIONAL CAMPUS</p>
-                    <!-- <p><a href="/login1" class="btn btn-primary">L  O  G  I  N</a></p> -->
+                    <b><a href="{{route('mahasiswa.show.login')}}" class="btn btn-primary px-5 mt-3">L  O  G  I  N</a></b>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -230,20 +226,6 @@
 </section>
 <!-- END section -->
 
-<section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url({{asset('page/images/big_image_1.jpg')}});">
-    <div class="container">
-        <div class="row justify-content-center align-items-center intro">
-            <div class="col-md-7 text-center element-animate">
-                <h2>Sign Up And Get a 7-day Free Trial</h2>
-                <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
-                <p><a href="#" class="btn btn-primary">Sign up and get a 7-day free trial</a></p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END section -->
-
-
 <section class="site-section bg-light">
     <div class="container">
         <div class="row justify-content-center mb-5">
@@ -255,15 +237,15 @@
         <div class="row top-course">
             <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                 <a href="#" class="course">
-                    <img src="{{asset('page/images/person_2.jpg')}}" alt="Image placeholder">
-                    <h2>Web Design 101</h2>
+                    <img src="{{asset('page/images/logo.png')}}" alt="Image placeholder">
+                    <h2>Politeknik Harapan Bersama Kota Tegal</h2>
                     <p>Enroll Now</p>
                 </a>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                 <a href="#" class="course">
-                    <img src="{{asset('page/images/wordpress.jpg')}}" alt="Image placeholder">
-                    <h2>Learn How To Develop WordPress Plugin</h2>
+                    <img src="{{asset('page/images/ristekdikti.png')}}" alt="Image placeholder">
+                    <h2 class="mt-3">Kementerian Riset dan Teknologi / Badan Riset dan Inovasi Nasional Republik Indonesia</h2>
                     <p>Enroll Now</p>
                 </a>
             </div>
@@ -294,26 +276,6 @@
                     <h2>Learn AngularJS 2</h2>
                     <p>Enroll Now</p>
                 </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END section -->
-
-<section class="overflow">
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-
-
-            <div class="col-lg-7 order-lg-3 order-1 mb-lg-0 mb-5">
-                <img src="{{asset('page/images/person_testimonial_1.jpg')}}" alt="Image placeholder" class="img-md-fluid">
-            </div>
-            <div class="col-lg-1 order-lg-2"></div>
-            <div class="col-lg-4 order-lg-1 order-2 mb-lg-0 mb-5">
-                <blockquote class="testimonial">
-                    &ldquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt nihil ab cumque molestiae commodi. &rdquo;
-                </blockquote>
-                <p>&mdash; John Doe, Certified ReactJS Student</p>
             </div>
         </div>
     </div>

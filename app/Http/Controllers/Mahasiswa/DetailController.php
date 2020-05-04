@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mahasiswa;
 
 use App\Http\Controllers\Controller;
+use App\Mahasiswa;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -14,7 +15,8 @@ class DetailController extends Controller
      */
     public function index()
     {
-        return view('pages.mahasiswa.detail');
+        $datas = Mahasiswa::all();
+        return view('pages.mahasiswa.detail', compact('datas'));
     }
 
     /**

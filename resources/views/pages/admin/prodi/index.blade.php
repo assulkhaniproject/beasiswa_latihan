@@ -28,7 +28,8 @@
                                 <th class="text-center">Image</th>
                                 <th>Email</th>
                                 <th>Program Study</th>
-                                <th class="text-center">Action</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -25,12 +25,13 @@
         <div class="form-form-wrap">
             <div class="form-container">
                 <div class="form-content">
-
+                    <a href="#" class="course">
+                        <img src="{{asset('page/images/logo.png')}}" height="100" width="100" alt="Image placeholder">
+                        <p class="text-primary">Login Admin</p>
+                    </a>
                     <form class="text-left" method="POST" action="{{route('admin.login')}}">
                         @csrf
                         <div class="form">
-                            <a class="text-primary float-right h4">Admin Login</a>
-
                             <div id="username-field" class="field-wrapper input">
                                 <label for="username">USERNAME</label>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>

@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/page/images/person_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/DetailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/mahasiswa_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/mahasiswa_login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,16 +150,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\admin" />
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\superAdmin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\templates\partials" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\User" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\SuperAdmin" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\AdminProdi" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\admin" />
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\superAdmin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -205,7 +212,13 @@
       <workItem from="1588073176919" duration="668000" />
       <workItem from="1588084892164" duration="11031000" />
       <workItem from="1588164093466" duration="6029000" />
-      <workItem from="1588193961578" duration="7679000" />
+      <workItem from="1588193961578" duration="8421000" />
+      <workItem from="1588332918273" duration="1181000" />
+      <workItem from="1588409931014" duration="1314000" />
+      <workItem from="1588420345245" duration="3144000" />
+      <workItem from="1588460877123" duration="397000" />
+      <workItem from="1588478786846" duration="9478000" />
+      <workItem from="1588606879907" duration="288000" />
     </task>
     <servers />
   </component>
