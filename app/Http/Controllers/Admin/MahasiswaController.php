@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mahasiswa;
 use Illuminate\Http\Request;
+use App\Prodi;
 
 class MahasiswaController extends Controller
 {
@@ -30,7 +31,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.mahasiswa.create');
+        $prodi= Prodi::all();
+        return view('pages.admin.mahasiswa.create',compact('prodi'));
     }
 
     /**
@@ -41,7 +43,48 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->all());
+        $rule = [
+            'nim' => 'required|string|min:8|max:8|unique:mahasiswa',
+            'nama' => 'required|min:3',
+            'tempat_lahir' => 'required|min:5',
+            'tanggal_lahir' => 'required',
+            'alamat' => 'required|min:5',
+            'angkatan' => 'required|min:4',
+            'semester' => 'required|max:1',
+            'no_hp' => 'required|min:11|max:13|unique:mahasiswa',
+            'email' => 'required|unique:mahasiswa'
+        ];
+        $message = [
+            'required' => 'Isi bidang ini.',
+            'nama.min' => 'Nama minimal 3 huruf.',
+            'tempat_lahir.min' => 'Tempat Lahir Minimal 5 Huruf',
+            'alamat.min' => 'Alamat Minimal 5 Huruf',
+            'angkatan.min' => 'Angkatan Minimal 4 Huruf',
+            'semester.max' => 'Semester Maximal 1 Huruf',
+            'nim.uniwue' => 'Nim Sudah Terdaftar',
+            'no_hp.uniwue' => 'No. Hp Sudah Terdaftar',
+            'email.uniwue' => 'Email Sudah Terdaftar'
+        ];
+        $this->validate($request, $rule, $message);
+
+        Mahasiswa::create([
+            'id_prodi' => $request->program_study,
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'angkatan' => $request->angkatan,
+            'semester' => $request->semester,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'password' => bcrypt($request->nim)
+        ]);
+        return redirect()->route('mahasiswa.index');
+
+
+
     }
 
     /**

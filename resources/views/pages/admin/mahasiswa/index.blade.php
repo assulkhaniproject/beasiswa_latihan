@@ -19,12 +19,12 @@
                     <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
                         <thead>
                         <tr>
-                            <th>ID Prodi</th>
                             <th>NIM</th>
                             <th>Nama </th>
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
+                            <th>Program Study</th>
                             <th>Angkatan</th>
                             <th>Semester</th>
                             <th>No. Hp</th>
@@ -36,12 +36,12 @@
                         <tbody>
                         @foreach($datas as $data)
                             <tr>
-                            <td>{{$data->id_prodi}}</td>
                             <td>{{$data->nim}}</td>
                             <td>{{$data->nama}}</td>
                             <td>{{$data->tempat_lahir}}</td>
                             <td>{{$data->tanggal_lahir}}</td>
                             <td>{{$data->alamat}}</td>
+                            <td>{{$data->prodi->program_study}}</td>
                             <td>{{$data->angkatan}}</td>
                             <td>{{$data->semester}}</td>
                             <td>{{$data->no_hp}}</td>
