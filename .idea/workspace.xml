@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MahasiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mahasiswa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +213,8 @@
       <workItem from="1588420345245" duration="3144000" />
       <workItem from="1588460877123" duration="397000" />
       <workItem from="1588478786846" duration="9478000" />
-      <workItem from="1588606879907" duration="8092000" />
+      <workItem from="1588606879907" duration="10134000" />
+      <workItem from="1588688677763" duration="2903000" />
     </task>
     <servers />
   </component>
