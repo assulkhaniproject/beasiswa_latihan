@@ -11,9 +11,9 @@
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <h5>Data Mahasiswa</h5>
                     </div>
-                    <div class="col-xl-6 col-md-6 col-sm-6 col-6 text-right">
+                    {{--<div class="col-xl-6 col-md-6 col-sm-6 col-6 text-right">
                         <a href="{{route('mahasiswa.create')}}" class="btn btn-primary float-right mr-4">Tambah Data</a>
-                    </div>
+                    </div>--}}
                 </div>
                 <div class="table-responsive mb-4 mt-4">
                     <table id="html5-extension" class="table table-hover non-hover" style="width:100%">

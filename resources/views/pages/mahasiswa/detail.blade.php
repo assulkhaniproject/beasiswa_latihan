@@ -28,60 +28,22 @@
                         </div>
                     </div>
                 </div>
-                {{--<div class="widget-content widget-content-area">
+                <div class="widget-content widget-content-area">
                     <form method="post">
                         @csrf
                         {{method_field('patch')}}
                         <div class="form-group row mb-4">
                             <label for="hEmail" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Nama</label>
                             <div class="col-xl-10 col-lg-9 col-sm-10">
-                                <input name="nama" type="text" class="form-control" id="nama" placeholder="">
+                                <input name="nama" type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label for="hPassword" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Password</label>
+                            <label for="hPassword" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Email</label>
                             <div class="col-xl-10 col-lg-9 col-sm-10">
-                                <input type="password" class="form-control" id="hPassword" placeholder="">
+                                <input type="email" class="form-control" id="hEmail" placeholder="">
                             </div>
                         </div>
-                        <fieldset class="form-group mb-4">
-                            <div class="row">
-                                <label class="col-form-label col-xl-2 col-sm-3 col-sm-2 pt-0">Choose Segements</label>
-                                <div class="col-xl-10 col-lg-9 col-sm-10">
-                                    <div class="form-check mb-2">
-                                        <div class="custom-control custom-radio classic-radio-info">
-                                            <input type="radio" id="hRadio1" name="classicRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="hRadio1">Segements 1</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-check mb-2">
-                                        <div class="custom-control custom-radio classic-radio-info">
-                                            <input type="radio" id="hRadio2" name="classicRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="hRadio2">Segements 2</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-check disabled">
-                                        <div class="custom-control custom-radio classic-radio-default">
-                                            <input type="radio" id="hRadio3" name="classicRadio" class="custom-control-input" disabled>
-                                            <label class="custom-control-label" for="hRadio3">Segements 3   ( disabled )</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="form-group row">
-                            <div class="col-sm-2">Apply</div>
-                            <div class="col-sm-10">
-                                <div class="form-check pl-0">
-
-                                    <div class="custom-control custom-checkbox checkbox-info">
-                                        <input type="checkbox" class="custom-control-input" id="hChkbox">
-                                        <label class="custom-control-label" for="hChkbox">Terms Conditions</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>--}}
                         <div class="form-group row">
                             <div class="col-sm-10">
                                 <button class="btn btn-warning mt-3 mr-2"  type="button" onclick="history.back()">Cancel</button>
