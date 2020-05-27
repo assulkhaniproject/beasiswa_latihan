@@ -47,7 +47,7 @@
                         <div class="form-group row">
                             <div class="col-sm-10">
                                 <button class="btn btn-warning mt-3 mr-2"  type="button" onclick="history.back()">Cancel</button>
-                                <button type="submit" class="btn btn-primary mt-3">Lets Go</button>
+                                <button type="submit" class="btn btn-primary mt-3">Simpan</button>
                             </div>
                         </div>
                     </form>

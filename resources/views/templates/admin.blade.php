@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>BEASISWA PHB | Admin</title>
+        <title>BEASISWA PHB | Data Beasiswa</title>
         @include('templates.partials.admin._head')
     </head>
 
