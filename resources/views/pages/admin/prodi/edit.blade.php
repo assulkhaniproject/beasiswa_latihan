@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-12 mb-4">
                                 <label for="fullName">Email</label>
-                                <input name="email" type="email" class="form-control" readonly value="{{$data->email}}">
+                                <input name="email" type="email" class="form-control" value="{{$data->email}}">
                             </div>
                             <div class="col-md-12 mb-4">
                                 <label for="fullName">Password</label>
