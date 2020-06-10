@@ -26,7 +26,9 @@
                             <tr>
                                 <th class="checkbox-column text-center"> No</th>
                                 <th class="text-center">Image</th>
+                                <th>Nama</th>
                                 <th>Email</th>
+                                <th>No. Hp</th>
                                 <th>Program Study</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -40,7 +42,9 @@
                                         <span><img src="{{asset('uploads/admin prodi/'.$data->logo)}}" class="profile-img" height="75" width="75"
                                                    alt="avatar"></span>
                                     </td>
+                                    <td>{{$data->nama}}</td>
                                     <td>{{$data->email}}</td>
+                                    <td>{{$data->no_hp}}</td>
                                     <td>{{$data->program_study}}</td>
                                     <td>
                                         <div class="icon-container">

@@ -17,6 +17,7 @@ class CreateProdiTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('email')->unique();
+            $table->string('no_hp', 12);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('program_study')->unique();

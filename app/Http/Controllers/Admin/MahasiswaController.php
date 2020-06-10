@@ -106,7 +106,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datas = Mahasiswa::find($id);
+        return view('pages.admin.mahasiswa.edit', compact('datas'));
     }
 
     /**

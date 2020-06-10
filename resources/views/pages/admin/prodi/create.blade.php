@@ -38,6 +38,16 @@
                             @endif
                         </div>
                         <div class="col-md-12 mb-4">
+                            <label for="fullName">No. Hp</label>
+                            <input name="no_hp" type="tel" class="form-control {{$errors->has('no_hp')?'is-invalid':''}}"
+                                   placeholder="No. Hp" value="" required>
+                            @if ($errors->has('no_hp'))
+                                <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('no_hp') }}</b></p>
+                                        </span>
+                            @endif
+                        </div>
+                        <div class="col-md-12 mb-4">
                             <label for="fullName">Password</label>
                             <input name="password" type="password" class="form-control {{$errors->has('password')?'is-invalid':''}}"
                                    placeholder="Password" value="" required>

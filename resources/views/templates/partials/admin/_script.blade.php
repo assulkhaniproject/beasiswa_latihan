@@ -5,6 +5,9 @@
     <script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('admin/assets/js/app.js')}}"></script>
+
+
+@yield('script')
     <script>
         $(document).ready(function() {
             App.init();

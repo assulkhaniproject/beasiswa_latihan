@@ -41,6 +41,7 @@ class ProdiController extends Controller
         $this->validate($request,[
           'nama' => 'required',
           'email' => 'required|unique:prodi',
+          'no_hp' => 'required|max:12',
           'password' => 'required|min:8',
           'program_study' => 'required|unique:prodi',
             'logo' => 'required|image|mimes:jpg,png,jpeg|max:2048',
@@ -54,6 +55,7 @@ class ProdiController extends Controller
         $data = new Prodi();
         $data->nama = $request->nama;
         $data->email = $request->email;
+        $data->no_hp = $request->no_hp;
         $data->password = Hash::make($request->password);
         $data->program_study = $request->program_study;
         $data->logo = $filename;
@@ -96,14 +98,27 @@ class ProdiController extends Controller
     {
         $this->validate($request,[
             'nama' => 'required',
+            'email' => 'required',
+            'no_hp' => 'required|max:12',
             'password' => 'required|min:8',
-            'program_study' => 'required|unique:prodi',
+            'program_study' => 'required:unique:prodi',
         ]);
 
         $data = Prodi::find($id);
         $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->no_hp = $request->no_hp;
         $data->password = Hash::make($request->password);
         $data->program_study = $request->program_study;
+        $logo = $request->file('logo');
+        if ($logo){
+            $filename        = time().'.'. $logo->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/admin prodi');
+            $logo->move($destinationPath, $filename);
+            $data->logo = $filename;
+        }else{
+            $data->logo = $request->old_logo;
+        }
         $data->update();
 
         return redirect()->route('prodi.index');

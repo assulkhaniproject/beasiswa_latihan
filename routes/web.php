@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/', function () {
     return view('welcome');});
 
+    Auth::routes();
 
 Route::group(['prefix' => 'admin'], function (){
 
@@ -27,8 +28,10 @@ Route::group(['prefix' => 'admin'], function (){
    Route::get('mahasiswa', 'Admin\MahasiswaController@index')->name('mahasiswa.index');
    Route::get('mahasiswa/create', 'Admin\MahasiswaController@create')->name('mahasiswa.create');
    Route::post('mahasiswa/create', 'Admin\MahasiswaController@store')->name('mahasiswa.store');
+   Route::get('mahasiswa/edit/{id}','Admin\MahasiswaController@edit')->name('mahasiswa.edit');
 
-   Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');
+
+    Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');
    Route::get('prodi/create','Admin\ProdiController@create')->name('prodi.create');
    Route::post('prodi/store', 'Admin\ProdiController@store')->name('prodi.store');
    Route::get('prodi/edit/{id}','Admin\ProdiController@edit')->name('prodi.edit');
