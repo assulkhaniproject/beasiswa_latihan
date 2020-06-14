@@ -24,7 +24,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                            <h4>On Progress ...</h4>
+                            <h4>Data Beasiswa</h4>
                         </div>
                     </div>
                 </div>
@@ -33,15 +33,21 @@
                         @csrf
                         {{method_field('patch')}}
                         <div class="form-group row mb-4">
-                            <label for="hEmail" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Nama</label>
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Nama</label>
                             <div class="col-xl-10 col-lg-9 col-sm-10">
-                                <input name="nama" type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
+                                <input name="nama" value="{{$user->nama}}" readonly type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label for="hPassword" class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Email</label>
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label">NIM</label>
                             <div class="col-xl-10 col-lg-9 col-sm-10">
-                                <input type="email" class="form-control" id="hEmail" placeholder="">
+                                <input name="nim" value="{{$user->nim}}" readonly type="text" class="form-control" id="program_study" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Program Study</label>
+                            <div class="col-xl-10 col-lg-9 col-sm-10">
+                                <input name="program_study" value="{{$user->prodi->program_study}}" readonly type="text" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row">

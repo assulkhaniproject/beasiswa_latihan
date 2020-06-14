@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Mahasiswa;
 use App\Http\Controllers\Controller;
 use App\Mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DetailController extends Controller
 {
@@ -15,8 +16,8 @@ class DetailController extends Controller
      */
     public function index()
     {
-        $datas = Mahasiswa::all();
-        return view('pages.mahasiswa.detail', compact('datas'));
+        $user = Auth::guard('mahasiswa')->user();
+        return view('pages.mahasiswa.detail', compact('user'));
     }
 
     /**
