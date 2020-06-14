@@ -22,5 +22,7 @@
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href="assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
+
+    <link href="{{asset('admin/assets/css/users/user-profile.css')}}" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
 </head>
