@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin'], function (){
    Route::get('mahasiswa/create', 'Admin\MahasiswaController@create')->name('mahasiswa.create');
    Route::post('mahasiswa/create', 'Admin\MahasiswaController@store')->name('mahasiswa.store');
    Route::get('mahasiswa/edit/{id}','Admin\MahasiswaController@edit')->name('mahasiswa.edit');
+   Route::get('mahasiswa/import','Admin\MahasiswaController@importecxel')->name('mahasiswa.import');
 
 
     Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');

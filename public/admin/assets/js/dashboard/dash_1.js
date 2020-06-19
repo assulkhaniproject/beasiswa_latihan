@@ -403,7 +403,7 @@ var options = {
             show: true,
             name: {
               show: true,
-              fontSize: '29px',
+              fontSize: '16px',
               fontFamily: 'Nunito, sans-serif',
               color: undefined,
               offsetY: -10
@@ -438,7 +438,7 @@ var options = {
       width: 25,
     },
     series: [985, 737, 270],
-    labels: ['Apparel', 'Electronic', 'Others'],
+    labels: ['DIII Akuntansi', 'DIII Teknik Komputer', 'DIII Teknik Elektro'],
     responsive: [{
         breakpoint: 1599,
         options: {
