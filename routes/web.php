@@ -51,6 +51,7 @@ Route::group(['prefix' => 'prodi'], function (){
 
     Route::get('mahasiswa', 'Prodi\MahasiswaController@index')->name('mahasiswas.index');
 
+    Route::get('beasiswa', 'Prodi\BeasiswaController@index')->name('beasiswas.index');
 });
 
 Route::group(['prefix' => 'mahasiswa'], function (){
