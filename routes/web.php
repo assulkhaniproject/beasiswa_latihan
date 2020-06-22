@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin'], function (){
    Route::get('mahasiswa/create', 'Admin\MahasiswaController@create')->name('mahasiswa.create');
    Route::post('mahasiswa/create', 'Admin\MahasiswaController@store')->name('mahasiswa.store');
    Route::get('mahasiswa/edit/{id}','Admin\MahasiswaController@edit')->name('mahasiswa.edit');
-   Route::get('mahasiswa/import','Admin\MahasiswaController@importecxel')->name('mahasiswa.import');
+   Route::get('mahasiswa/import','Admin\MahasiswaController@import')->name('mahasiswa.import');
 
 
     Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');
@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin'], function (){
    Route::get('prodi/destroy/{id}','Admin\ProdiController@destroy')->name('prodi.destroy');
 
    Route::get('beasiswa','Admin\BeasiswaController@index')->name('beasiswa.index');
+   Route::get('beasiswa/detail/{id}','Admin\BeasiswaController@show')->name('beasiswa.detail');
 
 });
 Route::group(['prefix' => 'prodi'], function (){
@@ -62,5 +63,6 @@ Route::group(['prefix' => 'mahasiswa'], function (){
     Route::get('dashboard', 'Mahasiswa\DashboardController@index')->name('mahasiswa.dashboard');
 
     Route::get('detail', 'Mahasiswa\DetailController@index')->name('mahasiswa.detail');
+    Route::post('detail/store','Mahasiswa\DetailController@store')->name('mahasiswas.store');
 
 });

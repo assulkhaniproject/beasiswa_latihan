@@ -19,7 +19,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="widget-content widget-content-area">
                     <div class="table-responsive mb-4">
                         <table id="style-3" class="table style-3 table-hover">
                             <thead>

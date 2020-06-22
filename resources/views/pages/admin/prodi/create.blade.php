@@ -13,7 +13,6 @@
                     </div>
                 </div>
             </div>
-            <div class="widget-content widget-content-area">
                 <form class="simple-example" action="{{route('prodi.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row">
@@ -68,7 +67,7 @@
                             @endif
                         </div>
                         <div class="col-md-12 mb-4">
-                            <label for="fullName">Logo</label>
+                            <label for="fullName">Foto</label>
                             <input name="logo" type="file" class="form-control {{$errors->has('logo')?'is-invalid':''}}"
                                    placeholder="Logo" value="" required>
                             @if ($errors->has('logo'))

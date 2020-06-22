@@ -38,7 +38,6 @@
                 </div>
             </div>
 
-
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">
                     <p class="">Copyright © 2020 <a target="_blank" href="https://designreset.com/">Tugas Akhir</a>, Beasiswa PHB.</p>
@@ -46,10 +45,6 @@
             </div>
         </div>
             {{--END BEGIN MAIN CONTAINER --}}
-
-            {{-- start javascript--}}
-                @include('templates.partials.admin._script')
-            {{--end javascript--}}
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,7 +63,7 @@
                                 <a href="user_account_setting.html" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></a>
                             </div>--}}
                             <div class="text-center user-info">
-                                <img src="assets/img/profile-3.jpg" alt="avatar">
+                                <img src="{{asset('admin/assets/img/profile-3.jpg')}}" alt="avatar">
                                 <p class="">A D M I N</p>
                             </div>
                             <div class="user-info-list">
@@ -122,6 +117,10 @@
                 </div>
             </div>
         </div>
+            {{-- start javascript--}}
+                @include('templates.partials.admin._script')
+            {{--end javascript--}}
+
 
     </body>
 </html>

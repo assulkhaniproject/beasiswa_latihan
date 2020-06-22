@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Mahasiswa;
 use Illuminate\Http\Request;
 use App\Prodi;
+use DB;
+use Excel;
 
 class MahasiswaController extends Controller
 {
@@ -23,6 +25,7 @@ class MahasiswaController extends Controller
         $datas = Mahasiswa::all();
         return view('pages.admin.mahasiswa.index', compact('datas'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -63,8 +66,8 @@ class MahasiswaController extends Controller
             'angkatan.min' => 'Angkatan Minimal 4 Huruf',
             'semester.max' => 'Semester Maximal 1 Huruf',
             'nim.uniwue' => 'Nim Sudah Terdaftar',
-            'no_hp.uniwue' => 'No. Hp Sudah Terdaftar',
-            'email.uniwue' => 'Email Sudah Terdaftar'
+            'no_hp.unique' => 'No. Hp Sudah Terdaftar',
+            'email.unique' => 'Email Sudah Terdaftar'
         ];
         $this->validate($request, $rule, $message);
 

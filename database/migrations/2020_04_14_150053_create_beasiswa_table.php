@@ -16,16 +16,33 @@ class CreateBeasiswaTable extends Migration
         Schema::create('beasiswa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_mahasiswa')->unsigned();
-            $table->string('khs', 30);
-            $table->string('krs', 30);
-            $table->string('foto');
-            $table->string('pekerjaan_ortu',50);
-            $table->integer('penghasilan_ortu');
+            $table->char('jenis_kelamin',9);
+            $table->string('agama',10);
+            $table->string('alamat', 50);
+            $table->char('ipk', 4);
+            $table->char('kode_pos',5);
+            $table->char('semester',1);
+            $table->string('email',50);
             $table->string('no_hp', 13);
+            $table->string('scan_khs', 30);
+            $table->string('scan_krs', 30);
+            $table->string('foto',30);
+
+            $table->string('nama_ortu', 50);
+            $table->string('alamat_ortu',50);
+            $table->string('pekerjaan_ortu',50);
+            $table->string('no_hp_ortu',13);
+            $table->string('penghasilan_ortu',50);
+            $table->string('tanggungan_ortu',10);
+            $table->string('scan_kk',30);
+            $table->string('scan_penghasilan',30);
+
             $table->string('nama_bank',20);
             $table->string('cabang_bank', 20);
             $table->string('no_rek', 50);
-            $table->string('nama_pemegang_rekening', 50);
+            $table->string('nama_rek', 50);
+            $table->string('scan_bt', 30);
+
             $table->boolean('status')->default(false);
             $table->timestamps();
 

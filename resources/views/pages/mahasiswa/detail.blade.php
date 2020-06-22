@@ -29,27 +29,209 @@
                     </div>
                 </div>
                 <div class="widget-content widget-content-area">
-                    <form method="post">
+                    <form method="post" action="{{route('mahasiswas.store')}}" enctype="multipart/form-data">
                         @csrf
-                        {{method_field('patch')}}
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Nama</label>
-                            <div class="col-xl-10 col-lg-9 col-sm-10">
-                                <input name="nama" value="{{$user->nama}}" readonly type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
-                            </div>
-                        </div>
-                        <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label">NIM</label>
-                            <div class="col-xl-10 col-lg-9 col-sm-10">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nomor Induk Mahasiswa</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nim" value="{{$user->nim}}" readonly type="text" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label">Program Study</label>
-                            <div class="col-xl-10 col-lg-9 col-sm-10">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Mahasiswa</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="nama" value="{{$user->nama}}" readonly type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Study</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="program_study" value="{{$user->prodi->program_study}}" readonly type="text" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Angkatan</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="program_study" value="{{$user->angkatan}}" readonly type="text" class="form-control" id="program_study" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Tempat/Tanggal Lahir</label>
+                            <div class="col-xl-2 col-lg-9 col-sm-10">
+                                <input name="program_study" value="{{$user->tempat_lahir}}" type="text" class="form-control" id="program_study" placeholder="">
+                            </div>
+                            <div class="col-xl-2 col-lg-9 col-sm-8">
+                                <input name="program_study" value="{{$user->tanggal_lahir}}" type="date" class="form-control" id="program_study" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Jenis Kelamin</label>
+                            <div class="new-control new-radio radio-primary ml-3">
+                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1" checked>
+                                <span class="new-control-indicator"></span>Laki-Laki
+                            </div>
+                            <a class="new-control new-radio radio-primary ml-3">
+                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1" checked>
+                                <span class="new-control-indicator"></span>Perempuan
+                            </a>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Agama</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="agama" value="" type="text" class="form-control" id="agama" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Alamat</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <textarea name="alamat" value="" type="text" class="form-control" id="alamat" placeholder="Sesuai Dengan KTP"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kode Pos</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="kode_pos" value="" type="text" class="form-control" id="kode_pos" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">IP Komulatif</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="ipk" value="" type="text" class="form-control"  id="ipk" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan KHS</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="scan_khs" value="" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan KRS</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="scan_krs" value="" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Semester</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="semester" value="" type="text" class="form-control" id="semester" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Email</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="email" value="" type="email" class="form-control" id="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Mahasiswa</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="no_hp" value="{{$user->no_hp}}" type="number" class="form-control" id="no_hp" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Foto Mahasiswa</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="foto" value="" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+
+                        {{--Data Orang Tua--}}
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5">
+                                <h5></h5>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Orang Tua</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="nama_ortu" value="" type="text" class="form-control" id="nama_ortu" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Alamat</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <textarea name="alamat_ortu" value="" type="text" class="form-control" id="alamat_ortu" placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Pekerjaan</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="pekerjaan_ortu" value="" type="text" class="form-control" id="pekerjaan_ortu" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Orangtua</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="no_hp_ortu" value="" type="text" class="form-control" id="no_hp_ortu" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Penghasilan</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <select name="penghasilan_ortu" class="form-control  basic">
+                                    <option selected="selected">-Pilih-</option>
+                                    <option>Rp.500.000-Rp.1.000.000</option>
+                                    <option>Rp.1.000.000-Rp.2.000.000</option>
+                                    <option>Rp.2.000.000-Rp.5.000.000</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan Slip Gaji</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="scan_penghasilan" value="" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Jumlah Tanggungan</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="tanggungan_ortu" value="" type="text" class="form-control" id="tanggungan_ortu" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan Kartu Keluarga</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="scan_kk" value="" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                        {{--Data Rekening Bank--}}
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5">
+                                <h5></h5>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Lengkap Bank</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="nama_bank" value="" type="text" class="form-control" id="nama_bank" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Cabang Bank</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="cabang_bank" value="" type="text" class="form-control" id="cabang_bank" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Pemegang Rekening</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="nama_rek" value="" type="text" class="form-control" id="nama_rek" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Rekening Bank</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="no.rek" value="" type="text" class="form-control" id="no_rek" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan Buku Tabungan</label>
+                            <div class="col-xl-6 col-lg-9 col-sm-10">
+                                <input name="scan_bt" value="" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <div class="col-sm-10">
                                 <button class="btn btn-warning mt-3 mr-2"  type="button" onclick="history.back()">Cancel</button>
@@ -77,7 +259,6 @@
 <script src="{{asset('mahasiswa/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('mahasiswa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('mahasiswa/assets/js/app.js')}}"></script>
-
 <script>
     $(document).ready(function() {
         App.init();

@@ -47,6 +47,13 @@
         </div>
     </nav>
     <div class="container">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span
+                        aria-hidden="true">×</span> </button>
+                <h3 class="text-success"><i class="fa fa-check-circle"></i> Success</h3> {{ $message }}
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-7 align-self-center order-md-0">
                 <h3>

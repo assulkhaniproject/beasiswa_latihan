@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Sales Admin | CORK - Multipurpose Bootstrap Dashboard Template </title>
+    <title>Beasiswa | Politeknik Harapan Bersama Kota Tegal  </title>
     <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}"/>
     <link href="{{asset('admin/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
     <script src="{{asset('admin/assets/js/loader.js')}}"></script>
@@ -25,4 +25,9 @@
 
     <link href="{{asset('admin/assets/css/users/user-profile.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL CUSTOM STYLES -->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/forms/theme-checkbox-radio.css')}}">
+    <link href="{{asset('admin/plugins/lightbox/photoswipe.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/plugins/lightbox/default-skin/default-skin.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/plugins/lightbox/custom-photswipe.css')}}" rel="stylesheet" type="text/css" />
 </head>

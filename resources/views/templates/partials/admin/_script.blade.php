@@ -49,4 +49,9 @@
         "pageLength": 7
     } );
 </script>
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="{{asset('admin/plugins/lightbox/photoswipe.min.js')}}"></script>
+<script src="{{asset('admin/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
+<script src="{{asset('admin/plugins/lightbox/custom-photswipe.js')}}"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
 <!-- END PAGE LEVEL CUSTOM SCRIPTS -->

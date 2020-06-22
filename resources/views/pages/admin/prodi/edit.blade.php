@@ -13,7 +13,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="widget-content widget-content-area">
                     <form class="simple-example" action="{{route('prodi.update',$data->id)}}" method="POST"
                           enctype="multipart/form-data">
                         @csrf
