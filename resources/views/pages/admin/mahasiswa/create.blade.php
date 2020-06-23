@@ -10,10 +10,6 @@
                             <h4>Tambah Data</h4>
                         </div>
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <!-- Button trigger modal -->
-                            <button name="upload" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#importexcel">
-                                Import Data
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -137,28 +133,5 @@
             </div>
         </div>
     </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="importexcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Import Data Excel</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="custom-file mb-4">
-                        <input name="import" type="file" class="custom-file-input" id="import">
-                        <label class="custom-file-label" for="customFile">Choose File Excel</label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </div>
-        </div>
     </div>
     @endsection
