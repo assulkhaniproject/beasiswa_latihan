@@ -2,28 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/beasiswa_latihan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/beasiswa_latihan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Beasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Beasiswa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MahasiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/DetailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Prodi/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Prodi/BeasiswaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Prodi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Prodi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_14_150053_create_beasiswa_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_14_150053_create_beasiswa_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/assets/js/dashboard/dash_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/assets/js/dashboard/dash_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_head.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_script.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/mahasiswa/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_script.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -167,20 +160,20 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\admin" />
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\superAdmin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\prodi\beasiswa" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\templates\partials" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\User" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\SuperAdmin" />
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\AdminProdi" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\admin" />
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\superAdmin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -267,7 +260,8 @@
       <workItem from="1592623120708" duration="11121000" />
       <workItem from="1592673555569" duration="13643000" />
       <workItem from="1592806782929" duration="611000" />
-      <workItem from="1592826669637" duration="24375000" />
+      <workItem from="1592826669637" duration="26102000" />
+      <workItem from="1592883903617" duration="6753000" />
     </task>
     <servers />
   </component>

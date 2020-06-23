@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.prodi')
 <head>
     <title>BEASISWA PHB | Data Beasiswa</title>
 </head>

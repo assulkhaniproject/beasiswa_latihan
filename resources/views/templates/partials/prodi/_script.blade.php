@@ -18,6 +18,9 @@
     <script src="{{asset('prodi/plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
     <script src="{{asset('prodi/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
 
+    <script src="{{asset('admin/plugins/apex/apexcharts.min.js')}}"></script>
+    <script src="{{asset('admin/assets/js/dashboard/dash_1.js')}}"></script>
+
 <script>
     $('#html5-extension').DataTable( {
         dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
@@ -46,3 +49,9 @@
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="assets/js/pages/helpdesk.js"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{{asset('prodi/plugins/lightbox/photoswipe.min.js')}}"></script>
+    <script src="{{asset('prodi/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
+    <script src="{{asset('prodi/plugins/lightbox/custom-photswipe.js')}}"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+

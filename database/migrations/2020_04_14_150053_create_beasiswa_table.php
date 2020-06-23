@@ -37,7 +37,7 @@ class CreateBeasiswaTable extends Migration
             $table->string('scan_kk',30);
             $table->string('scan_penghasilan',30);
 
-            $table->string('nama_bank',20);
+            $table->string('nama_bank',50);
             $table->string('cabang_bank', 20);
             $table->string('no_rek', 50);
             $table->string('nama_rek', 50);

@@ -126,7 +126,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp" value="{{$user->no_hp}}" type="number" class="form-control" id="no_hp" placeholder="">
+                                <input name="no_hp" value="" type="number" class="form-control" id="no_hp" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">

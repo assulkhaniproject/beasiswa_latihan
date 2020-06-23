@@ -9,4 +9,9 @@ class Prodi extends Authenticatable
 {
     protected $guarded = [];
     protected $table = 'prodi';
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class, 'id_mahasiswa', 'id');
+    }
 }

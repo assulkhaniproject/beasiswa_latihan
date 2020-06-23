@@ -1,7 +1,6 @@
 @extends('templates.admin')
 
 @section('content')
-
     <div class="row layout-top-spacing">
         <div id="basic" class="col-lg-12 layout-spacing">
             <div class="statbox widget box box-shadow">
@@ -18,6 +17,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="widget-content widget-content-area">
                     <form method="post" action="{{route('mahasiswa.store')}}">
                         @csrf
                         <div class="form-group row mr-lg-5">
@@ -137,6 +137,7 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="importexcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -159,6 +160,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     @endsection

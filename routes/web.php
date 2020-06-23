@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin'], function (){
    Route::get('mahasiswa/import','Admin\MahasiswaController@import')->name('mahasiswa.import');
 
 
-    Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');
+   Route::get('prodi', 'Admin\ProdiController@index')->name('prodi.index');
    Route::get('prodi/create','Admin\ProdiController@create')->name('prodi.create');
    Route::post('prodi/store', 'Admin\ProdiController@store')->name('prodi.store');
    Route::get('prodi/edit/{id}','Admin\ProdiController@edit')->name('prodi.edit');
@@ -53,6 +53,8 @@ Route::group(['prefix' => 'prodi'], function (){
     Route::get('mahasiswa', 'Prodi\MahasiswaController@index')->name('mahasiswas.index');
 
     Route::get('beasiswa', 'Prodi\BeasiswaController@index')->name('beasiswas.index');
+    Route::get('beasiswa/detail/{id}','Prodi\BeasiswaController@show')->name('beasiswas.detail');
+
 });
 
 Route::group(['prefix' => 'mahasiswa'], function (){

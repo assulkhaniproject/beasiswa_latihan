@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Prodi;
 
+use App\Beasiswa;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class BeasiswaController extends Controller
      */
     public function index()
     {
-        return view('pages.prodi.beasiswa.index');
+        $datas = Beasiswa::all();
+        return view('pages.prodi.beasiswa.index', compact('datas'));
     }
 
     /**
@@ -46,7 +48,8 @@ class BeasiswaController extends Controller
      */
     public function show($id)
     {
-        //
+        $beasiswa = Beasiswa::find($id);
+        return view('pages.prodi.beasiswa.detail', compact('beasiswa'));
     }
 
     /**

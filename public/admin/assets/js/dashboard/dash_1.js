@@ -80,7 +80,7 @@ var d_2options1 = {
           right: 0,
           bottom: -40,
           left: 0
-        }, 
+        },
     },
 }
 
@@ -120,7 +120,7 @@ var d_2options2 = {
       right: 0,
       bottom: 36,
       left: 0
-    }, 
+    },
   },
   fill: {
       type:"gradient",
@@ -302,7 +302,7 @@ var options1 = {
         lines: {
             show: true
         }
-    },   
+    },
     yaxis: {
         lines: {
             show: false,
@@ -313,8 +313,8 @@ var options1 = {
       right: 0,
       bottom: 0,
       left: -10
-    }, 
-  }, 
+    },
+  },
   legend: {
     position: 'top',
     horizontalAlign: 'right',
@@ -331,7 +331,7 @@ var options1 = {
       onClick: undefined,
       offsetX: 0,
       offsetY: 0
-    },    
+    },
     itemMargin: {
       horizontal: 0,
       vertical: 20
@@ -377,7 +377,7 @@ var options = {
         type: 'donut',
         width: 380
     },
-    colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
+    colors: ['#5c1ac3', '#FFD700', '#e7515a', '#000000','#CD853F'],
     dataLabels: {
       enabled: false
     },
@@ -437,8 +437,8 @@ var options = {
       show: true,
       width: 25,
     },
-    series: [985, 737, 270],
-    labels: ['DIII Akuntansi', 'DIII Teknik Komputer', 'DIII Teknik Elektro'],
+    series: [985, 737, 270,300, 500],
+    labels: ['DIII Akuntansi', 'DIII Teknik Komputer', 'DIII Teknik Elektro', 'DIII Teknik Mesin','DIV Informatika'],
     responsive: [{
         breakpoint: 1599,
         options: {
