@@ -76,16 +76,30 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="custom-file mb-4">
-                        <input name="import" type="file" class="custom-file-input" id="import">
-                        <label class="custom-file-label" for="customFile">Choose File Excel</label>
+                <form action="{{ route('mahasiswa.import') }}" enctype="multipart/form-data" method="post">
+                    {{ csrf_field() }}
+                    <div class="modal-body">
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Program Study</label>
+                            <div class="col-sm-8">
+                                <select name="program_study" class="form-control form-small" required>
+                                    <option selected="selected" value="">...</option>
+                                    @foreach($prodi as $p)
+                                        <option value="{{$p->id}}" {{$p->id == old('program_study') ? 'selected' : ''}} >{{$p->program_study}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="custom-file mb-4">
+                            <input name="import" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="custom-file-input" id="import" required>
+                            <label class="custom-file-label" for="customFile">Choose File Excel</label>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

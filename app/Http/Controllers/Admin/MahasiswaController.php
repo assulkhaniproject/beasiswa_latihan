@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\MahasiswaImport;
 use App\Mahasiswa;
 use Illuminate\Http\Request;
 use App\Prodi;
@@ -23,7 +24,8 @@ class MahasiswaController extends Controller
     public function index()
     {
         $datas = Mahasiswa::all();
-        return view('pages.admin.mahasiswa.index', compact('datas'));
+        $prodi = Prodi::all();
+        return view('pages.admin.mahasiswa.index', compact(['datas', 'prodi']));
     }
 
 
@@ -134,5 +136,12 @@ class MahasiswaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function import(Request $request)
+    {
+        $id_prodi = $request->program_study;
+        Excel::import(new MahasiswaImport($id_prodi), $request->file('import'));
+        return redirect()->back();
     }
 }
