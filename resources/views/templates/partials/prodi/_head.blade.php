@@ -21,19 +21,19 @@
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
-    <link href="assets/css/pages/helpdesk.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('prodi/assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('admin/assets/css/users/user-profile.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('prodi/assets/css/users/user-profile.css')}}" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
 
-    <link href="{{asset('admin/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('admin/assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('prodi/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('prodi/assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/forms/theme-checkbox-radio.css')}}">
     <link href="{{asset('prodi/plugins/lightbox/photoswipe.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('prodi/plugins/lightbox/default-skin/default-skin.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('prodi/plugins/lightbox/custom-photswipe.css')}}" rel="stylesheet" type="text/css" />
 
-    <link href="assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/forms/switches.css">
+    <link href="{{asset('prodi/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('prodi/assets/css/forms/switches.css')}}">
 </head>

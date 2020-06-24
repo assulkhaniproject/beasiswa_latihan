@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Study</label>
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Studi</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="program_study" value="{{$user->prodi->program_study}}" readonly type="text" class="form-control" id="program_study" placeholder="">
                             </div>

@@ -28,7 +28,7 @@
                                 <th>Nama</th>
                                 <th>Email</th>
                                 <th>No. Hp</th>
-                                <th>Program Study</th>
+                                <th>Program Studi</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>

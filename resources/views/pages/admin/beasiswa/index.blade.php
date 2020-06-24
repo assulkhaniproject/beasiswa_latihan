@@ -20,7 +20,7 @@
                             <th class="text-center">Image</th>
                             <th>NIM</th>
                             <th>Nama </th>
-                            <th>Program Study</th>
+                            <th>Program Studi</th>
                             <th>Email</th>
                             <th>Action</th>
 

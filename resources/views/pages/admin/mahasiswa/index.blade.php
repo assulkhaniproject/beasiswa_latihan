@@ -28,7 +28,7 @@
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
-                            <th>Program Study</th>
+                            <th>Program Studi</th>
                             <th>Angkatan</th>
                             <th>Semester</th>
                             <th>No. Hp</th>

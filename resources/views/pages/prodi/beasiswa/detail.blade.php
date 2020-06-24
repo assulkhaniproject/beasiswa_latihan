@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="form-group row mb-4">
-                <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Study</label>
+                <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Studi</label>
                 <div class="col-xl-6 col-lg-9 col-sm-10">
                     <input name="program_study" value="{{$beasiswa->mahasiswa->prodi->program_study}}"  type="text" class="form-control" id="program_study" placeholder="">
                 </div>
@@ -235,8 +235,8 @@
             </div>
 
             <div class="form-group row">
-                <div class="col-sm-10">
-                    <button class="btn btn-success px-5"  type="button" onclick="history.back()">OK</button>
+                <div class="col-sm-12">
+                    <button class="btn btn-success px-5 float-right"  type="button" onclick="history.back()">OK</button>
                 </div>
             </div>
         </form>
