@@ -397,13 +397,13 @@ var options = {
     plotOptions: {
       pie: {
         donut: {
-          size: '65%',
+          size: '75%',
           background: 'transparent',
           labels: {
             show: true,
             name: {
               show: true,
-              fontSize: '16px',
+              fontSize: '20px',
               fontFamily: 'Nunito, sans-serif',
               color: undefined,
               offsetY: -10
@@ -438,12 +438,12 @@ var options = {
       width: 25,
     },
     series: [985, 737, 270,300, 500],
-    labels: ['DIII Akuntansi', 'DIII Teknik Komputer', 'DIII Teknik Elektro', 'DIII Teknik Mesin','DIV Informatika'],
+    labels: ['DIII Akuntansi', 'DIII Teknik Komputer', 'DIII Teknik Elektro', 'DIII Teknik Mesin','DIV Teknik Informatika'],
     responsive: [{
         breakpoint: 1599,
         options: {
             chart: {
-                width: '350px',
+                width: '400px',
                 height: '400px'
             },
             legend: {
@@ -454,8 +454,8 @@ var options = {
         breakpoint: 1439,
         options: {
             chart: {
-                width: '250px',
-                height: '390px'
+                width: '500px',
+                height: '450px'
             },
             legend: {
                 position: 'bottom'
@@ -463,7 +463,7 @@ var options = {
             plotOptions: {
               pie: {
                 donut: {
-                  size: '65%',
+                  size: '75%',
                 }
               }
             }

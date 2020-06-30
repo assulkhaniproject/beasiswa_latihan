@@ -234,8 +234,8 @@
 
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <button class="btn btn-warning mt-3 mr-2"  type="button" onclick="history.back()">Cancel</button>
-                                <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+                                <button type="submit" class="btn btn-primary mt-3 float-right">Simpan</button>
+                                <button class="btn btn-warning mt-3 mr-2 float-right"  type="button" onclick="history.back()">Cancel</button>
                             </div>
                         </div>
                     </form>

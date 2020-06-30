@@ -7,7 +7,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Tambah Data</h4>
+                            <h4>Tambah Data Mahasiswa</h4>
                         </div>
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
                         </div>
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="form-group row mr-lg-5">
-                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Program Study</label>
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Program Studi</label>
                             <div class="col-sm-8">
                                 <select name="program_study" class="form-control form-small" required>
                                     <option selected="selected">...</option>
