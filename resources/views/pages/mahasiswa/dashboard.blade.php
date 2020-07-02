@@ -61,7 +61,8 @@
                     <b class="text-white">HARAPAN BERSAMA TEGAL</b>
                 </h3>
                 <p class="">Get Instant Answer From Popular Question Asked By Other Users</p>
-                <a class="btn btn-outline-white" href="{{route('mahasiswa.detail')}}">Detail Data</a>
+                <a class="btn btn-outline-white center" href="{{route('mahasiswa.detail')}}">Pengajuan</a>
+                <a class="btn btn-outline-white" href="#">Data Anda</a>
             </div>
             <div class="col-md-5 order-md-0 order-0">
                 <a target="_blank" class="banner-img">

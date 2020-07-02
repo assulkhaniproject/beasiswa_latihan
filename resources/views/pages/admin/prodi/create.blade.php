@@ -9,7 +9,7 @@
             <div class="widget-header">
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                        <h4>Tambah Data Admin</h4>
+                        <h4>Tambah Data</h4>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-md-12 mb-4">
                             <label for="fullName">No. Hp</label>
-                            <input name="no_hp" type="tel" class="form-control {{$errors->has('no_hp')?'is-invalid':''}}"
+                            <input name="no_hp" type="number" class="form-control {{$errors->has('no_hp')?'is-invalid':''}}"
                                    placeholder="No. Hp" value="" required>
                             @if ($errors->has('no_hp'))
                                 <span class="invalid-feedback" role="alert">
@@ -59,7 +59,7 @@
                         <div class="col-md-12 mb-4">
                             <label for="fullName">Program Studi</label>
                             <input name="program_study" type="text" class="form-control {{$errors->has('program_study')?'is-invalid':''}}"
-                                   placeholder="Program Studi" value="" required>
+                                   placeholder="Nama Program Studi" value="" required>
                             @if ($errors->has('program_study'))
                                 <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('program_Study') }}</b></p>

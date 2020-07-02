@@ -11,6 +11,13 @@
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <h5>Data Beasiswa</h5>
                     </div>
+                    <div class="col-xl-6 col-md-6 col-sm-6 col-6">
+                        <select class="form-control-sm col-sm-4 float-right text-primary">
+                            <option>Default select</option>
+                            <option>Default select</option>
+                            <option>Default select</option>
+                        </select>
+                        <button class="btn btn-outline-dark text-primary mb-2 py-1 float-right mr-2">Primary</button>                    </div>
                 </div>
                 <div class="table-responsive mb-4 mt-4">
                     <table id="html5-extension" class="table table-hover non-hover" style="width:100%">

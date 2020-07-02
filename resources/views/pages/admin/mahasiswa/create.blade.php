@@ -94,12 +94,16 @@
                             </div>
                         </div>
                         <div class="form-group row mr-lg-5">
-                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Semester</label>
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Jenis Kelamin</label>
                             <div class="col-sm-8">
-                                <input name="semester" type="number" value="{{old('semester')}}" class="form-control form-control-sm" id="colFormLabelSm" placeholder="">
-                                @if ($errors->has('semester'))
+                                <select name="jenis_kelamin" class="form-control  basic">
+                                    <option selected="selected">-Pilih-</option>
+                                    <option>Laki-laki</option>
+                                    <option>Perempuan</option>
+                                </select>
+                                @if ($errors->has('jenis_kelamin'))
                                     <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('semester') }}</b></p>
+                                            <p><b>{{ $errors->first('jenis_kelamin') }}</b></p>
                                         </span>
                                 @endif
                             </div>
@@ -107,10 +111,25 @@
                         <div class="form-group row mr-lg-5">
                             <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">No. Hp</label>
                             <div class="col-sm-8">
-                                <input name="no_hp" type="text" value="{{old('no_hp')}}" class="form-control form-control-sm {{$errors->has('semester') ? 'is-invalid':''}}" id="colFormLabelSm" placeholder="">
+                                <input name="no_hp" type="number" value="{{old('no_hp')}}" class="form-control form-control-sm {{$errors->has('no_hp') ? 'is-invalid':''}}" id="colFormLabelSm" placeholder="">
                                 @if ($errors->has('no_hp'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('no_hp') }}</b></p>
+                                        </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row mr-lg-5">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm ">Jalur</label>
+                            <div class="col-sm-8">
+                                <select name="jalur" class="form-control  basic">
+                                    <option selected="selected">-Pilih-</option>
+                                    <option>Reguler</option>
+                                    <option>Ekstensi</option>
+                                </select>
+                                @if ($errors->has('jalur'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('jalur') }}</b></p>
                                         </span>
                                 @endif
                             </div>

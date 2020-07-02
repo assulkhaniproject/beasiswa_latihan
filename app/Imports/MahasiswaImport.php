@@ -32,9 +32,10 @@ class MahasiswaImport implements ToModel, WithHeadingRow
            'tanggal_lahir' => $row['tanggal_lahir'],
            'alamat' => $row['alamat'],
            'angkatan' => $row['angkatan'],
-           'semester' => $row['semester'],
+           'jenis_kelamin' => $row['jenis_kelamin'],
            'no_hp' => $row['no_hp'],
            'email' => $row['email'],
+           'jalur' => $row['jalur'],
            'password' => Hash::make($row['nim']),
         ]);
     }

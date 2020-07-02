@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Mirrored from designreset.com/cork/ltr/demo4/form_layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Apr 2020 04:15:17 GMT -->
 <head>
     <meta charset="utf-8">
@@ -67,24 +66,30 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Jenis Kelamin</label>
                             <div class="new-control new-radio radio-primary ml-3">
-                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1" checked>
+                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1">
                                 <span class="new-control-indicator"></span>Laki-Laki
                             </div>
                             <a class="new-control new-radio radio-primary ml-3">
-                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1" checked>
+                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1">
                                 <span class="new-control-indicator"></span>Perempuan
                             </a>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Agama</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="agama" value="" type="text" class="form-control" id="agama" placeholder="">
+                                <select name="penghasilan_ortu" class="form-control  basic">
+                                    <option selected="selected">-Pilih-</option>
+                                    <option>Islam</option>
+                                    <option>Kristen</option>
+                                    <option>Budha</option>
+                                    <option>Hindu</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Alamat</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <textarea name="alamat" value="" type="text" class="form-control" id="alamat" placeholder="Sesuai Dengan KTP"></textarea>
+                                <textarea name="alamat" value="" type="text" class="form-control" id="alamat" placeholder=""></textarea>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -242,7 +247,6 @@
                 </div>
             </div>
         </div>
-
 <div class="footer-wrapper">
     <div class="footer-section f-section-1">
         <p class="">Copyright © 2020 <a target="_blank" href="https://designreset.com/">Tugas Akhir</a>, Beasiswa PHB</p>

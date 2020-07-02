@@ -30,4 +30,7 @@
     <link href="{{asset('admin/plugins/lightbox/photoswipe.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('admin/plugins/lightbox/default-skin/default-skin.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('admin/plugins/lightbox/custom-photswipe.css')}}" rel="stylesheet" type="text/css" />
+
+    <link href="{{asset('admin/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/plugins/bootstrap-select/bootstrap-select.min.css')}}">
 </head>

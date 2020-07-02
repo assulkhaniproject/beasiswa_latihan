@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
     Auth::routes();
 
-Route::group(['prefix' => 'admin'], function (){
+    Route::group(['prefix' => 'admin'], function (){
 
     Route::get('/login','Admin\AuthAdminController@showLogin')->name('admin.show.login');
     Route::post('/login','Admin\AuthAdminController@login')->name('admin.login');
@@ -29,6 +29,8 @@ Route::group(['prefix' => 'admin'], function (){
    Route::get('mahasiswa/create', 'Admin\MahasiswaController@create')->name('mahasiswa.create');
    Route::post('mahasiswa/create', 'Admin\MahasiswaController@store')->name('mahasiswa.store');
    Route::get('mahasiswa/edit/{id}','Admin\MahasiswaController@edit')->name('mahasiswa.edit');
+   Route::patch('mahasiswa/update/{id}','Admin\MahasiswaController@update')->name('mahasiswa.update');
+   Route::get('mahasiswa/destroy/{id}','Admin\MahasiswaController@destroy')->name('mahasiswa.destroy');
    Route::post('mahasiswa/import','Admin\MahasiswaController@import')->name('mahasiswa.import');
 
 

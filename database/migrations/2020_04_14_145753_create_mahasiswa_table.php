@@ -22,8 +22,9 @@ class CreateMahasiswaTable extends Migration
             $table->date('tanggal_lahir');
             $table->text('alamat');
             $table->char('angkatan', 4);
-            $table->char('semester',1);
+            $table->char('jenis_kelamin',9);
             $table->string('no_hp');
+            $table->string('jalur',10);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

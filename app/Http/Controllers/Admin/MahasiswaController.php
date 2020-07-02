@@ -56,8 +56,9 @@ class MahasiswaController extends Controller
             'tanggal_lahir' => 'required',
             'alamat' => 'required|min:5',
             'angkatan' => 'required|min:4',
-            'semester' => 'required|max:1',
+            'jenis_kelamin' => 'required|max:9',
             'no_hp' => 'required|min:11|max:13|unique:mahasiswa',
+            'jalur' => 'required',
             'email' => 'required|unique:mahasiswa'
         ];
         $message = [
@@ -66,7 +67,7 @@ class MahasiswaController extends Controller
             'tempat_lahir.min' => 'Tempat Lahir Minimal 5 Huruf',
             'alamat.min' => 'Alamat Minimal 5 Huruf',
             'angkatan.min' => 'Angkatan Minimal 4 Huruf',
-            'semester.max' => 'Semester Maximal 1 Huruf',
+            'jenis_kelamin.max' => 'Semester Maximal 9 Huruf',
             'nim.uniwue' => 'Nim Sudah Terdaftar',
             'no_hp.unique' => 'No. Hp Sudah Terdaftar',
             'email.unique' => 'Email Sudah Terdaftar'
@@ -81,9 +82,10 @@ class MahasiswaController extends Controller
             'tanggal_lahir' => $request->tanggal_lahir,
             'alamat' => $request->alamat,
             'angkatan' => $request->angkatan,
-            'semester' => $request->semester,
+            'jenis_kelamin' => $request->jenis_kelamin,
             'no_hp' => $request->no_hp,
             'email' => $request->email,
+            'jalur' => $request->jalur,
             'password' => bcrypt($request->nim)
         ]);
         return redirect()->route('mahasiswa.index');
@@ -124,8 +126,37 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'nim' => 'required',
+            'program_study' => 'required:unique:prodi',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'alamat' => 'required',
+            'angkatan' => 'required',
+            'no_hp' => 'required|max:13',
+            'email' => 'required',
+            'jalur' => 'required'
+        ]);
+
+        $data = Mahasiswa::find($id);
+        $data->nama = $request->nama;
+        $data->nim = $request->nim;
+        $data->program_study = $request->program_study;
+        $data->tempat_lahir = $request->tempat_lahir;
+        $data->tanggal_lahir = $request->tanggal_lahir;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->alamat = $request->alamat;
+        $data->angkatan = $request->angkatan;
+        $data->no_hp = $request->no_hp;
+        $data->email = $request->email;
+        $data->jalur = $request->jalur;
+
+        $data->update();
+        return redirect()->route('mahasiswa.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -135,7 +166,9 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Mahasiswa::find($id);
+        $data->delete();
+        return redirect()->route('mahasiswa.index');
     }
 
     public function import(Request $request)

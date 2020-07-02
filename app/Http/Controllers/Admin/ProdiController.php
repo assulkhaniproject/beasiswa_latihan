@@ -99,7 +99,7 @@ class ProdiController extends Controller
         $this->validate($request,[
             'nama' => 'required',
             'email' => 'required',
-            'no_hp' => 'required|max:12',
+            'no_hp' => 'required|max:13',
             'password' => 'required|min:8',
             'program_study' => 'required:unique:prodi',
         ]);

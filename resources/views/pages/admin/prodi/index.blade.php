@@ -1,6 +1,6 @@
 @extends('templates.admin')
 <head>
-    <title>BEASISWA PHB | Admin Prodi</title>
+    <title>BEASISWA PHB | Kemahasiswaan Prodi</title>
 </head>
 @section('content')
     <div class="row layout-top-spacing">
@@ -9,7 +9,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-6">
-                            <h4>Data Admin Prodi</h4>
+                            <h4>Data Kemahasiswaan Prodi</h4><br>
                         </div>
                         <div class="col-6">
                             <div class="icon-container">
