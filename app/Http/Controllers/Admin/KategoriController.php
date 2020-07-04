@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Kategori;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
@@ -14,7 +15,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.kategori.index');
+        $datas = Kategori::all();
+        return view('pages.admin.kategori.index', compact('datas'));
 
     }
 
