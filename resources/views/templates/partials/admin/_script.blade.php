@@ -49,11 +49,14 @@
         "pageLength": 10
     } );
 </script>
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
 <script src="{{asset('admin/plugins/lightbox/photoswipe.min.js')}}"></script>
 <script src="{{asset('admin/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
 <script src="{{asset('admin/plugins/lightbox/custom-photswipe.js')}}"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script src="assets/js/scrollspyNav.js"></script>
-<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
-<!-- END PAGE LEVEL CUSTOM SCRIPTS -->
+
+<script src="{{asset('admin/plugins/highlight/highlight.pack.js')}}"></script>
+<script src="{{asset('admin/assets/js/custom.js')}}"></script>
+
+<script src="{{asset('admin/assets/js/scrollspyNav.js')}}"></script>
+<script src="{{asset('admin/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
+

@@ -31,35 +31,45 @@
                     <form method="post" action="{{route('mahasiswas.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kategori/Tahun Akademik</label>
+                            <div class="col-xl-3 col-lg-9 col-sm-10">
+                                <input name="kategori" value="" type="text" class="form-control" id="kategori" placeholder="">
+                            </div>
+                            <div class="col-xl-3 col-lg-9 col-sm-8">
+                                <input name="tahun_akademik" value="" type="text" class="form-control" id="tahun_akademik" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nomor Induk Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="nim" value="{{$user->nim}}" readonly type="text" class="form-control" id="program_study" placeholder="">
+                                <input name="nim" value="{{$user->nim}}"  type="text" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="nama" value="{{$user->nama}}" readonly type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
+                                <input name="nama" value="{{$user->nama}}"  type="text" class="form-control" id="nama" placeholder="Nama Mahasiswa">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Studi</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="program_study" value="{{$user->prodi->program_study}}" readonly type="text" class="form-control" id="program_study" placeholder="">
+                                <input name="program_study" value="{{$user->prodi->program_study}}"  type="text" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Angkatan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="program_study" value="{{$user->angkatan}}" readonly type="text" class="form-control" id="program_study" placeholder="">
+                                <input name="program_study" value="{{$user->angkatan}}"  type="text" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Tempat/Tanggal Lahir</label>
-                            <div class="col-xl-2 col-lg-9 col-sm-10">
+                            <div class="col-xl-3 col-lg-9 col-sm-10">
                                 <input name="program_study" value="{{$user->tempat_lahir}}" type="text" class="form-control" id="program_study" placeholder="">
                             </div>
-                            <div class="col-xl-2 col-lg-9 col-sm-8">
+                            <div class="col-xl-3 col-lg-9 col-sm-8">
                                 <input name="program_study" value="{{$user->tanggal_lahir}}" type="date" class="form-control" id="program_study" placeholder="">
                             </div>
                         </div>
@@ -95,13 +105,13 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kode Pos</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="kode_pos" value="" type="text" class="form-control" id="kode_pos" placeholder="">
+                                <input name="kode_pos" value="" type="number" maxlength="5" class="form-control" id="kode_pos" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">IP Komulatif</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="ipk" value="" type="text" class="form-control"  id="ipk" placeholder="">
+                                <input name="ipk" value="" type="text" class="form-control" id="ipk" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -131,7 +141,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp" value="" type="number" class="form-control" id="no_hp" placeholder="">
+                                <input name="no_hp" value="" type="number" maxlength="13" class="form-control placement-bottom" id="no_hp" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -168,7 +178,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp_ortu" value="" type="text" class="form-control" id="no_hp_ortu" placeholder="">
+                                <input name="no_hp_ortu" value="" type="number" class="form-control" maxlength="13" id="defaultconfig" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -176,7 +186,7 @@
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <select name="penghasilan_ortu" class="form-control  basic">
                                     <option selected="selected">-Pilih-</option>
-                                    <option>Rp.500.000-Rp.1.000.000</option>
+                                    <option>Rp.0-Rp.1.000.000</option>
                                     <option>Rp.1.000.000-Rp.2.000.000</option>
                                     <option>Rp.2.000.000-Rp.5.000.000</option>
                                 </select>
@@ -256,6 +266,7 @@
 <!--  END CONTENT AREA  -->
 </div>
 <!-- END MAIN CONTAINER -->
+
 
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
 <script src="{{asset('mahasiswa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>

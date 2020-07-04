@@ -133,18 +133,40 @@
             <div class="row">
                 <div class="col-md-12 mb-5 mt-5">
 
-                    <h2>Some common questions</h2>
+                    <h2>PEDOMAN PROGRAM BEASISWA</h2>
 
                     <div class="accordion" id="accordionExample">
                         <div class="card">
-                            <div class="card-header" id="fqheadingThree">
+                            <div class="card-header" id="fqheadingThow">
                                 <div class="mb-0" data-toggle="collapse" role="navigation" data-target="#fqcollapseThree" aria-expanded="false" aria-controls="fqcollapseThree">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> <span class="faq-q-title">Getting started with UI Kit</span> <div class="like-faq"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> <span class="faq-like-count">33</span></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                    <span class="faq-q-title">KATA PENGANTAR</span>
                                 </div>
                             </div>
                             <div id="fqcollapseThree" class="collapse" aria-labelledby="fqheadingThree" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                    <br>Pemerintah melalui Direktorat Jenderal Pendidikan Tinggi Kementerian Pendidikan Nasional berupaya mengalokasikan dana untuk memberikan bantuan biaya pendidikan kepada mahasiswa yang orang tuanya tidak mampu untuk membiayai pendidikannya, dan memberikan beasiswa kepada mahasiswa yang mempunyai prestasi tinggi, baik di bidang akademik dan atau non akademik. Agar program bantuan biaya pendidikan dan beasiswa dapat dilaksanakan sesuai dengan prinsip 3T, yaitu: Tepat Sasaran, Tepat Jumlah, dan Tepat Waktu, maka Direktorat Jenderal Pendidikan Tinggi menerbitkan pedoman.
+
+                                        Penerbitan pedoman ini diharapkan dapat memudahkan bagi para pengelola agar penyelenggaraan program dapat terlaksana sesuai dengan harapan kita semua. Selain itu pedoman ini diharapkan juga dapat memudahkan bagi para mahasiswa yang akan mengusulkan sebagai calon penerima beasiswa, dan memudahkan bagi mahasiswa yang telah ditetapkan sebagai penerima beasiswa untuk menjalankan hak dan kewajibannya.
+
+                                        Dengan terbitnya pedoman ini, proses penyaluran/ pemberian PPA (Peningkatan Prestasi Akademik) dan BBM (Bantuan Belajar Mahasiswa) kepada mahasiswa akan berjalan dengan lebih baik, dan mahasiswa dapat mengikuti studinya dengan lancar yang diharapkan mampu meningkatkan prestasinya yang akhirnya dapat ikut andil dalam meneruskan perjuangan bangsa menuju pembangunan Indonesia sejahtera.
+
+                                        Kepada para pimpinan perguruan tinggi dan Kopertis Wilayah kami harapkan dapat melakukan sosialisasi, seleksi dan pengelolaan/penyaluran bantuan biaya pendidikan dan beasiswa mengacu kepada pedoman ini.
+
+                                        Akhirnya kami mengucapkan penghargaan dan terima kasih kepada tim penyusun dan semua pihak yang telah membantu dalam mewujudkan buku pedoman ini.
+
+
+                                    <p> Jakarta,         Agustus 2010</p>
+
+                                    <p>Direktur Jenderal Pendidikan Tinggi</p>
+
+
+
+                                    <b>Djoko Santoso</b>
+                                    </p>
                                 </div>
                             </div>
                         </div>

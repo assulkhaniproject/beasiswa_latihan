@@ -13,11 +13,15 @@
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <select class="form-control-sm col-sm-4 float-right text-primary">
-                            <option>Default select</option>
-                            <option>Default select</option>
-                            <option>Default select</option>
+                            <option selected="selected">Program Studi</option>
+                            @foreach($prodi as $p)
+                                <option value="{{$p->id}}" {{$p->id == old('program_study') ? 'selected' : ''}} >{{$p->program_study}}</option>
+                            @endforeach
                         </select>
-                        <button class="btn btn-outline-dark text-primary mb-2 py-1 float-right mr-2">Primary</button>                    </div>
+                        <button type="button" class="btn btn-primary py-1 px-4 float-right mr-2" data-toggle="modal" data-target="#exampleModal">
+                            Kategori
+                        </button>
+                    </div>
                 </div>
                 <div class="table-responsive mb-4 mt-4">
                     <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
@@ -61,5 +65,48 @@
                 </div>
             </div>
         </div>
+        {{--Modal Kategori--}}
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row ml-5">
+                            <label class="text-primary">Tahun Akademik</label>
+                            <select class="form-control-sm col-sm-6 ml-2 text-primary">
+                                <option value="">...</option>
+                                <option>2022/2023 - Genap</option>
+                                <option>2022/2023 - Ganjil</option>
+                                <option>2021/2022 - Genap</option>
+                                <option>2021/2022 - Ganjil</option>
+                                <option>2020/2021 - Genap</option>
+                                <option>2020/2021 - Ganjil</option>
+                                <option>2019/2020 - Genap</option>
+                                <option>2019/2020 - Ganjil</option>
+                            </select>
+                        </div>
+                        <div class="form-group row ml-5">
+                            <label class="text-primary mr-lg-5">Kategori</label>
+                            <select class="form-control-sm col-sm-6 ml-2 text-primary">
+                                <option value="">...</option>
+                                <option>Peningkatan Prestasi Akademik</option>
+                                <option>Bidikmisi</option>
+                                <option>Beasiswa Belajar Mahasiswa</option>
+                                <option>Lainnya...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal"><i class="flaticon-cacel-12"></i>Batal</button>
+                        <button type="button" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{--End Modal Kategori--}}
     </div>
 @endsection

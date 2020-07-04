@@ -174,7 +174,28 @@ class MahasiswaController extends Controller
     public function import(Request $request)
     {
         $id_prodi = $request->program_study;
-        Excel::import(new MahasiswaImport($id_prodi), $request->file('import'));
+        $file = $request->file('import');
+        $excel = Excel::toCollection(new MahasiswaImport($id_prodi), $file);
+//        dd($excel[0]);
+        foreach ($excel[0] as $mahasiswa){
+//            dd($mahasiswa['nim']);
+            if($mahasiswa['nim']) {
+                Mahasiswa::create([
+                'id_prodi' => $id_prodi,
+                'nim' => $mahasiswa['nim'],
+                'nama' => $mahasiswa['nama'],
+                'tempat_lahir' => $mahasiswa['tempat_lahir'],
+                'tanggal_lahir' => $mahasiswa['tanggal_lahir'],
+                'alamat' => $mahasiswa['alamat'],
+                'angkatan' => $mahasiswa['angkatan'],
+                'jenis_kelamin' => $mahasiswa['jenis_kelamin'],
+                'no_hp' => $mahasiswa['no_hp'],
+                'email' => $mahasiswa['email'],
+                'jalur' => $mahasiswa['jalur'],
+                'password' => bcrypt($mahasiswa['nim']),
+                ]);
+            }
+        }
         return redirect()->back();
     }
 }

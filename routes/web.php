@@ -44,6 +44,8 @@ use Illuminate\Support\Facades\Route;
    Route::get('beasiswa','Admin\BeasiswaController@index')->name('beasiswa.index');
    Route::get('beasiswa/detail/{id}','Admin\BeasiswaController@show')->name('beasiswa.detail');
 
+   Route::get('kategori','Admin\KategoriController@index')->name('kategori.index');
+
 });
 Route::group(['prefix' => 'prodi'], function (){
 
