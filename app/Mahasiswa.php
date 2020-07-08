@@ -27,4 +27,5 @@ class Mahasiswa extends Authenticatable
     public function prodi(){
         return $this->belongsTo(Prodi::class,'id_prodi','id');
     }
+
 }

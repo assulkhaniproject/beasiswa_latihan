@@ -42,11 +42,18 @@ use Illuminate\Support\Facades\Route;
    Route::get('prodi/destroy/{id}','Admin\ProdiController@destroy')->name('prodi.destroy');
 
    Route::get('beasiswa','Admin\BeasiswaController@index')->name('beasiswa.index');
-   Route::get('beasiswa/detail/{id}','Admin\BeasiswaController@show')->name('beasiswa.detail');
+   Route::get('beasiswa/filter','Admin\BeasiswaController@filter')->name('beasiswa.filter');
+
+        Route::get('beasiswa/detail/{id}','Admin\BeasiswaController@show')->name('beasiswa.detail');
 
    Route::get('kategori','Admin\KategoriController@index')->name('kategori.index');
+   Route::post('kategori/store','Admin\KategoriController@store')->name('kategori.store');
+   Route::post('kategori/edit/{id}','Admin\KategoriController@edit')->name('kategori.edit');
+   Route::patch('kategori/update/{id}','Admin\KategoriController@update')->name('kategori.update');
+   Route::get('kategori/destroy/{id}','Admin\KategoriController@destroy')->name('kategori.destroy');
 
-});
+
+    });
 Route::group(['prefix' => 'prodi'], function (){
 
     Route::get('/login', 'Prodi\AuthProdiController@showLogin')->name('prodi.show.login');
@@ -57,6 +64,9 @@ Route::group(['prefix' => 'prodi'], function (){
     Route::get('mahasiswa', 'Prodi\MahasiswaController@index')->name('mahasiswas.index');
 
     Route::get('beasiswa', 'Prodi\BeasiswaController@index')->name('beasiswas.index');
+    Route::post('beasiswa/tahun-akademik', 'Prodi\BeasiswaController@filterAkademik');
+    Route::get('beasiswa/seleksi', 'Prodi\BeasiswaController@filter')->name('prodi.beasiswa.filter');
+
     Route::get('beasiswa/detail/{id}','Prodi\BeasiswaController@show')->name('beasiswas.detail');
 
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mahasiswa;
 
 use App\Beasiswa;
 use App\Http\Controllers\Controller;
+use App\Kategori;
 use App\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,8 @@ class DetailController extends Controller
     public function index()
     {
         $user = Auth::guard('mahasiswa')->user();
-        return view('pages.mahasiswa.detail', compact('user'));
+        $kategori = Kategori::where('status', true)->first();
+        return view('pages.mahasiswa.detail', compact('user', 'kategori'));
     }
 
     /**
@@ -77,9 +79,21 @@ class DetailController extends Controller
         $destinationPath = public_path('/uploads/foto');
         $foto->move($destinationPath, $filename_foto);
 
+        $scan_ktm = $request->file('scan_ktm');
+        $filename_ktm =time().'ktm'.'.'. $scan_ktm->getClientOriginalExtension();
+        $destinationPath = public_path('/uploads/ktm');
+        $scan_ktm->move($destinationPath, $filename_ktm);
+
+        $scan_ktp = $request->file('scan_ktp');
+        $filename_ktp =time().'ktp'.'.'. $scan_ktp->getClientOriginalExtension();
+        $destinationPath = public_path('/uploads/ktp');
+        $scan_ktp->move($destinationPath, $filename_ktp);
+
         $data = new Beasiswa();
         $data->id_mahasiswa = Auth::guard('mahasiswa')->user()->id;
-        $data->jenis_kelamin = $request->jenis_kelamin ? 'Laki-laki' : 'Perempuan';
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->kategori = $request->kategori;
+        $data->tahun_akademik = $request->tahun_akademik;
         $data->agama = $request->agama;
         $data->alamat = $request->alamat;
         $data->kode_pos = $request->kode_pos;
@@ -101,6 +115,8 @@ class DetailController extends Controller
         $data->no_rek = $request->no_rek;
 
         $data->foto = $filename_foto;
+        $data->scan_ktm = $filename_ktm;
+        $data->scan_ktp = $filename_ktp;
         $data->scan_khs = $filename_khs;
         $data->scan_kk = $filename_kk;
         $data->scan_krs = $filename_krs;

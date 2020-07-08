@@ -29,6 +29,7 @@
                                 <th>Email</th>
                                 <th>No. Hp</th>
                                 <th>Program Studi</th>
+                                <th>Kuota Beasiswa</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -45,6 +46,7 @@
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->no_hp}}</td>
                                     <td>{{$data->program_study}}</td>
+                                    <td>{{$data->kuota_beasiswa}}</td>
                                     <td>
                                         <div class="icon-container">
                                             <a href="{{route('prodi.edit',$data->id)}}" class="btn btn-warning btn-sm ">

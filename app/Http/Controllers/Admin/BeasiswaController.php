@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Beasiswa;
 use App\Http\Controllers\Controller;
+use App\Kategori;
 use App\Prodi;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class BeasiswaController extends Controller
     {
         $datas = Beasiswa::all();
         $prodi = Prodi::all();
-        return view('pages.admin.beasiswa.index', compact('datas','prodi'));
+        $kategori = Kategori::all();
+        return view('pages.admin.beasiswa.index', compact('datas','prodi', 'kategori'));
     }
 
     /**
@@ -29,6 +31,23 @@ class BeasiswaController extends Controller
     public function create()
     {
         //
+    }
+
+    public function filter(Request $request){
+//        dd($request->all());
+        $prodi = $request->program_studi;
+        $kategori = $request->kategori;
+        $tahun_akademik = $request->tahun_akademik;
+
+        $datas = Beasiswa::whereHas('mahasiswa', function($query) use ($prodi){
+           $prodi ? $query->where('id_prodi', $prodi) : null;
+        })->where('tahun_akademik', $tahun_akademik)->where('kategori', $kategori)->get();
+
+//        dd($datas);
+
+        $prodi = Prodi::all();
+        $kategori = Kategori::all();
+        return view('pages.admin.beasiswa.index', compact('datas','prodi', 'kategori'));
     }
 
     /**
@@ -51,14 +70,14 @@ class BeasiswaController extends Controller
     public function show($id)
     {
         $beasiswa = Beasiswa::find($id);
-        return view('pages.admin.beasiswa.detail', compact('beasiswa'));
+        $kategori = Kategori::where('status', true)->first();
+        return view('pages.admin.beasiswa.detail', compact('beasiswa', 'kategori'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+         * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {

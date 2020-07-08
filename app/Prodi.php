@@ -14,4 +14,8 @@ class Prodi extends Authenticatable
     {
         return $this->belongsTo(Mahasiswa::class, 'id_mahasiswa', 'id');
     }
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
+    }
 }

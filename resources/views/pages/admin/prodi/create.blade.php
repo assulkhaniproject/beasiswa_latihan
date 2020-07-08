@@ -67,6 +67,16 @@
                             @endif
                         </div>
                         <div class="col-md-12 mb-4">
+                            <label for="fullName">Kuota Beasiswa</label>
+                            <input name="kuota_beasiswa" type="number" class="form-control {{$errors->has('kuota_beasiswa')?'is-invalid':''}}"
+                                   placeholder="Kuota Beasiswa" value="">
+                            @if ($errors->has('kuota_beasiswa'))
+                                <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('kuota_beasiswa') }}</b></p>
+                                        </span>
+                            @endif
+                        </div>
+                        <div class="col-md-12 mb-4">
                             <label for="fullName">Foto</label>
                             <input name="logo" type="file" class="form-control {{$errors->has('logo')?'is-invalid':''}}"
                                    placeholder="Logo" value="" required>

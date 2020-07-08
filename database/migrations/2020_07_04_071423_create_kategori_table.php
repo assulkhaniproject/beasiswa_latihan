@@ -17,7 +17,7 @@ class CreateKategoriTable extends Migration
             $table->id();
             $table->string('kategori',20);
             $table->string('tahun_akademik', 50);
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

@@ -44,6 +44,7 @@ class ProdiController extends Controller
           'no_hp' => 'required|max:12',
           'password' => 'required|min:8',
           'program_study' => 'required|unique:prodi',
+          'kuota_beasiswa' => 'required|unique:prodi',
             'logo' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
@@ -58,6 +59,7 @@ class ProdiController extends Controller
         $data->no_hp = $request->no_hp;
         $data->password = Hash::make($request->password);
         $data->program_study = $request->program_study;
+        $data->kuota_beasiswa = $request->kuota_beasiswa;
         $data->logo = $filename;
         $data->save();
 
@@ -102,6 +104,7 @@ class ProdiController extends Controller
             'no_hp' => 'required|max:13',
             'password' => 'required|min:8',
             'program_study' => 'required:unique:prodi',
+            'kuota_beasiswa' => 'required|max:2',
         ]);
 
         $data = Prodi::find($id);
@@ -110,6 +113,7 @@ class ProdiController extends Controller
         $data->no_hp = $request->no_hp;
         $data->password = Hash::make($request->password);
         $data->program_study = $request->program_study;
+        $data->kuota_beasiswa = $request->kuota_beasiswa;
         $logo = $request->file('logo');
         if ($logo){
             $filename        = time().'.'. $logo->getClientOriginalExtension();

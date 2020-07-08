@@ -38,7 +38,16 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = [
+            'required' => 'Isi bidang ini.'
+        ];
+        $this->validate($request, $message);
+
+        Kategori::create([
+            'kategori' => $request->kategori,
+            'tahun_akademik' => $request->tahun_akademik,
+            ]);
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -49,7 +58,8 @@ class KategoriController extends Controller
      */
     public function show($id)
     {
-        //
+        $datas = Kategori::find($id);
+
     }
 
     /**
@@ -60,7 +70,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        return view('pages.admin.beasiswa.detail', compact('kategori'));
     }
 
     /**
@@ -72,7 +83,14 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        dd($request->all());
+        $data = Kategori::find($id);
+        $data->kategori = $request->kategori;
+        $data->tahun_akademik = $request->tahun_akademik;
+        $data->status = $request->status ? true : false;
+        $data->update();
+
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -83,6 +101,8 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Kategori::find($id);
+        $data->delete();
+        return redirect()->route('kategori.index');
     }
 }

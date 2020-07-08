@@ -61,7 +61,18 @@
                                        placeholder="Program Study" value="{{$data->program_study}}" required>
                                 @if ($errors->has('program_study'))
                                     <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('program_Study') }}</b></p>
+                                            <p><b>{{ $errors->first('program_study') }}</b></p>
+                                        </span>
+                                @endif
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label for="fullName">Kuota Beasiswa</label>
+                                <input name="kuota_beasiswa" type="text"
+                                       class="form-control {{$errors->has('kuota_beasiswa')?'is-invalid':''}}"
+                                       placeholder="Kuota Beasiswa" value="{{$data->kuota_beasiswa}}">
+                                @if ($errors->has('kuota_beasiswa'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('kuota_beasiswa') }}</b></p>
                                         </span>
                                 @endif
                             </div>

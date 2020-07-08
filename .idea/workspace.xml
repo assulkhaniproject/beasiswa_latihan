@@ -3,8 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Beasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Beasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/KategoriController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/KategoriController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProdiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProdiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/DetailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Prodi/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Prodi/BeasiswaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Prodi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Prodi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_14_145638_create_prodi_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_14_145638_create_prodi_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_04_071423_create_kategori_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_04_071423_create_kategori_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/assets/js/forms/bootstrap_validation/bs_validation_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/assets/js/forms/bootstrap_validation/bs_validation_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/plugins/bootstrap-select/bootstrap-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/plugins/bootstrap-select/bootstrap-select.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/kategori/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/kategori/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/prodi/_head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -151,16 +177,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\admin" />
-      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\superAdmin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\prodi\beasiswa" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\templates\partials" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\User" />
       <recent name="C:\xampp\htdocs\beasiswa_latihan\app\Http\Controllers\SuperAdmin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\admin" />
+      <recent name="C:\xampp\htdocs\beasiswa_latihan\resources\views\pages\superAdmin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -258,7 +284,10 @@
       <workItem from="1593577141276" duration="16348000" />
       <workItem from="1593601982280" duration="6425000" />
       <workItem from="1593669262798" duration="648000" />
-      <workItem from="1593789615703" duration="25186000" />
+      <workItem from="1593789615703" duration="27262000" />
+      <workItem from="1593884319071" duration="18087000" />
+      <workItem from="1594053343966" duration="11129000" />
+      <workItem from="1594185059278" duration="31368000" />
     </task>
     <servers />
   </component>

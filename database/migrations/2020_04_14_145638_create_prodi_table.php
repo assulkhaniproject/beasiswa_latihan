@@ -21,6 +21,7 @@ class CreateProdiTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('program_study')->unique();
+            $table->string('kuota_beasiswa')->nullable();
             $table->text('logo')->nullable();
             $table->rememberToken();
             $table->timestamps();

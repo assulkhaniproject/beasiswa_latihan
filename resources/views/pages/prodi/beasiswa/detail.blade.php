@@ -13,6 +13,15 @@
                 </div>
         <form method="post" action="{{route('mahasiswas.store')}}" enctype="multipart/form-data">
             <div class="form-group row mb-4">
+                <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kategori/Tahun Akademik*</label>
+                <div class="col-xl-4 col-lg-9 col-sm-10">
+                    <input name="kategori" value="{{$kategori ? $kategori->kategori : ''}}" readonly type="text" class="form-control" id="kategori" placeholder="" required>
+                </div>
+                <div class="col-xl-3 col-lg-9 col-sm-10">
+                    <input name="tahun_akademik" value="{{$kategori ? $kategori->tahun_akademik : ''}}"  readonly type="text" class="form-control" id="tahun_akademik" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row mb-4">
                 <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nomor Induk Mahasiswa</label>
                 <div class="col-xl-6 col-lg-9 col-sm-10">
                     <input name="nim" value="{{$beasiswa->mahasiswa->nim}}" type="text" class="form-control" id="program_study" placeholder="">
@@ -47,7 +56,10 @@
             </div>
             <div class="form-group row mb-4">
                 <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Jenis Kelamin</label>
-                <div class="new-control new-radio radio-primary ml-3">
+                <div class="col-xl-6 col-lg-9 col-sm-10">
+                    <input name="jenis_kelamin" value="{{$beasiswa->jenis_kelamin}}" type="text" class="form-control" id="agama" placeholder="">
+                </div>
+                {{--<div class="new-control new-radio radio-primary ml-3">
                     <input type="radio" class="new-control-input mt-2" name="custom-radio-1"
                         {{$beasiswa->jenis_kelamin == 'Laki-laki' ? 'checked' : ''}}>
                     <span class="new-control-indicator"></span>Laki-Laki
@@ -56,7 +68,7 @@
                     <input type="radio" class="new-control-input mt-2" name="custom-radio-1"
                         {{$beasiswa->jenis_kelamin == 'Perempuan' ? 'checked' : ''}}>
                     <span class="new-control-indicator"></span>Perempuan
-                </a>
+                </a>--}}
             </div>
             <div class="form-group row mb-4">
                 <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Agama</label>
@@ -118,6 +130,26 @@
                 <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Mahasiswa</label>
                 <div class="col-xl-6 col-lg-9 col-sm-10">
                     <input name="no_hp" value="{{$beasiswa->no_hp}}" type="number" class="form-control" id="no_hp" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row mb-4">
+                <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan KTM</label>
+                <div class="col-xl-6 col-lg-9 col-sm-10">
+                    <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+                        <a class="img-1" href="{{asset('uploads/ktm/'.$beasiswa->scan_ktm)}}" data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683" data-author="Samuel Rohl">
+                            <img src="{{asset('uploads/ktm/'.$beasiswa->scan_ktm)}}" alt="image-gallery">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-4">
+                <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan KTP</label>
+                <div class="col-xl-6 col-lg-9 col-sm-10">
+                    <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+                        <a class="img-1" href="{{asset('uploads/ktp/'.$beasiswa->scan_ktp)}}" data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683" data-author="Samuel Rohl">
+                            <img src="{{asset('uploads/ktp/'.$beasiswa->scan_ktp)}}" alt="image-gallery">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="form-group row mb-4">
@@ -236,7 +268,7 @@
 
             <div class="form-group row">
                 <div class="col-sm-12">
-                    <button class="btn btn-success px-5 float-right"  type="button" onclick="history.back()">OK</button>
+                    <button class="btn btn-primary px-5 float-right"  type="button" onclick="history.back()">OK</button>
                 </div>
             </div>
         </form>
@@ -263,7 +295,7 @@
                                 <!--  Controls are self-explanatory. Order can be changed. -->
                                 <div class="pswp__counter"></div>
                                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                                <button class="pswp__button pswp__button--share" title="Share"></button>
+                                {{--<button class="pswp__button pswp__button--share" title="Share"></button>--}}
                                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
                                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 

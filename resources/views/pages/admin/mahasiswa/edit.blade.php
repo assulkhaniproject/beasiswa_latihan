@@ -45,7 +45,7 @@
                         <div class="col-md-12 mb-4">
                             <label for="fullName">Program Studi</label>
                             <input name="program_study" type="text"
-                                   class="form-control {{$errors->has('program_studi')?'is-invalid':''}}"
+                                   class="form-control {{$errors->has('program_study')?'is-invalid':''}}"
                                    placeholder="" value="{{$datas->prodi->program_study}}" required>
                             @if ($errors->has('program_study'))
                                 <span class="invalid-feedback" role="alert">
