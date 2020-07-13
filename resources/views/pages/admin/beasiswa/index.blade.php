@@ -5,14 +5,14 @@
 @section('content')
     <div class="row layout-top-spacing">
 
-        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
             <div class="widget-content widget-content-area">
                 <div class="row">
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <h5>Data Beasiswa</h5>
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                        <button type="button" class="btn btn-primary py-1 px-4 float-right mr-2" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-primary py-1 px-4 float-right mr-sm-5 py-2 px-lg-5" data-toggle="modal" data-target="#exampleModal">
                             Filter
                         </button>
                     </div>
@@ -108,6 +108,12 @@
                                     <option value="{{$p->id}}" {{$p->id == old('program_study') ? 'selected' : ''}} >{{$p->program_study}}</option>
                                 @endforeach
                             </select>
+                            </div>
+                        </div>
+                        <div class="form-group row  mb-4">
+                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary">Status</label>
+                            <div class="col-sm-10">
+                                <input class="form-control form-control-sm text-primary" name="status" required></input>
                             </div>
                         </div>
                     </div>

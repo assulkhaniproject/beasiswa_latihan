@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/pdf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/beasiswa_latihan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/beasiswa_latihan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,6 +151,14 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/h4cc/wkhtmltopdf-amd64" />
     </include_path>
   </component>
   <component name="ProjectId" id="1a3BwM9AqHlREyBFQ5TjmH4Fwp8" />
@@ -260,7 +281,11 @@
       <workItem from="1593789615703" duration="27262000" />
       <workItem from="1593884319071" duration="18087000" />
       <workItem from="1594053343966" duration="11129000" />
-      <workItem from="1594185059278" duration="32742000" />
+      <workItem from="1594185059278" duration="33957000" />
+      <workItem from="1594296219689" duration="3132000" />
+      <workItem from="1594315836436" duration="11482000" />
+      <workItem from="1594458163654" duration="599000" />
+      <workItem from="1594483851874" duration="17768000" />
     </task>
     <servers />
   </component>
@@ -279,5 +304,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/pages/admin/beasiswa/pdf.blade.php</url>
+          <line>114</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

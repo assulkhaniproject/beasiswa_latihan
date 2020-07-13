@@ -11,7 +11,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="simple-example" action="{{route('prodi.update',$datas->id)}}" method="POST"
+                <form class="simple-example" action="{{route('mahasiswa.update',$datas->id)}}" method="post"
                       enctype="multipart/form-data">
                     @csrf
                     {{method_field('patch')}}
@@ -41,17 +41,15 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="col-md-12 mb-4">
-                            <label for="fullName">Program Studi</label>
-                            <input name="program_study" type="text"
-                                   class="form-control {{$errors->has('program_study')?'is-invalid':''}}"
-                                   placeholder="" value="{{$datas->prodi->program_study}}" required>
-                            @if ($errors->has('program_study'))
-                                <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('program_study') }}</b></p>
-                                        </span>
-                            @endif
+                    <div class="form-group row  mb-4">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary">Program Studi</label>
+                        <div class="col-sm-10">
+                            <select class="form-control form-control-sm text-primary" name="program_study">
+                                <option selected="selected" value="">Program Studi</option>
+                                @foreach($prodi as $p)
+                                    <option value="{{$p->id}}" {{$p->id == old('program_study') ? 'selected' : ''}} >{{$p->program_study}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-row">

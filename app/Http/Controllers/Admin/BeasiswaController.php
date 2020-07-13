@@ -5,11 +5,24 @@ namespace App\Http\Controllers\Admin;
 use App\Beasiswa;
 use App\Http\Controllers\Controller;
 use App\Kategori;
+use App\Mahasiswa;
 use App\Prodi;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class BeasiswaController extends Controller
 {
+
+    public function pdf()
+    {
+        $data = ['title' => 'Welcome to Beasiswa PHB'];
+   $pdf = PDF::loadView('pages.admin.beasiswa.pdf');
+
+//        PDF::loadView('pages.admin.beasiswa.pdf', $data);
+        return $pdf->stream('laporan-pdf.pdf');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -106,4 +119,5 @@ class BeasiswaController extends Controller
     {
         //
     }
+
 }

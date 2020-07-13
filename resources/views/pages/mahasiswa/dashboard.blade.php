@@ -62,7 +62,7 @@
                 </h3>
                 <p class="">Get Instant Answer From Popular Question Asked By Other Users</p>
                 <a class="btn btn-outline-white center" href="{{route('mahasiswa.detail')}}">Pengajuan</a>
-                <a class="btn btn-outline-white" href="#">Data Anda</a>
+                <a class="btn btn-outline-white" href="{{route('mahasiswa.profile')}}">Data Anda</a>
             </div>
             <div class="col-md-5 order-md-0 order-0">
                 <a target="_blank" class="banner-img">
@@ -133,7 +133,7 @@
             <div class="row">
                 <div class="col-md-12 mb-5 mt-5">
 
-                    <h2>PEDOMAN PROGRAM BEASISWA</h2>
+                    <h2>PEDOMAN PROGAM BEASISWA</h2>
 
                     <div class="accordion" id="accordionExample">
                         <div class="card">
@@ -174,12 +174,21 @@
                         <div class="card">
                             <div class="card-header" id="fqheadingFour">
                                 <div class="mb-0" data-toggle="collapse" role="navigation" data-target="#fqcollapseFour" aria-expanded="false" aria-controls="fqcollapseFour">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> <span class="faq-q-title">Production Level Built</span> <div class="like-faq"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> <span class="faq-like-count">14</span></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                    <span class="faq-q-title">A. PENDAHULUAN</span>
                                 </div>
                             </div>
                             <div id="fqcollapseFour" class="collapse" aria-labelledby="fqheadingFour" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                    <p>A. LATAR BELAKANG
+
+                                        Tiap-tiap warga negara berhak mendapatkan pengajaran. Hak setiap warga negara tersebut telah dicantumkan dalam Pasal 31 (1) Undang-Undang Dasar 1945. Berdasarkan pasal tersebut, maka Pemerintah dan pemerintah daerah wajib memberikan layanan dan kemudahan, serta menjamin terselenggaranya pendidikan yang bermutu bagi setiap warga negara tanpa diskriminasi, dan masyarakat berkewajiban memberikan dukungan sumber daya dalam penyelenggaraan pendidikan. Untuk menyelenggarakan pendidikan yang bermutu diperlukan biaya yang cukup besar. Oleh karena itu bagi setiap peserta didik pada setiap satuan pendidikan berhak mendapatkan biaya pendidikan bagi mereka yang orang tuanya tidak mampu membiayai pendidikannya, dan berhak mendapatkan beasiswa bagi mereka yang berprestasi.
+
+                                        Undang-undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional, Bab V pasal 12 (1.c), menyebutkan bahwa setiap peserta didik pada setiap satuan pendidikan berhak mendapatkan beasiswa bagi yang berprestasi yang orang tuanya tidak mampu membiayai pendidikannya. Pasal 12 (1.d), menyebutkan bahwa setiap peserta didik pada setiap satuan pendidikan berhak mendapatkan biaya pendidikan bagi mereka yang orang tuanya tidak mampu membiayai pendidikannya.
+
+                                        Peraturan Pemerintah Nomor 48 tahun 2008 tentang Pendanaan Pendidikan, Bagian Kelima, Pasal 27 ayat (1), menyebutkan bahwa Pemerintah dan pemerintah daerah sesuai kewenangannya memberi bantuan biaya pendidikan atau beasiswa kepada peserta didik yang orang tua atau walinya tidak mampu membiayai pendidikannya. Pasal 27 ayat (2), menyebutkan bahwa Pemerintah dan pemerintah daerah sesuai dengan kewenangannya dapat memberi beasiswa kepada peserta didik yang berprestasi.
+
+                                        pada Undang-undang dan Peraturan Pemerintah tersebut, maka Pemerintah melalui Direktorat Jenderal Pendidikan Tinggi – Kementerian Pendidikan Nasional, mengupayakan pemberian bantuan biaya pendidikan bagi mahasiswa yang orang tua/walinya kurang mampu membiayai pendidikan, dalam bentuk Bantuan Biaya Mahasiswa (BBM) dan Beasiswa bagi mahasiswa berprestasi dalam bentuk Beasiswa Peningkatan Prestasi Akademik (PPA).</p>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +229,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
                     <div class="card">
-                        <img src="assets/img/masonry-blog-style-3.jpg" class="card-img-top" alt="faq-video-tutorials">
+                        <img src="assets/img/favicon.png" class="card-img-top" alt="faq-video-tutorials">
                         <div class="card-body">
                             <div class="fq-rating">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star checked"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -304,10 +313,10 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-5 mx-auto col-lg-6 col-md-6 site-content-inner text-md-left text-center copyright align-self-center">
-                        <p class="mt-md-0 mt-4 mb-0">2019 &copy; <a target="_blank" href="https://designreset.com/cork">Design Reset</a>.</p>
+                        <p class="mt-md-0 mt-4 mb-0">2020 &copy; <a target="_blank" href="https://github.com/assulkhaniproject/">TUGAS AKHIR</a>.</p>
                     </div>
                     <div class="col-xl-5 mx-auto col-lg-6 col-md-6 site-content-inner text-md-right text-center align-self-center">
-                        <p class="mb-0">1355 Market Street, Suit 900 San Francisco, CA 94103</p>
+                        <p class="mb-0">Abu Muslih Assulkhani, 16090014</p>
                     </div>
                 </div>
             </div>

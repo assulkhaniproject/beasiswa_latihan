@@ -23,9 +23,8 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-3 col-md-6 col-sm-6 col-6">
-                            <h4>Data Beasiswa</h4>
+                            <h3 class="mt-3 text-center text-primary"><b>Data Beasiswa</b></h3>
                         </div>
-
                         <div class="col-xl-6 col-md-3 col-sm-6 col-6 mt-2">
                             @if(!$kategori)
                             <div class="alert alert-warning mb-4" role="alert">
@@ -213,7 +212,10 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Penghasilan Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="penghasilan_ortu" value="" type="tel" class="form-control" id="penghasilan_ortu" placeholder="">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon5">Rp.</span>
+                                <input name="penghasilan_ortu" value="" type="number" class="form-control" id="penghasilan_ortu" placeholder="">
+                            </div>
                             </div>
                         </div>
                         <div class="form-group row mb-4">

@@ -43,8 +43,9 @@ use Illuminate\Support\Facades\Route;
 
    Route::get('beasiswa','Admin\BeasiswaController@index')->name('beasiswa.index');
    Route::get('beasiswa/filter','Admin\BeasiswaController@filter')->name('beasiswa.filter');
+   Route::get('beasiswa/detail/{id}','Admin\BeasiswaController@show')->name('beasiswa.detail');
+   Route::get('beasiswa/reportPDF','Admin\BeasiswaController@pdf')->name('beasiswa.report');
 
-        Route::get('beasiswa/detail/{id}','Admin\BeasiswaController@show')->name('beasiswa.detail');
 
    Route::get('kategori','Admin\KategoriController@index')->name('kategori.index');
    Route::post('kategori/store','Admin\KategoriController@store')->name('kategori.store');
@@ -80,5 +81,7 @@ Route::group(['prefix' => 'mahasiswa'], function (){
 
     Route::get('detail', 'Mahasiswa\DetailController@index')->name('mahasiswa.detail');
     Route::post('detail/store','Mahasiswa\DetailController@store')->name('mahasiswas.store');
+
+    Route::get('profile','Mahasiswa\ProfileController@index')->name('mahasiswa.profile');
 
 });
