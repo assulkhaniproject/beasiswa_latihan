@@ -47,7 +47,7 @@
                                 <label for="fullName">Password</label>
                                 <input name="password" type="password"
                                        class="form-control {{$errors->has('password')?'is-invalid':''}}"
-                                       placeholder="Password" value="" required>
+                                       placeholder="Password" value="">
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('password') }}</b></p>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Mahasiswa;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Beasiswa;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -14,7 +16,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('pages.mahasiswa.profile');
+        $beasiswas = Beasiswa::where('id_mahasiswa',Auth::user()->id)->orderBy('id','DESC')->paginate(6);
+        return view('pages.mahasiswa.profile', compact('beasiswas'));
     }
 
     /**
@@ -46,7 +49,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

@@ -4,14 +4,12 @@
 </head>
 @section('content')
     <div class="row layout-top-spacing">
-
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
             <div class="widget-content widget-content-area">
                 <div class="row">
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <h5>Data Beasiswa </h5>
                     </div>
-
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <form method="get" action="{{route('prodi.beasiswa.filter')}}">
 
@@ -41,9 +39,9 @@
                             <th>Nama</th>
                             <th>Program Study</th>
                             <th>Email</th>
+                            <th>Kategori</th>
                             <th>Action</th>
                             <th>Status</th>
-
                         </tr>
                         </thead>
                         <tbody id="tabel-beasiswa">
@@ -60,6 +58,7 @@
                                 {{-- <td>{{$data->mahasiswa->tempat_lahir}}, {{$data->mahasiswa->tanggal_lahir}}</td>--}}
                                 <td>{{$data->mahasiswa->prodi->program_study}}</td>
                                 <td>{{$data->email}}</td>
+                                <td>{{$data->kategori}}</td>
                                 <td>
                                     <div class="icon-container">
                                         <a href="{{route('beasiswas.detail',$data->id)}}"
@@ -72,11 +71,71 @@
                                 </td>
                                 <td>
                                     <label class="switch s-icons s-outline s-outline-success mr-2">
-                                        <input type="checkbox" checked>
-                                        <span class="slider round"></span>
+                                        @if($data->status === 1)
+                                            <button class="btn btn-success" data-target="#modalPembatalan{{$data->id}}" data-toggle="modal">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                                            </button>
+                                            @elseif($data->status === 0)
+                                            <button class="btn btn-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            </button>
+                                            @else
+                                        <button class="btn btn-info" data-target="#modalPersetujuan{{$data->id}}" data-toggle="modal">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        </button>
+                                            @endif
                                     </label>
                                 </td>
                             </tr>
+
+                            <!-- Modal Persetujuan -->
+                            <div class="modal fade" id="modalPersetujuan{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Beasiswa</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form action="{{route('beasiswa.konfirmasi', $data->id)}}" method="post">
+                                            @csrf
+                                            @method('PATCH')
+                                        <div class="modal-body">
+                                            <h5><b>Beasiswa untuk {{$data->mahasiswa->nama}}</b></h5>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-primary">Ok</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="modalPembatalan{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-danger">
+                                            <h5 class="modal-title text-white" id="exampleModalLabel">Konfirmasi Pembatalan Beasiswa</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form action="{{route('beasiswa.pembatalan', $data->id)}}" method="post">
+                                            @csrf
+                                            @method('PATCH')
+                                            <div class="modal-body">
+                                                <h5><b>Beasiswa untuk {{$data->mahasiswa->nama}}</b></h5>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
+                                                <button type="submit" class="btn btn-primary">Ok</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                         </tbody>
                     </table>
@@ -84,6 +143,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
 
@@ -122,32 +182,37 @@
                                 {{-- <td>{{$data->mahasiswa->tempat_lahir}}, {{$data->mahasiswa->tanggal_lahir}}</td>--}}
                             <td>${beasiswa.mahasiswa.prodi.program_study}</td>
                                 <td>${beasiswa.email}</td>
+                                <td>${beasiswa.kategori}</td>
                                 <td>
                                     <div class="icon-container">
                                          <a href="${url}prodi/beasiswa/detail/${beasiswa.id}"
-                                           class="btn btn-warning btn-sm ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                 class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
+                                            class="btn btn-warning btn-sm ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                                             <span class="icon-name">
-                                                     View</span>
+                                                     Lihat</span>
                                         </a>
                                     </div>
                                 </td>
                                 <td>
                                     <label class="switch s-icons s-outline s-outline-success mr-2">
-                                        <input type="checkbox" checked>
-                                        <span class="slider round"></span>
-                                    </label>
-                                </td>
-                            </tr>
-            `
+                                            ${beasiswa.status === 1 ? `
+                                            <button class="btn btn-success" data-target="#modalPembatalan${beasiswa.id}" data-toggle="modal">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                                            </button>
+                                            ` : ''}
+                                             ${beasiswa.status == 0 ? `<button class="btn btn-danger">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                        </button>` : ''}
+                                             ${beasiswa.status === null ? `
+                                             <button class="btn btn-info" data-target="#modalPersetujuan${beasiswa.id}" data-toggle="modal">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        </button>
+                                            ` : ''}
+
+            </label>
+        </td>
+    </tr>
+`
         }
     </script>
 @endsection

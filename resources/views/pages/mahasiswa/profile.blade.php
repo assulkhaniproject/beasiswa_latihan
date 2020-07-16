@@ -43,6 +43,7 @@
                         <img alt="avatar" height="100" width="100" src="{{asset('mahasiswa/assets/img/favicon.png')}}" class="rounded-circle" />
                     </div>
                     <h4 class="">{{Auth::guard('mahasiswa')->user()->nama}}</h4>
+
 {{--                    <p class="">A knowledge base Admin Template </p>--}}
 
                     {{--<div class="row">
@@ -55,6 +56,41 @@
                             </div>
                         </div>
                     </div>--}}
+                </div>
+                <div class="col-md-12 text-center">
+                    <h4 class="text-dark">Beasiswa</h4>
+                </div>
+                @foreach($beasiswas as $beasiswa)
+                <div class="col-md-4">
+                    <div class="card component-card_4">
+                        <div class="card-header bg-info">
+                            <h5 class="text-white">{{$beasiswa->kategori}}</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Tahun Akademik : {{$beasiswa->tahun_akademik}}</h6>
+                        </div>
+                        <div class="card-footer">
+                            @if($beasiswa->status === 1)
+                            <button type="button" class="btn btn-success btn-lg">
+                                <span>Diterima</span>
+                            </button>
+                                @elseif($beasiswa->status === 0)
+                                <button type="button" class="btn btn-danger btn-lg">
+                                    <span>Ditolak</span>
+                                </button>
+                                @else
+                                <button type="button" class="btn btn-info btn-lg">
+                                    <span>Menunggu</span>
+                                </button>
+                                @endif
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <div class="col-md-12 mt-5">
+                    <div class="pagination-custom_solid">
+                        {{$beasiswas->links()}}
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,6 @@
 </head>
 @section('content')
     <div class="row layout-top-spacing">
-
         <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
             <div class="widget-content widget-content-area">
                 <div class="row">
@@ -28,7 +27,6 @@
                             <th>Program Studi</th>
                             <th>Email</th>
                             <th>Action</th>
-
                         </tr>
                         </thead>
                         <tbody>

@@ -69,6 +69,9 @@ Route::group(['prefix' => 'prodi'], function (){
     Route::get('beasiswa/seleksi', 'Prodi\BeasiswaController@filter')->name('prodi.beasiswa.filter');
 
     Route::get('beasiswa/detail/{id}','Prodi\BeasiswaController@show')->name('beasiswas.detail');
+    Route::patch('beasiswa/konfirmasi/{id}','Prodi\BeasiswaController@update')->name('beasiswa.konfirmasi');
+    Route::patch('beasiswa/pembatalan/{id}','Prodi\BeasiswaController@edit')->name('beasiswa.pembatalan');
+
 
 });
 

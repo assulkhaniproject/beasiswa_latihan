@@ -6,6 +6,9 @@ use App\Prodi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Beasiswa;
+use App\Kategori;
+use DB;
 
 class ProdiController extends Controller
 {
@@ -102,12 +105,69 @@ class ProdiController extends Controller
             'nama' => 'required',
             'email' => 'required',
             'no_hp' => 'required|max:13',
-            'password' => 'required|min:8',
             'program_study' => 'required:unique:prodi',
             'kuota_beasiswa' => 'required|max:2',
         ]);
 
         $data = Prodi::find($id);
+        $kategories = Kategori::where('status', 1)->get();
+        $kategoriBeasiswas = [];
+        foreach ($kategories as $kategori){
+            $kategoriBeasiswas[] = Beasiswa::whereHas('mahasiswa', function ($query) use ($id) {
+                $query->where('id_prodi', $id);
+            })->select('kategori')->where('kategori', $kategori->kategori)->groupBy('kategori')->first();
+        }
+
+
+        if($request->kuota_beasiswa < $data->kuota_beasiswa){
+            foreach ($kategoriBeasiswas as $kategoriBeasiswa){
+                $cekPenghasilanTerkecil = Beasiswa::whereHas('mahasiswa', function ($query) use ($data){
+                    $query->where('id_prodi', $data->id);
+                })->select('penghasilan_ortu','kategori')
+                    ->where('kategori', $kategoriBeasiswa->kategori)
+                    ->orderBy('penghasilan_ortu', 'ASC')->first()->penghasilan_ortu;
+
+                $cekTanggunganTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
+                    $query->where('id_prodi', $data->id);
+                })->select('tanggungan_ortu','kategori')
+                    ->where('kategori', $kategoriBeasiswa->kategori)
+                    ->orderBy('tanggungan_ortu', 'DESC')->first()->tanggungan_ortu;
+
+                $cekIpkTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
+                    $query->where('id_prodi', $data->id);
+                })->select('ipk','kategori')
+                    ->where('kategori', $kategoriBeasiswa->kategori)
+                    ->orderBy('ipk', 'DESC')->first()->ipk;
+
+                $beasiswaDiterima = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query) use ($data){
+                    $query->where('id_prodi', $data->id);
+                })->select('status','kategori','id',
+                    DB::raw(str_replace(".", "", $cekPenghasilanTerkecil) . '/ (replace(penghasilan_ortu,".","")) * (0.2) as skorPenghasilan'),
+                    DB::raw('(round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * (0.2) as skorTanggungan'),
+                    DB::raw('(ipk / ' . $cekIpkTerbesar . ') * 0.6  as skorIpk'),
+                    DB::raw('SUM(
+            CAST(' . str_replace(".", "", $cekPenghasilanTerkecil) . '/ (replace(penghasilan_ortu,".","")) * 0.2 as decimal(5, 2))
+            + CAST((round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * 0.2 as decimal(5, 2))
+            + ((ipk / ' . $cekIpkTerbesar . ') * 0.6)
+            ) * 100 as total'))
+                    ->where('kategori', $kategoriBeasiswa->kategori)
+                    ->orderBy('total', 'ASC')
+                    ->groupBy('penghasilan_ortu', 'tanggungan_ortu','status','ipk','id','kategori')
+                    ->limit($data->kuota_beasiswa - $request->kuota_beasiswa)->get();
+//                dd($beasiswaDiterima);
+                foreach ($beasiswaDiterima as $diterima){
+                    Beasiswa::find($diterima->id)->update(['status' => 0]);
+                }
+            }
+        }else{
+            Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
+                $query->where('id_prodi', $data->id);
+            })->where('status', 0)->update(['status' => null]);
+        }
+
+//        dd($ketegoriBeasiswas);
+
+
         $data->nama = $request->nama;
         $data->email = $request->email;
         $data->no_hp = $request->no_hp;

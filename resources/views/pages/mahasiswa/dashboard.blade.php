@@ -19,7 +19,6 @@
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 </head>
 <body>
-
 <div class="fq-header-wrapper">
     <nav class="navbar navbar-expand">
         <div class="container">

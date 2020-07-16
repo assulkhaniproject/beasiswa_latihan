@@ -8,6 +8,7 @@ use App\Kategori;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use function foo\func;
 
 class BeasiswaController extends Controller
 {
@@ -21,7 +22,7 @@ class BeasiswaController extends Controller
 
         $datas = Beasiswa::whereHas('mahasiswa', function ($query){
             $query->where('id_prodi',Auth::guard('prodi')->user()->id);
-        })->get();
+        })->orderBy('created_at', 'ASC')->get();
 
         $kategori = Kategori::where('status', true)->first();
         return view('pages.prodi.beasiswa.index', compact('datas', 'kategori'));
@@ -35,27 +36,27 @@ class BeasiswaController extends Controller
                 $query->with('prodi');
             }])->whereHas('mahasiswa', function ($query){
                 $query->where('id_prodi',Auth::guard('prodi')->user()->id);
-            })->where('tahun_akademik', $tahun_akademik)->get();
+            })->where('tahun_akademik', $tahun_akademik)
+                ->orderBy('created_at', 'ASC')->get();
 
             return $datas;
         }else{
             $datas = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query){
                 $query->with('prodi')->where('id_prodi',Auth::guard('prodi')->user()->id);
-            })->get();
+            })->orderBy('created_at', 'ASC')->get();
 
             return $datas;
         }
 
-
-
     }
 
     public function filter(Request $request){
+        $kategori = Kategori::where('status', true)->first();
+
         $beasiswa = Beasiswa::whereHas('mahasiswa', function ($query) {
             $query->where('id_prodi', Auth::guard('prodi')->user()->id);
         })->where('tahun_akademik', $request->tahun_akademik)->get();
 //        dd($beasiswa);
-        $kategori = Kategori::where('status', true)->first();
         if(count($beasiswa) > 0) {
             $kuota = Auth::guard('prodi')->user()->kuota_beasiswa;
             $cekPenghasilanTerkecil = Beasiswa::whereHas('mahasiswa', function ($query) {
@@ -77,7 +78,7 @@ class BeasiswaController extends Controller
 
             $datas = $cekIpkTerbesar = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query) {
                 $query->where('id_prodi', Auth::guard('prodi')->user()->id);
-            })->select('id_mahasiswa', 'email', 'id', 'foto',
+            })->select('id_mahasiswa', 'email', 'id', 'foto','status','kategori',
                 DB::raw(str_replace(".", "", $cekPenghasilanTerkecil) . '/ (replace(penghasilan_ortu,".","")) * (0.2) as skorPenghasilan'),
                 DB::raw('(round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * (0.2) as skorTanggungan'),
                 DB::raw('(ipk / ' . $cekIpkTerbesar . ') * 0.6  as skorIpk'),
@@ -88,13 +89,13 @@ class BeasiswaController extends Controller
             ) * 100 as total'))
                 ->where('tahun_akademik', $request->tahun_akademik)
                 ->orderBy('total', 'DESC')
-                ->groupBy('id_mahasiswa', 'penghasilan_ortu', 'tanggungan_ortu', 'ipk', 'email', 'id', 'foto')
+                ->groupBy('id_mahasiswa', 'penghasilan_ortu', 'tanggungan_ortu','kategori','status', 'ipk', 'email', 'id', 'foto')
                 ->limit($kuota)
                 ->get();
 
-
             return view('pages.prodi.beasiswa.index', compact('datas', 'kategori'));
         }
+
         $datas = $beasiswa;
         return view('pages.prodi.beasiswa.index', compact('datas', 'kategori'))->with('message','Data beasiswa tidak ditemukan');
 
@@ -142,7 +143,14 @@ class BeasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $beasiswa = Beasiswa::find($id);
+        $beasiswa->update(['status' => null]);
+        $beasiswaDitolak = Beasiswa::whereHas('mahasiswa', function ($query){
+            $query->where('id_prodi', Auth::guard('prodi')->user()->id);
+        })->where('tahun_akademik',$beasiswa->tahun_akademik)->where('kategori', $beasiswa->kategori)->where('status', 0);
+        $beasiswaDitolak->update(['status' => null]);
+        return  redirect()->back()->with('Pembatalan beasiswa berhasil');
+
     }
 
     /**
@@ -154,7 +162,25 @@ class BeasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $beasiswa = Beasiswa::find($id);
+        $kuota = $beasiswa->mahasiswa->prodi->kuota_beasiswa;
+
+            $beasiswa->update(['status' => 1]);
+            $beasiswaDikonfirmasi = Beasiswa::where('tahun_akademik',$beasiswa->tahun_akademik)->where('kategori', $beasiswa->kategori)
+            ->where('status', 1)->get();
+
+            if(count($beasiswaDikonfirmasi) == $kuota){
+                $beasiswaMenunggu = Beasiswa::whereHas('mahasiswa', function ($query){
+                    $query->where('id_prodi', Auth::guard('prodi')->user()->id);
+                })->where('tahun_akademik',$beasiswa->tahun_akademik)->where('kategori', $beasiswa->kategori)->where('status', null);
+
+//                dd($beasiswaMenunggu->get());
+                $beasiswaMenunggu->update(['status' => 0]);
+            }
+
+            return  redirect()->back()->with('Konfirmasi beasiswa berhasil');
+
+//        dd($beasiswaMenunggu);
     }
 
     /**

@@ -66,7 +66,7 @@ class ProdiSeeder extends Seeder
             'nama' => 'user6',
             'email' => 'perhotelan@gmail.com',
             'no_hp' => '085385723136',
-            'program_study' => 'D3 Perhohtelan',
+            'program_study' => 'D3 Perhotelan',
             'logo' => '1593850345.png',
             'password' => bcrypt(1234567890)
         ]);
