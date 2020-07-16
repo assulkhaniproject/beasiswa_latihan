@@ -10,16 +10,18 @@ use App\Prodi;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use function GuzzleHttp\Promise\all;
 
 class BeasiswaController extends Controller
 {
 
     public function pdf()
     {
-        $data = ['title' => 'Welcome to Beasiswa PHB'];
-   $pdf = PDF::loadView('pages.admin.beasiswa.pdf');
 
-//        PDF::loadView('pages.admin.beasiswa.pdf', $data);
+        $data = ['title' => 'Welcome to Beasiswa PHB'];
+        $pdf = PDF::loadView('pages.admin.beasiswa.pdf');
+
+//      PDF::loadView('pages.admin.beasiswa.pdf', $data);
         return $pdf->stream('laporan-pdf.pdf');
     }
 
@@ -47,7 +49,7 @@ class BeasiswaController extends Controller
     }
 
     public function filter(Request $request){
-//        dd($request->all());
+//          dd($request->all());
         $prodi = $request->program_studi;
         $kategori = $request->kategori;
         $tahun_akademik = $request->tahun_akademik;

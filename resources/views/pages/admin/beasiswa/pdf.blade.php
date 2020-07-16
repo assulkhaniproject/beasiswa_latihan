@@ -20,20 +20,19 @@
         <div class="card" style="border: 1px solid black">
             <div class="card-body">
                 <div class="text-center">
-                    <h3>FORMULIR PERMOHONAN</h3>
-                    <h3>BEASISWA ....</h3>
-                    <h3>....</h3>
-                    <h3>TAHUN ....</h3>
+                    <h4>FORMULIR PERMOHONAN</h4>
+                    <h4>BEASISWA PENINGKATAN PRESTASI AKADEMIK (PPA)</h4>
+                    <h4>POLITEKNIK HARAPAN BERSAMA TEGAL</h4>
+                    <h4>TAHUN 2020</h4>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<h5>Yang bertanda....</h5>
+<h5>Yang bertanda tangan dibawah ini :</h5>
 <table class="table table-sm borderless">
     <thead>
     <tbody>
-
     <tr>
         <td width="3%">1.</td>
         <td width="35%">No. Urut Usulan</td>
@@ -42,7 +41,7 @@
     <tr>
         <td width="3%">2.</td>
         <td width="35%">Nama Perguruan Tinggi</td>
-        <td width="60%">: 900</td>
+        <td width="60%">: Politeknik Harapan Bersama</td>
     </tr>
     <tr>
         <td width="3%">3.</td>
@@ -99,19 +98,43 @@
         <td width="35%">Alamat Tempat Tinggal</td>
         <td width="60%">: 900</td>
     </tr>
+
     <tr>
         <td width="3%">14.</td>
         <td width="35%">No. Hp Mahasiswa</td>
         <td width="60%">: 900</td>
     </tr>
-
+    <tr>
+        <td width="3%">15.</td>
+        <td width="35%">No. Hp Orang Tua/wali</td>
+        <td width="60%">: 900</td>
+    </tr>
+    <tr>
+        <td width="3%">16.</td>
+        <td width="35%">Nama Lengkat Bank</td>
+        <td width="60%">: 900</td>
+    </tr>
+    <tr>
+        <td width="3%">17.</td>
+        <td width="35%">Cabang Bank</td>
+        <td width="60%">: 900</td>
+    </tr>
+    <tr>
+        <td width="3%">18.</td>
+        <td width="35%">No. Rekening Bank</td>
+        <td width="60%">: 900</td>
+    </tr>
+    <tr>
+        <td width="3%">19.</td>
+        <td width="35%">Nama Pemegang Rekening</td>
+        <td width="60%">: 900</td>
+    </tr>
     </tbody>
 </table>
 <ul class="">
-    <li> sdfghjklghgjgdadsgaJGDJgdjKGDJKgdkjGDHSGAHDGAHDGAHGHGSHSKJDSFJKGSJGSFJGFDSJGFJDSGDSFJKGSJKGFDSJKGFAJKHFlkhfkajgajkg </li>
-    <li>Cras justo odio</li>
-    <li>Cras justo odio</li>
+    <li>Mohon Dengan Hormat Untuk Mendapatkan Beasiswa Peningkatan Prestasi Akademik (PPA).</li>
+    <li>Saya Bertanggung jawab Atas Kebenaran Data Tersebut Diatas.</li>
+    <li>Saya Berjanji Akan Mematuhi Segala Peraturan/Ketentuan Yang Ditetapkan Dari Perguruan Tinggi.</li>
 </ul>
-
 </body>
 </html>
