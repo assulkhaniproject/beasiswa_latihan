@@ -39,7 +39,7 @@
                             <th>Nama</th>
                             <th>Program Study</th>
                             <th>Email</th>
-                            <th>Kategori</th>
+                            {{--<th>Kategori</th>--}}
                             <th>Action</th>
                             <th>Status</th>
                         </tr>
@@ -58,7 +58,7 @@
                                 {{-- <td>{{$data->mahasiswa->tempat_lahir}}, {{$data->mahasiswa->tanggal_lahir}}</td>--}}
                                 <td>{{$data->mahasiswa->prodi->program_study}}</td>
                                 <td>{{$data->email}}</td>
-                                <td>{{$data->kategori}}</td>
+                                {{--<td>{{$data->kategori}}</td>--}}
                                 <td>
                                     <div class="icon-container">
                                         <a href="{{route('beasiswas.detail',$data->id)}}"

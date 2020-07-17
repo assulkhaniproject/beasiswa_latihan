@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProdiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProdiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Mahasiswa/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Prodi/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Prodi/BeasiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mahasiswa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ProdiSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProdiSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/prodi/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/prodi/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +279,10 @@
       <workItem from="1594713217002" duration="4468000" />
       <workItem from="1594882919401" duration="3875000" />
       <workItem from="1594890943521" duration="1952000" />
-      <workItem from="1594913602455" duration="20846000" />
+      <workItem from="1594913602455" duration="22294000" />
+      <workItem from="1594936910821" duration="1856000" />
+      <workItem from="1594944838765" duration="987000" />
+      <workItem from="1594950543995" duration="1834000" />
     </task>
     <servers />
   </component>

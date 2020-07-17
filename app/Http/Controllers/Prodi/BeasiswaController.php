@@ -64,6 +64,7 @@ class BeasiswaController extends Controller
             })->select('penghasilan_ortu')
                 ->where('tahun_akademik', $request->tahun_akademik)
                 ->orderBy('penghasilan_ortu', 'ASC')->first()->penghasilan_ortu;
+
             $cekTanggunganTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) {
                 $query->where('id_prodi', Auth::guard('prodi')->user()->id);
             })->select('tanggungan_ortu')
