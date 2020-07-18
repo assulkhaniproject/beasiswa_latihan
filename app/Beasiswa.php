@@ -18,6 +18,7 @@ class Beasiswa extends Model
     {
         return $this->belongsTo(Prodi::class, 'id_prodi', 'id');
     }
+
     public function kategori()
     {
         return $this->belongsTo(Kategori::class, 'id_kategori', 'id');

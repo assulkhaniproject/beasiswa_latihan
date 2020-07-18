@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDF Demo in Laravel 7</title>
+    <title>PDF Report Data Beasiswa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         .borderless td {
@@ -33,6 +33,7 @@
 <table class="table table-sm borderless">
     <thead>
     <tbody>
+    @foreach($datas as $data)
     <tr>
         <td width="3%">1.</td>
         <td width="35%">No. Urut Usulan</td>
@@ -56,7 +57,7 @@
     <tr>
         <td width="3%">5.</td>
         <td width="35%">Jenis Kelamin</td>
-        <td width="60%">: 900</td>
+        <td width="60%">: {{$data->agama}}</td>
     </tr>
     <tr>
         <td width="3%">6.</td>
@@ -129,6 +130,7 @@
         <td width="35%">Nama Pemegang Rekening</td>
         <td width="60%">: 900</td>
     </tr>
+        @endforeach
     </tbody>
 </table>
 <ul class="">

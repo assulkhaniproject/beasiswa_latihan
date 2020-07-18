@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Beasiswa;
+use App\Exports\BeasiswaExport;
 use App\Http\Controllers\Controller;
 use App\Kategori;
 use App\Mahasiswa;
@@ -10,6 +11,7 @@ use App\Prodi;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel;
 use function GuzzleHttp\Promise\all;
 
 class BeasiswaController extends Controller
@@ -18,8 +20,9 @@ class BeasiswaController extends Controller
     public function pdf()
     {
 
+        $datas = Beasiswa::all();
         $data = ['title' => 'Welcome to Beasiswa PHB'];
-        $pdf = PDF::loadView('pages.admin.beasiswa.pdf');
+        $pdf = PDF::loadView('pages.admin.beasiswa.pdf', compact('datas'));
 
 //      PDF::loadView('pages.admin.beasiswa.pdf', $data);
         return $pdf->stream('laporan-pdf.pdf');
@@ -35,7 +38,7 @@ class BeasiswaController extends Controller
         $datas = Beasiswa::all();
         $prodi = Prodi::all();
         $kategori = Kategori::all();
-        return view('pages.admin.beasiswa.index', compact('datas','prodi', 'kategori'));
+        return view('pages.admin.beasiswa.index', compact('datas', 'prodi', 'kategori'));
     }
 
     /**
@@ -48,27 +51,44 @@ class BeasiswaController extends Controller
         //
     }
 
-    public function filter(Request $request){
+    public function filter(Request $request)
+    {
 //          dd($request->all());
+
+        $kategori = Kategori::where('id', $request->kategori)->first();
+
+//        dd($kategori);
+
         $prodi = $request->program_studi;
-        $kategori = $request->kategori;
-        $tahun_akademik = $request->tahun_akademik;
+        $status = $request->status;
 
-        $datas = Beasiswa::whereHas('mahasiswa', function($query) use ($prodi){
-           $prodi ? $query->where('id_prodi', $prodi) : null;
-        })->where('tahun_akademik', $tahun_akademik)->where('kategori', $kategori)->get();
-
-//        dd($datas);
+        $datas = Beasiswa::whereHas('mahasiswa', function ($query) use ($prodi) {
+            $prodi != null ? $query->where('id_prodi', $prodi) : null;
+        })->where('kategori', $kategori->kategori)
+            ->where('tahun_akademik', $kategori->tahun_akademik)
+            ->where(function ($query) use ($status){
+                $status != 'all' ? $query->where('status', $status) : null;
+            })->get();
 
         $prodi = Prodi::all();
         $kategori = Kategori::all();
-        return view('pages.admin.beasiswa.index', compact('datas','prodi', 'kategori'));
+        return view('pages.admin.beasiswa.index', compact('datas', 'prodi', 'kategori'));
+    }
+
+    public function exportExcel()
+    {
+        $kategori = Kategori::where('id', \request()->get('kategori'))->first();
+        $prodi = \request()->get('program_studi');
+        $status = \request()->get('status');
+
+        return Excel::download(new BeasiswaExport($kategori, $prodi, $status), 'beasiswa.xlsx');
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -79,7 +99,7 @@ class BeasiswaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -92,7 +112,7 @@ class BeasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-         * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -102,8 +122,8 @@ class BeasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -114,7 +134,7 @@ class BeasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
