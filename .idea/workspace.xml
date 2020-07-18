@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="58a474d7-57cf-43d4-8609-239a21a3fa78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Beasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Beasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exports/BeasiswaExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/BeasiswaExport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BeasiswaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/beasiswa/pdf.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/prodi/beasiswa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/admin/mahasiswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/mahasiswa/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/mahasiswa/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/admin/_script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/admin/_script.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +287,7 @@
       <workItem from="1594944838765" duration="987000" />
       <workItem from="1594950543995" duration="1834000" />
       <workItem from="1594974460704" duration="5401000" />
-      <workItem from="1595055696308" duration="8281000" />
+      <workItem from="1595055696308" duration="19288000" />
     </task>
     <servers />
   </component>

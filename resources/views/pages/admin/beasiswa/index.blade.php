@@ -11,16 +11,15 @@
                         <h5>Data Beasiswa</h5>
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                        <button type="button" class="btn btn-primary py-1 px-4 float-right mr-sm-5 py-2 px-lg-5"
+                        <button type="button" class="btn btn-primary py-1 px-4 float-right mr-3 py-2 px-lg-5"
                                 data-toggle="modal" data-target="#exampleModal">
                             Filter
                         </button>
-                    </div>
-                    <div class="col-xl-6 col-md-6 col-sm-6 col-6">
+
                         <a href="{{ url("admin/export/excel?kategori="
                         .request()->get('kategori')."&program_studi="
                         .request()->get('program_studi')."&status="
-                        .request()->get('status')) }}" class="btn btn-primary py-1 px-4 float-right mr-sm-5 py-2 px-lg-5">
+                        .request()->get('status')) }}" class="btn btn-primary py-1 px-4 float-right mr-2 py-2 px-lg-5">
                             Export
                         </a>
                     </div>

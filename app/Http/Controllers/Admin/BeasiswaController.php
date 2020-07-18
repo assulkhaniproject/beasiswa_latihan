@@ -70,6 +70,8 @@ class BeasiswaController extends Controller
                 $status != 'all' ? $query->where('status', $status) : null;
             })->get();
 
+//        dd($datas);
+
         $prodi = Prodi::all();
         $kategori = Kategori::all();
         return view('pages.admin.beasiswa.index', compact('datas', 'prodi', 'kategori'));
