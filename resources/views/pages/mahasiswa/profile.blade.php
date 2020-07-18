@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from designreset.com/cork/ltr/demo4/pages_helpdesk.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Apr 2020 04:15:42 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +16,8 @@
     <link href="{{asset('mahasiswa/assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css"/>
     <!--  END CUSTOM STYLE FILE  -->
 </head>
-<body>
 
+<body>
 <div class="helpdesk container">
     <nav class="navbar navbar-expand navbar-light">
         <a class="navbar-brand" href="{{route('mahasiswa.dashboard')}}">B E A S I S W A P H B</a>
@@ -44,25 +43,10 @@
                              class="rounded-circle"/>
                     </div>
                     <h4 class="">{{Auth::guard('mahasiswa')->user()->nama}}</h4>
-
-                    {{--                    <p class="">A knowledge base Admin Template </p>--}}
-
-                    {{--<div class="row">
-                        <div class="col-xl-6 col-lg-7 col-md-7 col-sm-11 col-11 mx-auto">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Let's find your question in fast way" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                    </div>--}}
                 </div>
-                <div class="col-md-12 text-center">
-                    <h5 class="text-dark">BEASISWA</h5>
-                </div>
+                {{--status--}}
                 @foreach($beasiswas as $beasiswa)
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3">
                         <div class="card component-card_4">
                             <div class="card-header bg-info">
                                 <h5 class="text-white">{{$beasiswa->kategori}}</h5>
@@ -72,15 +56,15 @@
                             </div>
                             <div class="card-footer">
                                 @if($beasiswa->status === 1)
-                                    <button type="button" class="btn btn-success btn-lg">
+                                    <button type="button" class="btn btn-success btn-lg px-5">
                                         <span>Diterima</span>
                                     </button>
                                 @elseif($beasiswa->status === 0)
-                                    <button type="button" class="btn btn-danger btn-lg">
+                                    <button type="button" class="btn btn-danger btn-lg px-5">
                                         <span>Ditolak</span>
                                     </button>
                                 @else
-                                    <button type="button" class="btn btn-info btn-lg">
+                                    <button type="button" class="btn btn-warning btn-lg px-5">
                                         <span>Menunggu</span>
                                     </button>
                                 @endif
@@ -88,6 +72,7 @@
                         </div>
                     </div>
                 @endforeach
+                {{--end status--}}
                 <div class="col-md-12 mt-5">
                     <div class="pagination-custom_solid">
                         {{$beasiswas->links()}}
