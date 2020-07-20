@@ -23,7 +23,7 @@
             <h4 class="text-white"><b>B E A S I S W A P H B</b></h4>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item btn-rotate dropdown user-profile-dropdown">
+                    {{--<li class="nav-item btn-rotate dropdown user-profile-dropdown">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="nc-icon nc-bell-55"></i>
@@ -38,14 +38,111 @@
                                 </svg>
                             </p>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{route('mahasiswa.changepassword')}}">Ganti Password</a>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="/">Logout</a>
                             </div>
                         </a>
-                    </li>
+                    </li>--}}
+                    <ul class="navbar-item flex-row ml-md-auto">
+                        <li class="nav-item dropdown user-profile-dropdown">
+                            <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="text-white">{{Auth::guard('mahasiswa')->user()->nama}}</span>
+                                <img class="x" height="45" width="45" src="{{asset('admin/assets/img/boy.png')}}"
+                                     alt="avatar">
+                            </a>
+                            <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
+                                <div class="">
+                                    <div class="dropdown-item">
+                                        <a class="" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-user">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="12" cy="7" r="4"></circle>
+                                            </svg>
+                                            Ganti Password</a>
+                                    </div>
+                                    <div class="dropdown-item">
+                                        <a class="" href="/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-log-out">
+                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                <polyline points="16 17 21 12 16 7"></polyline>
+                                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                                            </svg>
+                                            Logout
+                                        </a>
+                                        <form id="logout-admin-form" action="{{ route('mahasiswa.logout') }}"
+                                              method="POST"
+                                              style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- Modal ganti password-->
+    <div class="modal fade" id="exampleChangePassword" tabindex="-1" role="dialog"
+         aria-labelledby="exampleChangePassword" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleChangePassword">Ganti Password</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        {{ csrf_field() }}
+                        <div class="modal-body">
+                            <div class="form-group row mr-lg-5">
+                                <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm ">Password
+                                    Lama</label>
+                                <div class="col-sm-7">
+                                    <input id="password_old" name="password_old" type="password" class="form-control"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group row mr-lg-5">
+                                <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm ">Password
+                                    Baru</label>
+                                <div class="col-sm-7">
+                                    <input id="password_new" name="password_new" type="password" class="form-control"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group row mr-lg-5">
+                                <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm ">Konfirmasi
+                                    Password</label>
+                                <div class="col-sm-7">
+                                    <input id="confirmed" name="confirmed" type="password" class="form-control"
+                                           placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-warning" data-dismiss="modal"><i
+                                    class="flaticon-cancel-12"></i>Batal
+                            </button>
+                            <button type="submit" class="btn btn-outline-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{--end modal ganti password--}}
     <div class="container">
         @if ($message = Session::get('success'))
             <div class="alert alert-success">

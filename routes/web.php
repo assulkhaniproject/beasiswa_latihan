@@ -89,4 +89,8 @@ Route::group(['prefix' => 'mahasiswa'], function () {
 
     Route::get('profile', 'Mahasiswa\ProfileController@index')->name('mahasiswa.profile');
 
+    Route::get('password','Mahasiswa\PasswordController@change')->name('mahasiswa.changepassword');
+    Route::put('password','Mahasiswa\PasswordController@update')->name('mahasiswa.updatepassword');
+
+
 });
