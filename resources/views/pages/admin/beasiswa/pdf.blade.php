@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PDF Report Data Beasiswa</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  {{--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">--}}
     <style>
         .borderless td {
             border: none;
@@ -15,25 +15,28 @@
     </style>
 </head>
 <body>
-<div class="row">
-    <div class="col-12">
-        <div class="card" style="border: 1px solid black">
-            <div class="card-body">
-                <div class="text-center">
-                    <h4>FORMULIR PERMOHONAN</h4>
-                    <h4>BEASISWA PENINGKATAN PRESTASI AKADEMIK (PPA)</h4>
-                    <h4>POLITEKNIK HARAPAN BERSAMA TEGAL</h4>
-                    <h4>TAHUN 2020</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+<div align="center">
+    {{--<tr>--}}
+    {{--<td>--}}
+    <center>
+        <font size="4">DINAS PEKERJAAN UMUM SUMBER DAYA AIR DAN PENATAAN RUANG</font><BR>
+        <font size="5"><b>BALAI PENGELOLAAN SUMBER DAYA AIR PEMALI COMAL</b></font><BR>
+        <font size="2">Jl. Dr.Sutomo No.53 Telp.(0283)-351011 Fax.0283-356259, Kode Pos 52113, Tegal</font><BR>
+        <font size="2"><i>Email : balai_psdapc@yahoo.co.id, Website : bpsda-pemali.jatengprov.go.id</i><BR></font>
+    </center>
+    {{--</td>--}}
+    {{--</tr>--}}
+    {{--<tr>--}}
+    {{--<td colspan="2">--}}
+    <hr style="height:1px;border:none;color:#333;background-color:#333;">
+    {{--</td>--}}
+    {{--</tr>--}}
 </div>
 <h5>Yang bertanda tangan dibawah ini :</h5>
 <table class="table table-sm borderless">
     <thead>
     <tbody>
-    @foreach($datas as $data)
+
     <tr>
         <td width="3%">1.</td>
         <td width="35%">No. Urut Usulan</td>
@@ -51,13 +54,13 @@
     </tr>
     <tr>
         <td width="3%">4.</td>
-        <td width="35%">Nama</td>
-        <td width="60%">: 900</td>
+        <td width="35%"> Nama </td>
+        <td width="60%">: {{$beasiswa->mahasiswa->nama}}</td>
     </tr>
     <tr>
         <td width="3%">5.</td>
         <td width="35%">Jenis Kelamin</td>
-        <td width="60%">: {{$data->agama}}</td>
+        <td width="60%">:</td>
     </tr>
     <tr>
         <td width="3%">6.</td>
@@ -130,7 +133,6 @@
         <td width="35%">Nama Pemegang Rekening</td>
         <td width="60%">: 900</td>
     </tr>
-        @endforeach
     </tbody>
 </table>
 <ul class="">

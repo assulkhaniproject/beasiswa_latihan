@@ -271,7 +271,7 @@
 
                 <div>
                     <button class="btn btn-info px-5"  type="button" onclick="history.back()">OK</button>
-                    <a href="{{route('beasiswa.report')}}" class="btn btn-info px-5"  type="button">Report</a>
+                    <a href="{{route('beasiswa.report', $beasiswa->id)}}" class="btn btn-info px-5"  type="button">Report</a>
                 </div>
 
         </form>

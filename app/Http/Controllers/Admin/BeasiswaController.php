@@ -17,15 +17,15 @@ use function GuzzleHttp\Promise\all;
 class BeasiswaController extends Controller
 {
 
-    public function pdf()
+    public function pdf($id)
     {
+        $beasiswa = Beasiswa::find($id);
+        //  $datas = Beasiswa::all();
+        //$data = ['title' => 'Welcome to Beasiswa PHB'];
+        //$pdf = PDF::loadView('pages.admin.beasiswa.pdf', compact('beasiswa'));
 
-        $datas = Beasiswa::all();
-        $data = ['title' => 'Welcome to Beasiswa PHB'];
-        $pdf = PDF::loadView('pages.admin.beasiswa.pdf', compact('datas'));
-
-//      PDF::loadView('pages.admin.beasiswa.pdf', $data);
-        return $pdf->stream('laporan-pdf.pdf');
+        $pdf =PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadview('pages.admin.beasiswa.pdf', compact(['beasiswa']));
+        return $pdf->stream();
     }
 
     /**
@@ -53,11 +53,8 @@ class BeasiswaController extends Controller
 
     public function filter(Request $request)
     {
-//          dd($request->all());
 
         $kategori = Kategori::where('id', $request->kategori)->first();
-
-//        dd($kategori);
 
         $prodi = $request->program_studi;
         $status = $request->status;
@@ -69,8 +66,6 @@ class BeasiswaController extends Controller
             ->where(function ($query) use ($status){
                 $status != 'all' ? $query->where('status', $status) : null;
             })->get();
-
-//        dd($datas);
 
         $prodi = Prodi::all();
         $kategori = Kategori::all();

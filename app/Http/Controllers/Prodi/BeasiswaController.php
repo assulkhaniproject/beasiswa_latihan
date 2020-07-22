@@ -25,18 +25,24 @@ class BeasiswaController extends Controller
         })->orderBy('created_at', 'ASC')->get();
 
         $kategori = Kategori::where('status', true)->first();
-        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori'));
+        $categories = Kategori::all();
+
+
+        /*        $categories = Kategori::all();*/
+        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori', 'categories'));
     }
 
     public function filterAkademik(Request $request){
-    $tahun_akademik = $request->tahun_akademik;
+//        $tahun_akademik = $request->k;
+        $kategori = Kategori::where('kategori', $request->kategori)->first()->kategori;
 
-        if($tahun_akademik){
+
+        if($kategori){
             $datas = Beasiswa::with(['mahasiswa' => function($query){
                 $query->with('prodi');
             }])->whereHas('mahasiswa', function ($query){
                 $query->where('id_prodi',Auth::guard('prodi')->user()->id);
-            })->where('tahun_akademik', $tahun_akademik)
+            })->where('kategori', $kategori)
                 ->orderBy('created_at', 'ASC')->get();
 
             return $datas;
@@ -51,30 +57,39 @@ class BeasiswaController extends Controller
     }
 
     public function filter(Request $request){
-        $kategori = Kategori::where('status', true)->first();
+        $kategori = request()->get('kategori');
+//        dd($kategori);
+
+        $tahun_akademik = Beasiswa::where('kategori', $kategori)->first()->tahun_akademik;
+        $categories = Kategori::all();
+
 
         $beasiswa = Beasiswa::whereHas('mahasiswa', function ($query) {
             $query->where('id_prodi', Auth::guard('prodi')->user()->id);
-        })->where('tahun_akademik', $request->tahun_akademik)->get();
+        })->where('tahun_akademik', $tahun_akademik)
+            ->where('kategori', $kategori)
+            ->get();
 //        dd($beasiswa);
         if(count($beasiswa) > 0) {
             $kuota = Auth::guard('prodi')->user()->kuota_beasiswa;
             $cekPenghasilanTerkecil = Beasiswa::whereHas('mahasiswa', function ($query) {
                 $query->where('id_prodi', Auth::guard('prodi')->user()->id);
             })->select('penghasilan_ortu')
-                ->where('tahun_akademik', $request->tahun_akademik)
+                ->where('tahun_akademik', $tahun_akademik)
+                ->where('kategori', $kategori)
                 ->orderBy('penghasilan_ortu', 'ASC')->first()->penghasilan_ortu;
 
             $cekTanggunganTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) {
                 $query->where('id_prodi', Auth::guard('prodi')->user()->id);
             })->select('tanggungan_ortu')
-                ->where('tahun_akademik', $request->tahun_akademik)
+                ->where('tahun_akademik', $tahun_akademik)
+                ->where('kategori', $kategori)
                 ->orderBy('tanggungan_ortu', 'DESC')->first()->tanggungan_ortu;
 
             $cekIpkTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) {
                 $query->where('id_prodi', Auth::guard('prodi')->user()->id);
             })->select('ipk')
-                ->where('tahun_akademik', $request->tahun_akademik)
+                ->where('tahun_akademik', $tahun_akademik)
                 ->orderBy('ipk', 'DESC')->first()->ipk;
 
             $datas = $cekIpkTerbesar = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query) {
@@ -88,17 +103,18 @@ class BeasiswaController extends Controller
             + CAST((round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * 0.2 as decimal(5, 2)) 
             + ((ipk / ' . $cekIpkTerbesar . ') * 0.6) 
             ) * 100 as total'))
-                ->where('tahun_akademik', $request->tahun_akademik)
+                ->where('tahun_akademik', $tahun_akademik)
+                ->where('kategori', $kategori)
                 ->orderBy('total', 'DESC')
                 ->groupBy('id_mahasiswa', 'penghasilan_ortu', 'tanggungan_ortu','kategori','status', 'ipk', 'email', 'id', 'foto')
                 ->limit($kuota)
                 ->get();
 
-            return view('pages.prodi.beasiswa.index', compact('datas', 'kategori'));
+            return view('pages.prodi.beasiswa.index', compact('datas', 'kategori','categories'));
         }
 
         $datas = $beasiswa;
-        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori'))->with('message','Data beasiswa tidak ditemukan');
+        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori','categories'))->with('message','Data beasiswa tidak ditemukan');
 
     }
 

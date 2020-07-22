@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('beasiswa', 'Admin\BeasiswaController@index')->name('beasiswa.index');
     Route::get('beasiswa/filter', 'Admin\BeasiswaController@filter')->name('beasiswa.filter');
     Route::get('beasiswa/detail/{id}', 'Admin\BeasiswaController@show')->name('beasiswa.detail');
-    Route::get('beasiswa/reportPDF', 'Admin\BeasiswaController@pdf')->name('beasiswa.report');
+    Route::get('beasiswa/report/{id}', 'Admin\BeasiswaController@pdf')->name('beasiswa.report');
 
 
     Route::get('kategori', 'Admin\KategoriController@index')->name('kategori.index');
