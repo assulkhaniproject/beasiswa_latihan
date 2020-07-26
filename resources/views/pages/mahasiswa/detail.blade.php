@@ -209,14 +209,9 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KHS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_khs" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                @if ($errors->has('scan_khs'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_khs') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
 
@@ -224,14 +219,9 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KRS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_krs" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_krs') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                @if ($errors->has('scan_krs'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_krs') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
 
@@ -286,14 +276,9 @@
                                 Mahasiswa (KTM)</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_ktm" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_ktm') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                @if ($errors->has('scan_ktm'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_ktm') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
 
@@ -302,14 +287,9 @@
                                 Penduduk (KTP)</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_ktp" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_ktp') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                @if ($errors->has('scan_ktp'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_ktp') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
 
@@ -318,16 +298,9 @@
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="foto" value="" type="file"
-                                       class="form-control text-black {{$errors->has('foto') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                <small id="emailHelp1" class="form-text text-muted">Foto Resmi Beralmamater | size max :
-                                    2 MB </small>
-                                @if ($errors->has('foto'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('foto') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
 
@@ -409,13 +382,8 @@
                                 Gaji</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_penghasilan" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_penghasilan') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*" required>
-                                @if ($errors->has('scan_penghasilan'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_penghasilan') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -439,14 +407,9 @@
                                 Keluarga</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_kk" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_kk') ? 'is-invalid':''}}"
+                                       class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                @if ($errors->has('scan_kk'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_kk') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
 
@@ -516,18 +479,12 @@
                                 Tabungan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_bt" value="" type="file"
-                                       class="form-control {{$errors->has('scan_bt') ? 'is-invalid':''}}"
+                                       class="form-control"
                                        accept="image/*"
                                        required>
-                                @if ($errors->has('scan_bt'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_bt') }}</b></p>
-                                        </span>
-                                @endif
                             </div>
                         </div>
                         {{--end form pengajuan--}}
-
                         <div class="form-group row">
                             <div class="col-sm-10">
                                 <button class="btn btn-warning mt-3 mr-2 ml-5 px-5" type="button"
