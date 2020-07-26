@@ -9,18 +9,18 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-6">
-                            <h4>Data Kemahasiswaan Prodi</h4><br>
+                            <h5 class="text-primary"><b>Data Kemahasiswaan Prodi</b></h5>
                         </div>
                         <div class="col-6">
                             <div class="icon-container">
-                            <a href="{{route('prodi.create')}}" class="btn btn-primary float-right mr-3 mt-2 "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg><span class="icon-name"></span>
+                            <a href="{{route('prodi.create')}}" class="btn btn-primary float-right mr-2 mt-2 "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg><span class="icon-name"></span>
                                 Tambah Data</a>
                             </div>
                         </div>
                     </div>
                 </div>
                     <div class="table-responsive mb-4">
-                        <table id="style-3" class="table style-3 table-hover">
+                        <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
                             <thead>
                             <tr>
                                 <th class="checkbox-column text-center"> No</th>

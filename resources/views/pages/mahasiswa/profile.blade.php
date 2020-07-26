@@ -42,11 +42,15 @@
                         <img alt="avatar" height="100" width="100" src="{{asset('mahasiswa/assets/img/favicon.png')}}"
                              class="rounded-circle"/>
                     </div>
-                    <h4 class="">{{Auth::guard('mahasiswa')->user()->nama}}</h4>
+                    <h4 class="">{{$user->nama}}</h4>
+                    <h5 class="text-black">{{$user->prodi->program_study}}</h5>
+
+                    <a href="#" class="text-center btn btn-primary">Lihat Selengkapnya</a>
                 </div>
                 {{--status--}}
+                <div class="col-lg-12">
                 @foreach($beasiswas as $beasiswa)
-                    <div class="col-md-4 mt-3">
+                    <div class="col-4 mt-3">
                         <div class="card component-card_4">
                             <div class="card-header bg-info">
                                 <h5 class="text-white">{{$beasiswa->kategori}}</h5>
@@ -73,6 +77,7 @@
                     </div>
                 @endforeach
                 {{--end status--}}
+                </div>
                 <div class="col-md-12 mt-5">
                     <div class="pagination-custom_solid">
                         {{$beasiswas->links()}}
@@ -80,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="hd-contact-section">
+        {{--<div class="hd-contact-section">
             <div class="hd-slider">
                 <div class="row">
                     <div class="col-sm-12">
@@ -177,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
 
     </div>
@@ -195,12 +200,11 @@
                 <div class="row">
                     <div
                         class="col-lg-5 mx-auto col-lg-6 col-md-6 site-content-inner text-md-left text-center copyright align-self-center">
-                        <p class="mt-md-0 mt-4 mb-0">2019 &copy; <a target="_blank" href="https://designreset.com/cork">Design
-                                Reset</a>.</p>
+                        <p class="mt-md-0 mt-4 mb-0">2020 &copy; <a target="_blank" href="">Tugas Akhir</a>.</p>
                     </div>
                     <div
                         class="col-xl-5 mx-auto col-lg-6 col-md-6 site-content-inner text-md-right text-center align-self-center">
-                        <p class="mb-0">1355 Market Street, Suit 900 San Francisco, CA 94103</p>
+                        <p class="mb-0">Politeknik Harapan Bersama, Kota Tegal</p>
                     </div>
                 </div>
             </div>

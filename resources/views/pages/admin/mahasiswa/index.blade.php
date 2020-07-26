@@ -4,18 +4,33 @@
 </head>
 @section('content')
     <div class="row layout-top-spacing">
-
-        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
             <div class="widget-content widget-content-area">
                 <div class="row">
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                        <h5>Data Mahasiswa</h5>
+                        <h5 class="text-primary"><b>Data Mahasiswa</b></h5>
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6 text-right">
-                        <a href="{{route('mahasiswa.create')}}" class="btn btn-primary float-right mr-4">Tambah Data</a>
+                        <a href="{{route('mahasiswa.create')}}" class="btn btn-primary float-right mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-file-plus">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                            Tambah Data</a>
                         <!-- Button trigger modal -->
                         <button name="upload" type="button" class="btn btn-primary float-right mr-2" data-toggle="modal"
                                 data-target="#importexcel">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-download">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
                             Import Data
                         </button>
                     </div>

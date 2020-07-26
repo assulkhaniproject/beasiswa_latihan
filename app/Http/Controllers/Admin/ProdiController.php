@@ -36,23 +36,23 @@ class ProdiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-          'nama' => 'required',
-          'email' => 'required|unique:prodi',
-          'no_hp' => 'required|max:12',
-          'password' => 'required|min:8',
-          'program_study' => 'required|unique:prodi',
-          'kuota_beasiswa' => 'required|unique:prodi',
+        $this->validate($request, [
+            'nama' => 'required',
+            'email' => 'required|unique:prodi',
+            'no_hp' => 'required|max:12',
+            'password' => 'required|min:8',
+            'program_study' => 'required|unique:prodi',
+            'kuota_beasiswa' => 'required|unique:prodi',
             'logo' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
         $logo = $request->file('logo');
-        $filename = time().'.'. $logo->getClientOriginalExtension();
+        $filename = time() . '.' . $logo->getClientOriginalExtension();
         $destinationPath = public_path('/uploads/admin prodi');
         $logo->move($destinationPath, $filename);
 
@@ -72,7 +72,7 @@ class ProdiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -83,7 +83,7 @@ class ProdiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -95,13 +95,13 @@ class ProdiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'nama' => 'required',
             'email' => 'required',
             'no_hp' => 'required|max:13',
@@ -112,36 +112,36 @@ class ProdiController extends Controller
         $data = Prodi::find($id);
         $kategories = Kategori::where('status', 1)->get();
         $kategoriBeasiswas = [];
-        foreach ($kategories as $kategori){
+        foreach ($kategories as $kategori) {
             $kategoriBeasiswas[] = Beasiswa::whereHas('mahasiswa', function ($query) use ($id) {
                 $query->where('id_prodi', $id);
             })->select('kategori')->where('kategori', $kategori->kategori)->groupBy('kategori')->first();
         }
 
 
-        if($request->kuota_beasiswa < $data->kuota_beasiswa){
-            foreach ($kategoriBeasiswas as $kategoriBeasiswa){
-                $cekPenghasilanTerkecil = Beasiswa::whereHas('mahasiswa', function ($query) use ($data){
+        if ($request->kuota_beasiswa < $data->kuota_beasiswa) {
+            foreach ($kategoriBeasiswas as $kategoriBeasiswa) {
+                $cekPenghasilanTerkecil = Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
                     $query->where('id_prodi', $data->id);
-                })->select('penghasilan_ortu','kategori')
+                })->select('penghasilan_ortu', 'kategori')
                     ->where('kategori', $kategoriBeasiswa->kategori)
                     ->orderBy('penghasilan_ortu', 'ASC')->first()->penghasilan_ortu;
 
                 $cekTanggunganTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
                     $query->where('id_prodi', $data->id);
-                })->select('tanggungan_ortu','kategori')
+                })->select('tanggungan_ortu', 'kategori')
                     ->where('kategori', $kategoriBeasiswa->kategori)
                     ->orderBy('tanggungan_ortu', 'DESC')->first()->tanggungan_ortu;
 
                 $cekIpkTerbesar = Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
                     $query->where('id_prodi', $data->id);
-                })->select('ipk','kategori')
+                })->select('ipk', 'kategori')
                     ->where('kategori', $kategoriBeasiswa->kategori)
                     ->orderBy('ipk', 'DESC')->first()->ipk;
 
-                $beasiswaDiterima = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query) use ($data){
+                $beasiswaDiterima = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query) use ($data) {
                     $query->where('id_prodi', $data->id);
-                })->select('status','kategori','id',
+                })->select('status', 'kategori', 'id',
                     DB::raw(str_replace(".", "", $cekPenghasilanTerkecil) . '/ (replace(penghasilan_ortu,".","")) * (0.2) as skorPenghasilan'),
                     DB::raw('(round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * (0.2) as skorTanggungan'),
                     DB::raw('(ipk / ' . $cekIpkTerbesar . ') * 0.6  as skorIpk'),
@@ -152,14 +152,14 @@ class ProdiController extends Controller
             ) * 100 as total'))
                     ->where('kategori', $kategoriBeasiswa->kategori)
                     ->orderBy('total', 'ASC')
-                    ->groupBy('penghasilan_ortu', 'tanggungan_ortu','status','ipk','id','kategori')
+                    ->groupBy('penghasilan_ortu', 'tanggungan_ortu', 'status', 'ipk', 'id', 'kategori')
                     ->limit($data->kuota_beasiswa - $request->kuota_beasiswa)->get();
 //                dd($beasiswaDiterima);
-                foreach ($beasiswaDiterima as $diterima){
+                foreach ($beasiswaDiterima as $diterima) {
                     Beasiswa::find($diterima->id)->update(['status' => 0]);
                 }
             }
-        }else{
+        } else {
             Beasiswa::whereHas('mahasiswa', function ($query) use ($data) {
                 $query->where('id_prodi', $data->id);
             })->where('status', 0)->update(['status' => null]);
@@ -175,12 +175,12 @@ class ProdiController extends Controller
         $data->program_study = $request->program_study;
         $data->kuota_beasiswa = $request->kuota_beasiswa;
         $logo = $request->file('logo');
-        if ($logo){
-            $filename        = time().'.'. $logo->getClientOriginalExtension();
+        if ($logo) {
+            $filename = time() . '.' . $logo->getClientOriginalExtension();
             $destinationPath = public_path('/uploads/admin prodi');
             $logo->move($destinationPath, $filename);
             $data->logo = $filename;
-        }else{
+        } else {
             $data->logo = $request->old_logo;
         }
         $data->update();
@@ -191,7 +191,7 @@ class ProdiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

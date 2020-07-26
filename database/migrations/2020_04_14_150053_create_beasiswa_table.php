@@ -20,7 +20,7 @@ class CreateBeasiswaTable extends Migration
             $table->integer('id_mahasiswa')->unsigned();
             $table->char('jenis_kelamin',9);
             $table->string('agama',10);
-            $table->string('alamat', 50);
+            $table->string('alamat', 100);
             $table->char('ipk', 4);
             $table->char('kode_pos',5);
             $table->char('semester',1);
@@ -33,7 +33,7 @@ class CreateBeasiswaTable extends Migration
             $table->string('foto',30);
 
             $table->string('nama_ortu', 50);
-            $table->string('alamat_ortu',50);
+            $table->string('alamat_ortu',100);
             $table->string('pekerjaan_ortu',50);
             $table->string('no_hp_ortu',13);
             $table->string('penghasilan_ortu',50);

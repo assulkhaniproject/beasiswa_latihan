@@ -34,6 +34,7 @@
                             <th>Nama</th>
                             <th>Program Study</th>
                             <th>Email</th>
+                            <th>Kategori</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -52,7 +53,7 @@
                                 {{-- <td>{{$data->mahasiswa->tempat_lahir}}, {{$data->mahasiswa->tanggal_lahir}}</td>--}}
                                 <td>{{$data->mahasiswa->prodi->program_study}}</td>
                                 <td>{{$data->email}}</td>
-                                {{--<td>{{$data->kategori}}</td>--}}
+                                <td>{{$data->kategori}}</td>
                                 <td>
                                         @if($data->status === 1)
                                             <button class="btn btn-success" data-target="#modalPembatalan{{$data->id}}"
@@ -128,7 +129,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <div class="modal-body">
-                                                <h5><b>Beasiswa untuk {{$data->mahasiswa->nama}}</b></h5>
+                                                <h5><b>Beasiswa Diberikan Untuk {{$data->mahasiswa->nama}}</b></h5>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-warning" data-dismiss="modal">
@@ -156,7 +157,7 @@
                                             @csrf
                                             @method('PATCH')
                                             <div class="modal-body">
-                                                <h5><b>Beasiswa untuk {{$data->mahasiswa->nama}}</b></h5>
+                                                <h5><b>Pembatalan Beasiswa Untuk {{$data->mahasiswa->nama}}</b></h5>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-warning" data-dismiss="modal">
@@ -214,6 +215,7 @@
                                 {{-- <td>{{$data->mahasiswa->tempat_lahir}}, {{$data->mahasiswa->tanggal_lahir}}</td>--}}
                          <td>${beasiswa.mahasiswa.prodi.program_study}</td>
                                 <td>${beasiswa.email}</td>
+                                <td>${beasiswa.kategori}</td>
                                 <td>
 
                                             ${beasiswa.status === 1 ? `

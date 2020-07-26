@@ -16,8 +16,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $user = Auth::guard('mahasiswa')->user();
         $beasiswas = Beasiswa::where('id_mahasiswa',Auth::user()->id)->orderBy('id','DESC')->paginate(6);
-        return view('pages.mahasiswa.profile', compact('beasiswas'));
+        return view('pages.mahasiswa.profile', compact('beasiswas', 'user'));
     }
 
     /**
@@ -60,7 +61,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.mahasiswa.edit');
     }
 
     /**

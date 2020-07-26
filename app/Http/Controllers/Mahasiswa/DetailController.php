@@ -48,6 +48,44 @@ class DetailController extends Controller
      */
     public function store(Request $request)
     {
+        $rule = [
+            'kategori'=>'required',
+            'tahun_akademik'=>'required',
+            'agama' => 'required',
+            'alamat' => 'required|min:5',
+            'kode_pos' => 'required|min:5|max:5',
+            'ipk' => 'required|max:4|min:4',
+            'semester' => 'required|max:1|min:1',
+            'email' => 'required|unique:mahasiswa',
+            'no_hp' => 'required|min:11|max:13|unique:mahasiswa',
+
+            'alamat_ortu' => 'required|min:5',
+            'no_hp_ortu' => 'required|min:11|max:13',
+            'tanggungan_ortu' => 'required|max:1',
+            'pekerjaan_ortu' => 'required|min:5',
+
+        ];
+        $message = [
+            'required' => 'Isi bidang ini.',
+            'alamat.min' => 'Alamat Minimal 5 Huruf',
+            'kode_pos.max' => 'Kode Pos Maximal 5 Karakter',
+            'ipk.max' => 'Masukan IPK Dengan Benar',
+            'ipk.min' => 'Masukan IPK Dengan Benar',
+
+            'semester.max' => 'Semester Maximal 1 Karakter',
+            'no_hp.unique' => 'No. Hp Sudah Terdaftar',
+            'email.unique' => 'Email Sudah Terdaftar',
+
+            'pekerjaan_ortu' => 'Minimal 5 Karakter',
+            'alamat_ortu.min' => 'Alamat Minimal 5 Huruf',
+            'no_hp_ortu.max' => 'No Hp Maximal 13 Angka',
+            'no_hp.max' => 'No Hp Maximal 13 Angka',
+            'tanggungan_ortu.max' => 'Salah Menginputkan Jumlah'
+
+        ];
+        $this->validate($request, $rule, $message);
+
+
 
         $scan_khs = $request->file('scan_khs');
         $filename_khs = time().'khs'.'.'. $scan_khs->getClientOriginalExtension();
