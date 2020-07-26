@@ -31,5 +31,9 @@ class Mahasiswa extends Authenticatable
     public function semuaBeasiswa(){
       return $this->hasMany(Beasiswa::class, 'id_mahasiswa','id');
     }
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
+    }
 
 }

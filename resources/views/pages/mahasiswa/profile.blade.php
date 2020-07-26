@@ -6,17 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>BEASISWA PHB | Profile </title>
-    <link rel="icon" type="image/x-icon" href="{{asset('mahasiswa/assets/img/favicon.png')}}"/>
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('mahasiswa/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('mahasiswa/assets/css/main.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/main.css')}}" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
     <!--  BEGIN CUSTOM STYLE FILE  -->
-    <link href="{{asset('mahasiswa/assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css"/>
-    <!--  END CUSTOM STYLE FILE  -->
-</head>
-
+    <link href="{{asset('admin/assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css"/>
+    <!--  END CUSTOM STYLE FILE  -->admin
 <body>
 <div class="helpdesk container">
     <nav class="navbar navbar-expand navbar-light">
@@ -39,44 +37,43 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="avatar avatar-xl">
-                        <img alt="avatar" height="100" width="100" src="{{asset('mahasiswa/assets/img/favicon.png')}}"
+                        <img alt="avatar" height="100" width="100" src="{{asset('admin/assets/img/favicon.png')}}"
                              class="rounded-circle"/>
                     </div>
-                    <h4 class="">{{$user->nama}}</h4>
-                    <h5 class="text-black">{{$user->prodi->program_study}}</h5>
-
-                    <a href="#" class="text-center btn btn-primary">Lihat Selengkapnya</a>
+                    <h5 class="text-white">{{$user->nama}}</h5>
+                    <a href="{{route('mahasiswa.edit',$user->id)}}" class="text-center btn btn-primary mt-3">Lihat
+                        Selengkapnya</a>
                 </div>
                 {{--status--}}
                 <div class="col-lg-12">
-                @foreach($beasiswas as $beasiswa)
-                    <div class="col-4 mt-3">
-                        <div class="card component-card_4">
-                            <div class="card-header bg-info">
-                                <h5 class="text-white">{{$beasiswa->kategori}}</h5>
-                            </div>
-                            <div class="card-body">
-                                <h6 class="card-title">Tahun Akademik : {{$beasiswa->tahun_akademik}}</h6>
-                            </div>
-                            <div class="card-footer">
-                                @if($beasiswa->status === 1)
-                                    <button type="button" class="btn btn-success btn-lg px-5">
-                                        <span>Diterima</span>
-                                    </button>
-                                @elseif($beasiswa->status === 0)
-                                    <button type="button" class="btn btn-danger btn-lg px-5">
-                                        <span>Ditolak</span>
-                                    </button>
-                                @else
-                                    <button type="button" class="btn btn-warning btn-lg px-5">
-                                        <span>Menunggu</span>
-                                    </button>
-                                @endif
+                    @foreach($beasiswas as $beasiswa)
+                        <div class="col-4 mt-3">
+                            <div class="card component-card_4">
+                                <div class="card-header bg-info">
+                                    <h5 class="text-white">{{$beasiswa->kategori}}</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">Tahun Akademik : {{$beasiswa->tahun_akademik}}</h6>
+                                </div>
+                                <div class="card-footer">
+                                    @if($beasiswa->status === 1)
+                                        <button type="button" class="btn btn-success btn-lg px-5">
+                                            <span>Diterima</span>
+                                        </button>
+                                    @elseif($beasiswa->status === 0)
+                                        <button type="button" class="btn btn-danger btn-lg px-5">
+                                            <span>Ditolak</span>
+                                        </button>
+                                    @else
+                                        <button type="button" class="btn btn-warning btn-lg px-5">
+                                            <span>Menunggu</span>
+                                        </button>
+                                    @endif
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                {{--end status--}}
+                    @endforeach
+                    {{--end status--}}
                 </div>
                 <div class="col-md-12 mt-5">
                     <div class="pagination-custom_solid">
@@ -183,9 +180,8 @@
                     </div>
                 </div>
             </div>--}}
-        </div>
-
     </div>
+
 </div>
 
 <div id="miniFooterWrapper" class="">
@@ -213,13 +209,13 @@
 </div>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<script src="{{asset('mahasiswa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/popper.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-<script src="{{asset('mahasiswa/assets/js/pages/helpdesk.js')}}"></script>
+<script src="{{asset('admin/assets/js/pages/helpdesk.js')}}"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 </body>
 

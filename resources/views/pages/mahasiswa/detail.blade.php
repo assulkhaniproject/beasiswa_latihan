@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>BEASISWA PHB | Detail Data </title>
-    <link rel="icon" type="image/x-icon" href="{{asset('mahasiswa/assets/img/favicon.png')}}"/>
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('mahasiswa/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('mahasiswa/assets/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
-    <link href="{{asset('mahasiswa/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css"/>
 </head>
 <body data-spy="scroll" data-target="#navSection" data-offset="100">
 <div class="row layout-top-spacing">
@@ -22,7 +22,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Isi Data
+                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Form Pengajuan
                                     Beasiswa</b>
                             </h3>
                         </div>
@@ -82,7 +82,8 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="nama" value="{{$user->nama}}" readonly type="text" class="form-control text-black"
+                                <input name="nama" value="{{$user->nama}}" readonly type="text"
+                                       class="form-control text-black"
                                        id="nama" placeholder="Nama Mahasiswa">
                             </div>
                         </div>
@@ -141,7 +142,8 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Agama</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <select name="agama" class="form-control text-black {{$errors->has('agama') ? 'is-invalid':''}}"
+                                <select name="agama"
+                                        class="form-control text-black {{$errors->has('agama') ? 'is-invalid':''}}"
                                         required>
                                     <option selected="selected" value="">-Pilih-</option>
                                     <option>Islam</option>
@@ -161,7 +163,8 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Alamat</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <textarea name="alamat" value="" type="text"
-                                          class="form-control text-black {{$errors->has('alamat') ? 'is-invalid':''}}" id="alamat"
+                                          class="form-control text-black {{$errors->has('alamat') ? 'is-invalid':''}}"
+                                          id="alamat"
                                           placeholder="" required>{{old('alamat')}}</textarea>
                                 @if ($errors->has('alamat'))
                                     <span class="invalid-feedback" role="alert">
@@ -190,7 +193,8 @@
                                 Komulatif</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="ipk" value="{{old('ipk')}}" type="float"
-                                       class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}" id="ipk"
+                                       class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}"
+                                       id="ipk"
                                        placeholder=""
                                        required>
                                 @if ($errors->has('ipk'))
@@ -235,7 +239,8 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Semester</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="semester" value="{{old('semester')}}" type="number"
-                                       class="form-control text-black {{$errors->has('semester') ? 'is-invalid':''}}" id="semester"
+                                       class="form-control text-black {{$errors->has('semester') ? 'is-invalid':''}}"
+                                       id="semester"
                                        placeholder="" required>
                                 @if ($errors->has('semester'))
                                     <span class="invalid-feedback" role="alert">
@@ -249,7 +254,8 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Email</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="email" value="{{old('email')}}" type="email"
-                                       class="form-control text-black {{$errors->has('email') ? 'is-invalid':''}}" id="email"
+                                       class="form-control text-black {{$errors->has('email') ? 'is-invalid':''}}"
+                                       id="email"
                                        placeholder="" required>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -264,7 +270,8 @@
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="no_hp" value="{{old('no_hp')}}" type="number" maxlength="13"
-                                       class="form-control text-black {{$errors->has('no_hp') ? 'is-invalid':''}}" id="no_hp"
+                                       class="form-control text-black {{$errors->has('no_hp') ? 'is-invalid':''}}"
+                                       id="no_hp"
                                        required>
                                 @if ($errors->has('no_hp'))
                                     <span class="invalid-feedback" role="alert">
@@ -311,7 +318,8 @@
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="foto" value="" type="file"
-                                       class="form-control text-black {{$errors->has('foto') ? 'is-invalid':''}}" accept="image/*"
+                                       class="form-control text-black {{$errors->has('foto') ? 'is-invalid':''}}"
+                                       accept="image/*"
                                        required>
                                 <small id="emailHelp1" class="form-text text-muted">Foto Resmi Beralmamater | size max :
                                     2 MB </small>
@@ -386,7 +394,6 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Penghasilan
                                 Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <label>Rp.</label>
                                 <input name="penghasilan_ortu" value="{{old('penghasilan_ortu')}}" type="text"
                                        class="form-control text-black {{$errors->has('penghasilan_ortu') ? 'is-invalid':''}}"
                                        id="penghasilan_ortu" placeholder="" required>
@@ -479,7 +486,8 @@
                                 Rekening</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nama_rek" value="{{old('nama_rek')}}" type="text"
-                                       class="form-control text-black {{$errors->has('nama_rek') ? 'is-invalid':''}}" id="nama_rek"
+                                       class="form-control text-black {{$errors->has('nama_rek') ? 'is-invalid':''}}"
+                                       id="nama_rek"
                                        placeholder="" required>
                                 @if ($errors->has('nama_rek'))
                                     <span class="invalid-feedback" role="alert">
@@ -493,7 +501,8 @@
                                 Bank</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="no_rek" value="{{old('no_rek')}}" type="text"
-                                       class="form-control text-black {{$errors->has('no_rek') ? 'is-invalid':''}}" id="no_rek"
+                                       class="form-control text-black {{$errors->has('no_rek') ? 'is-invalid':''}}"
+                                       id="no_rek"
                                        placeholder="" required>
                                 @if ($errors->has('no_rek'))
                                     <span class="invalid-feedback" role="alert">
@@ -543,19 +552,19 @@
 <!-- END MAIN CONTAINER -->
 
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<script src="{{asset('mahasiswa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/popper.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('mahasiswa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-<script src="{{asset('mahasiswa/assets/js/app.js')}}"></script>
+<script src="{{asset('admin/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/app.js')}}"></script>
 <script>
     $(document).ready(function () {
         App.init();
     });
 </script>
-<script src="{{asset('mahasiswa/plugins/highlight/highlight.pack.js')}}"></script>
-<script src="{{asset('mahasiswa/assets/js/custom.js')}}"></script>
+<script src="{{asset('admin/plugins/highlight/highlight.pack.js')}}"></script>
+<script src="{{asset('admin/assets/js/custom.js')}}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
-<script src="{{asset('mahasiswa/assets/js/scrollspyNav.js')}}"></script>
+<script src="{{asset('admin/assets/js/scrollspyNav.js')}}"></script>
 </body>
 </html>

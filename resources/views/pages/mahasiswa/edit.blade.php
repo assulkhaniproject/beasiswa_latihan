@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>BEASISWA PHB | Detail Data </title>
-    <link rel="icon" type="image/x-icon" href="{{asset('mahasiswa/assets/img/favicon.png')}}"/>
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('mahasiswa/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('mahasiswa/assets/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/plugins.css')}}" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
-    <link href="{{asset('mahasiswa/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css"/>
 </head>
-<body data-spy="scroll" data-target="#navSection" data-offset="100">
+<body data-spy="scroll" data-target="#navSection" data-offsadmin>
 <div class="row layout-top-spacing">
     <div class="col-12 layout-spacing">
         <div id="flHorizontalForm" class="col-lg-12 layout-spacing">
@@ -27,13 +27,13 @@
                             </h3>
                         </div>
                         {{--alert--}}
-                        <div class="col-xl-6 col-md-3 col-sm-6 col-6 mt-2">
+                        {{--<div class="col-xl-6 col-md-3 col-sm-6 col-6 mt-2">
                             @if(!$kategori)
                                 <div class="alert alert-warning mb-4" role="alert">
                                     <strong>Warning!</strong> Tidak Bisa Mengajukan Beasiswa, Silakan Hubungi Admin !
                                 </div>
                             @endif
-                        </div>
+                        </div>--}}
                         {{--end alert--}}
                     </div>
                 </div>
@@ -543,19 +543,19 @@
 <!-- END MAIN CONTAINER -->
 
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-<script src="{{asset('mahasiswa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/popper.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('mahasiswa/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-<script src="{{asset('mahasiswa/assets/js/app.js')}}"></script>
+<script src="{{asset('admin/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/app.js')}}"></script>
 <script>
     $(document).ready(function () {
         App.init();
     });
 </script>
-<script src="{{asset('mahasiswa/plugins/highlight/highlight.pack.js')}}"></script>
-<script src="{{asset('mahasiswa/assets/js/custom.js')}}"></script>
+<script src="{{asset('admin/plugins/highlight/highlight.pack.js')}}"></script>
+<script src="{{asset('admin/assets/js/custom.js')}}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
-<script src="{{asset('mahasiswa/assets/js/scrollspyNav.js')}}"></script>
+<script src="{{asset('admin/assets/js/scrollspyNav.js')}}"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mahasiswa;
 
 use App\Http\Controllers\Controller;
+use App\Kategori;
 use Illuminate\Http\Request;
 use App\Beasiswa;
 use Auth;
@@ -14,11 +15,17 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth:mahasiswa');
+    }
+
     public function index()
     {
         $user = Auth::guard('mahasiswa')->user();
-        $beasiswas = Beasiswa::where('id_mahasiswa',Auth::user()->id)->orderBy('id','DESC')->paginate(6);
-        return view('pages.mahasiswa.profile', compact('beasiswas', 'user'));
+        $kategori = Kategori::where('status', true)->first();
+        $beasiswas = Beasiswa::where('id_mahasiswa', Auth::user()->id)->orderBy('id', 'DESC')->paginate(6);
+        return view('pages.mahasiswa.profile', compact('beasiswas', 'user', $kategori));
     }
 
     /**
@@ -34,7 +41,7 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +52,7 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -56,19 +63,22 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view('pages.mahasiswa.edit');
+        $user = Auth::guard('mahasiswa')->user();
+        $kategori = Kategori::where('status', true)->first();
+        $beasiswas = Beasiswa::where('id_mahasiswa', Auth::user()->id)->orderBy('id', 'DESC')->paginate(6);
+        return view('pages.mahasiswa.edit', compact('beasiswas', 'user', $kategori));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -79,7 +89,7 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

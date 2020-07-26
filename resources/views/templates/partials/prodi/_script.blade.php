@@ -1,22 +1,22 @@
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{asset('prodi/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{asset('prodi/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('prodi/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('prodi/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('prodi/assets/js/app.js')}}"></script>
+    <script src="{{asset('admin/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset('admin/bootstrap/js/popper.min.js')}}"></script>
+    <script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('admin/assets/js/app.js')}}"></script>
     <script>
         $(document).ready(function() {
             App.init();
         });
     </script>
-    <script src="{{asset('prodi/assets/js/custom.js')}}"></script>
+    <script src="{{asset('admin/assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-    <script src="{{asset('prodi/plugins/table/datatable/button-ext/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('prodi/plugins/table/datatable/button-ext/jszip.min.js')}}"></script>
-    <script src="{{asset('prodi/plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('prodi/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/table/datatable/button-ext/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/table/datatable/button-ext/jszip.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
 
     <script src="{{asset('admin/plugins/apex/apexcharts.min.js')}}"></script>
     <script src="{{asset('admin/assets/js/dashboard/dash_1.js')}}"></script>
@@ -50,8 +50,8 @@
     <script src="assets/js/pages/helpdesk.js"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="{{asset('prodi/plugins/lightbox/photoswipe.min.js')}}"></script>
-    <script src="{{asset('prodi/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
-    <script src="{{asset('prodi/plugins/lightbox/custom-photswipe.js')}}"></script>
+    <script src="{{asset('admin/plugins/lightbox/photoswipe.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/lightbox/custom-photswipe.js')}}"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
 

@@ -4,9 +4,7 @@
     <title>BEASISWA PHB TEGAL</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
-
     <link rel="stylesheet" href="{{asset('page/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('page/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('page/css/owl.carousel.min.css')}}">
@@ -52,7 +50,7 @@
 </section>
 <!-- END section -->
 
-<section class="site-section">
+{{--<section class="site-section">
     <div class="container">
         <section class="school-features text-dark last d-flex">
             <div class="inner">
@@ -95,9 +93,9 @@
         </section>
     </div>
 </section>
-<!-- END section -->
+<!-- END section -->--}}
 
-<section class="site-section bg-light">
+{{--<section class="site-section bg-light">
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center">
@@ -153,7 +151,7 @@
         </div>
     </div>
 </section>
-<!-- END section -->
+<!-- END section -->--}}
 
 <footer class="site-footer" style="background-image: url({{asset('page/images/big_image_3.jpg')}});">
     <div class="container">

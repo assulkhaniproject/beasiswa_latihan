@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>BEASISWA PHB | Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('mahasiswa/assets/img/favicon.png')}}"/>
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('mahasiswa/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('mahasiswa/assets/css/main.css')}}" rel="stylesheet" type="text/css"/>
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{asset('mahasiswa/assets/css/pages/faq/faq.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/main.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/assets/css/pages/faq/faq.css')}}" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 </head>
 <body>
@@ -23,34 +21,12 @@
             <h4 class="text-white"><b>B E A S I S W A P H B</b></h4>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    {{--<li class="nav-item btn-rotate dropdown user-profile-dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>
-                                <span class="text-white mt-3">{{Auth::guard('mahasiswa')->user()->nama}}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-user-check text-white ml-1">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                    <polyline points="17 11 19 13 23 9"></polyline>
-                                </svg>
-                            </p>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{route('mahasiswa.changepassword')}}">Ganti Password</a>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/">Logout</a>
-                            </div>
-                        </a>
-                    </li>--}}
                     <ul class="navbar-item flex-row ml-md-auto">
                         <li class="nav-item dropdown user-profile-dropdown">
                             <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span class="text-white">{{Auth::guard('mahasiswa')->user()->nama}}</span>
-                                <img class="x" height="45" width="45" src="{{asset('admin/assets/img/boy.png')}}"
+                                <img class="x" height="40" width="40" src="{{asset('admin/assets/img/boy.png')}}"
                                      alt="avatar">
                             </a>
                             <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
@@ -146,8 +122,8 @@
     <div class="container">
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span
-                        aria-hidden="true">×</span></button>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">X</span></button>
                 <h3 class="text-success"><i class="fa fa-check-circle"></i> Success</h3> {{ $message }}
             </div>
         @endif
@@ -163,7 +139,7 @@
             </div>
             <div class="col-md-5 order-md-0 order-0">
                 <a target="_blank" class="banner-img">
-                    <img src="{{asset('mahasiswa/assets/img/mindset.svg')}}" class="d-block" alt="image">
+                    <img src="{{asset('admin/assets/img/mindset.svg')}}" class="d-block" alt="image">
                 </a>
             </div>
         </div>
@@ -172,8 +148,8 @@
 
 <div class="faq container">
     <div class="faq-layouting layout-spacing">
-        <div class="fq-comman-question-wrapper">
-            <div class="row">
+        {{--<div class="fq-comman-question-wrapper">
+            --}}{{--<div class="row">
                 <div class="col-md-12">
                     <h3>Installation Based Problems</h3>
                     <div class="row">
@@ -253,8 +229,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>--}}{{--
+        </div>--}}
 
         <div class="fq-tab-section">
             <div class="row">
@@ -386,7 +362,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        {{--<div class="card">
                             <div class="card-header" id="fqheadingFive">
                                 <div class="mb-0" data-toggle="collapse" role="navigation" data-target="#fqcollapseFive"
                                      aria-expanded="false" aria-controls="fqcollapseFive">
@@ -421,9 +397,9 @@
                                         you probably haven't heard of them accusamus labore sustainable VHS.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
 
-                        <div class="card">
+                        {{--<div class="card">
                             <div class="card-header" id="fqheadingSix">
                                 <div class="mb-0" data-toggle="collapse" role="navigation" data-target="#fqcollapseSix"
                                      aria-expanded="false" aria-controls="fqcollapseSix">
@@ -458,7 +434,7 @@
                                         you probably haven't heard of them accusamus labore sustainable VHS.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -468,7 +444,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
                     <div class="card">
-                        <img src="{{asset('admin/assets/img/favicon.png')}}" class="card-img-top" alt="faq-video-tutorials">
+                        <img src="{{asset('admin/assets/img/favicon.png')}}" class="card-img-top"
+                             alt="faq-video-tutorials">
                         <div class="card-body">
                             <h5 class="card-title text-center">Politeknik Harapan Bersama</h5>
                         </div>
@@ -476,7 +453,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
                     <div class="card">
-                        <img src="{{asset('admin/assets/img/bg.png')}}" class="card-img-top " alt="faq-video-tutorials">
+                        <img src="{{asset('admin/assets/img/bg.png')}}" class="card-img-top" alt="faq-video-tutorials">
                         <div class="card-body">
                             <h5 class="card-title text-center">Kementrian Pendidikan Dan Kebudayaan</h5>
                         </div>
@@ -484,7 +461,8 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
                     <div class="card">
-                        <img src="{{asset('admin/assets/img/favicon.png')}}" class="card-img-top" alt="faq-video-tutorials">
+                        <img src="{{asset('admin/assets/img/favicon.png')}}" class="card-img-top"
+                             alt="faq-video-tutorials">
                         <div class="card-body">
                             <h5 class="card-title text-center">Politeknik Harapan Bersama</h5>
                         </div>
@@ -529,13 +507,13 @@
 </div>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
-<script src="{{asset('mahasiswa/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/popper.min.js')}}"></script>
-<script src="{{asset('mahasiswa/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- END GLOBAL MANDATORY STYLES -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-<script src="{{asset('mahasiswa/assets/js/pages/faq/faq.js')}}"></script>
+<script src="{{asset('admin/assets/js/pages/faq/faq.js')}}"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 </body>
 </html>
