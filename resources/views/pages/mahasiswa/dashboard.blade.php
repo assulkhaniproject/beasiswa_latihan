@@ -468,7 +468,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
                     <div class="card">
-                        <img src="assets/img/favicon.png" class="card-img-top" alt="faq-video-tutorials">
+                        <img src="{{asset('admin/assets/img/favicon.png')}}" class="card-img-top" alt="faq-video-tutorials">
                         <div class="card-body">
                             <h5 class="card-title text-center">Politeknik Harapan Bersama</h5>
                         </div>
@@ -484,7 +484,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
                     <div class="card">
-                        <img src="assets/img/favicon.png" class="card-img-top" alt="faq-video-tutorials">
+                        <img src="{{asset('admin/assets/img/favicon.png')}}" class="card-img-top" alt="faq-video-tutorials">
                         <div class="card-body">
                             <h5 class="card-title text-center">Politeknik Harapan Bersama</h5>
                         </div>
