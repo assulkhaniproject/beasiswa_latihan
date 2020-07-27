@@ -56,13 +56,13 @@ class DetailController extends Controller
             'kode_pos' => 'required|min:5|max:5',
             'ipk' => 'required|max:4|min:4',
             'semester' => 'required|max:1|min:1',
-            'email' => 'required|unique:mahasiswa',
-            'no_hp' => 'required|min:11|max:13|unique:mahasiswa',
+           // 'email' => 'required|unique:mahasiswa',
+           // 'no_hp' => 'required|min:11|max:13|unique:mahasiswa',
 
             'alamat_ortu' => 'required|min:5',
             'no_hp_ortu' => 'required|min:11|max:13',
             'tanggungan_ortu' => 'required|max:1',
-            'pekerjaan_ortu' => 'required|min:5',
+            'pekerjaan_ortu' => 'required|min:5'
 
         ];
         $message = [
@@ -84,7 +84,6 @@ class DetailController extends Controller
 
         ];
         $this->validate($request, $rule, $message);
-
 
 
         $scan_khs = $request->file('scan_khs');
@@ -162,7 +161,7 @@ class DetailController extends Controller
         $data->scan_bt = $filename_bt;
         $data->save();
 
-        return  redirect()->route('mahasiswa.dashboard')->with('success', 'Data Tersimpan');
+        return redirect()->route('mahasiswa.dashboard')->with('success', 'Data Tersimpan');
 
     }
 

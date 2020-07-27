@@ -15,8 +15,8 @@ class CreateKategoriTable extends Migration
     {
         Schema::create('kategori', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori',20);
-            $table->string('tahun_akademik', 50);
+            $table->string('kategori',100);
+            $table->string('tahun_akademik', 100);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

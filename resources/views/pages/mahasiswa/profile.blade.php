@@ -41,7 +41,7 @@
                              class="rounded-circle"/>
                     </div>
                     <h5 class="text-white">{{$user->nama}}</h5>
-                    <a href="{{route('mahasiswa.edit',$user->id)}}" class="text-center btn btn-primary mt-3">Lihat
+                    <a href="{{route('mahasiswas.edit',$user->id)}}" class="text-center btn btn-primary mt-3">Lihat
                         Selengkapnya</a>
                 </div>
                 {{--status--}}

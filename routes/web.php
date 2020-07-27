@@ -82,9 +82,9 @@ Route::group(['prefix' => 'mahasiswa'], function () {
     Route::post('detail/store', 'Mahasiswa\DetailController@store')->name('mahasiswas.store');
 
     Route::get('profile', 'Mahasiswa\ProfileController@index')->name('mahasiswa.profile');
-    Route::get('mahasiswa/edit/{id}', 'Mahasiswa\ProfileController@edit')->name('mahasiswa.edit');
+    Route::get('edit/{id}', 'Mahasiswa\ProfileController@edit')->name('mahasiswas.edit');
 
-    Route::get('password','Mahasiswa\PasswordController@change')->name('mahasiswa.changepassword');
-    Route::put('password','Mahasiswa\PasswordController@update')->name('mahasiswa.updatepassword');
+    Route::get('password/{id}','Mahasiswa\PasswordController@change')->name('mahasiswa.changepassword');
+    Route::put('password/update/{id}','Mahasiswa\PasswordController@update')->name('mahasiswa.updatepassword');
 
 });
