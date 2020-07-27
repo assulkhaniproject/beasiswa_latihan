@@ -6,10 +6,10 @@
 @section('content')
 
                 <div class="row layout-top-spacing">
-                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="widget widget-chart-two">
                             <div class="widget-heading">
-                                <h5 class="">Data Mahasiswa</h5>
+                                <h5 class="text-center text-primary">Data Beasiswa</h5>
                             </div>
                             <div class="widget-content">
                                 <div id="chart-2" class=""></div>
@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                    {{--<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
                         <div class="widget-three">
                             <div class="widget-heading">
                                 <h5 class="">Summary</h5>
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>
