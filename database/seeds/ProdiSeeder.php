@@ -17,7 +17,7 @@ class ProdiSeeder extends Seeder
             'email' => 'elektro@gmail.com',
             'no_hp' => '085385723130',
             'program_study' => 'DIII Elektro',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -26,7 +26,7 @@ class ProdiSeeder extends Seeder
             'email' => 'mesin@gmail.com',
             'no_hp' => '085385723131',
             'program_study' => 'DIII Teknik Mesin',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -35,7 +35,7 @@ class ProdiSeeder extends Seeder
             'email' => 'akuntansi@gmail.com',
             'no_hp' => '085385723132',
             'program_study' => 'DIII Akuntansi',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -53,7 +53,7 @@ class ProdiSeeder extends Seeder
             'email' => 'kebidanan@gmail.com',
             'no_hp' => '085385723134',
             'program_study' => 'DIII Kebidanan',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -62,7 +62,7 @@ class ProdiSeeder extends Seeder
             'email' => 'farmasi@gmail.com',
             'no_hp' => '085385723135',
             'program_study' => 'DIII Farmasi',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -71,7 +71,7 @@ class ProdiSeeder extends Seeder
             'email' => 'informatika@gmail.com',
             'no_hp' => '085385723136',
             'program_study' => 'DIII Teknik Informatika',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -80,7 +80,7 @@ class ProdiSeeder extends Seeder
             'email' => 'perhotelan@gmail.com',
             'no_hp' => '085385723137',
             'program_study' => 'DIII Perhotelan',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -89,7 +89,7 @@ class ProdiSeeder extends Seeder
             'email' => 'akuntansiSP',
             'no_hp' => '085385723138',
             'program_study' => 'DIV Akuntansi Sektor Publik',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
@@ -98,7 +98,7 @@ class ProdiSeeder extends Seeder
             'email' => 'desainKV@gmail.com',
             'no_hp' => '085385723139',
             'program_study' => 'DIII Desain Komunikasi Visual',
-            'logo' => '1592852481.png',
+            'logo' => '1593848880.png',
             'kuota_beasiswa' => '5',
             'password' => bcrypt(1234567890)
         ]);
