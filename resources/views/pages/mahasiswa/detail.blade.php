@@ -21,20 +21,26 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
-                        <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Form Pengajuan
-                                    Beasiswa</b>
-                            </h3>
-                        </div>
-                        {{--alert--}}
-                        <div class="col-xl-6 col-md-3 col-sm-6 col-6 mt-2">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                             @if(!$kategori)
-                                <div class="alert alert-warning mb-4" role="alert">
+                                <div class="alert alert-warning mt-2 mb-4" role="alert">
                                     <strong>Warning!</strong> Tidak Bisa Mengajukan Beasiswa, Silakan Hubungi Admin !
+                                </div>
+                            @elseif(Session::has('error'))
+                                <div class="alert alert-danger mt-2 mb-4" role="alert">
+                                    <strong>Warning!</strong> {{Session::get('error')}}
+                                </div>
+                            @elseif($errors->all())
+                                <div class="alert alert-danger mt-2 mb-4" role="alert">
+                                    <strong>Warning!</strong> {{$errors->first()}}
                                 </div>
                             @endif
                         </div>
-                        {{--end alert--}}
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                            <h2 class="mt-3 mb-3 mr-5 text-center text-primary">
+                                <b class="text-center">Form Pengajuan Beasiswa</b>
+                            </h2>
+                        </div>
                     </div>
                 </div>
                 {{--form pengajuan--}}
@@ -209,9 +215,14 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KHS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_khs" value="" type="file"
-                                       class="form-control text-black"
-                                       accept="image/*"
+                                       class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
+                                       accept="image/png, image/jpeg"
                                        required>
+                                @if ($errors->has('scan_khs'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <p class="text-danger"><b>{{ $errors->first('scan_khs') }}</b></p>
+                                        </span>
+                                @endif
                             </div>
                         </div>
 
