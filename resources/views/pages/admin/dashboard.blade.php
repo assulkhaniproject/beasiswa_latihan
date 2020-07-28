@@ -164,9 +164,7 @@
                                 label: 'Total',
                                 color: '#888ea8',
                                 formatter: function (w) {
-                                    return w.globals.seriesTotals.reduce( function(a, b) {
-                                        return a + b
-                                    }, 0) + ' Mahasiswa'
+                                    return w.globals.seriesTotals.reduce( (a, b) => a + b) + ' Mahasiswa'
                                 }
                             }
                         }
