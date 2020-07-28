@@ -4,10 +4,16 @@ namespace App\Http\Controllers\Mahasiswa;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
+use Validator;
+use Auth;
 
 class PasswordController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:mahasiswa');
+    }
+
     public function change()
     {
         return view('auth.changepass_mahasiswa');
@@ -16,21 +22,21 @@ class PasswordController extends Controller
     public function update ()
     {
         // custom validator
-        Validator::extend('password', function ($attribute, $value, $parameters, $validator) {
-            return Hash::check($value, \Auth::user()->password);
+        Validator::extend('old_password', function ($attribute, $value, $parameters, $validator) {
+            return Hash::check($value, Auth::user()->password);
         });
 
         // message for custom validation
         $messages = [
-            'password' => 'Invalid current password.',
+            'password' => 'Password yang anda masukan salah.',
+            'confirmed' => 'Password tidak sama',
+            'min' => 'Password minimal 6 karakter'
         ];
 
         // validate form
         $validator = Validator::make(request()->all(), [
-            'current_password'      => 'required|password',
-            'password'              => 'required|min:6|confirmed',
-            'password_confirmation' => 'required',
-
+            'old_password'      => 'required|password',
+            'password'      => 'required|min:6|confirmed',
         ], $messages);
 
         // if validation fails
@@ -41,13 +47,13 @@ class PasswordController extends Controller
         }
 
         // update password
-        $user = User::find(Auth::id());
+        $user = Auth::user();
 
         $user->password = bcrypt(request('password'));
-        $user->save();
+        $user->update();
 
         return redirect()
-            ->route('password.change')
-            ->withSuccess('Password has been updated.');
+            ->route('mahasiswa.dashboard')
+            ->with('success','Password berhasil diubah');
     }
 }

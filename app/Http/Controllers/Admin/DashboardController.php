@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Prodi;
 use Illuminate\Http\Request;
+use DB;
 
 class DashboardController extends Controller
 {
@@ -20,6 +22,14 @@ class DashboardController extends Controller
     public function index()
     {
         return view('pages.admin.dashboard');
+    }
+
+    public function chart(){
+        $prodi = Prodi::select('id','program_study')->withCount(['mahasiswa' => function ($query){
+            $query->whereHas('beasiswa');
+        }])->get();
+
+        return $prodi;
     }
 
     /**

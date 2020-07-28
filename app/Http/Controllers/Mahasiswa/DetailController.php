@@ -67,12 +67,12 @@ class DetailController extends Controller
             'scan_ktm' => 'required|image|max:2048',
             'scan_ktp' => 'required|image|max:2048',
             'foto' => 'required|image|max:2048',
-            'scan_gaji' => 'required|image|max:2048',
+            'scan_penghasilan' => 'required|image|max:2048',
             'scan_kk' => 'required|image|max:2048',
             'scan_bt' => 'required|image|max:2048',
         ];
         $message = [
-            'required' => 'Isi bidang ini.',
+            'required' => ':attributes Isi bidang ini.',
             'alamat.min' => 'Alamat Minimal 5 Huruf',
             'kode_pos.max' => 'Kode Pos Maximal 5 Karakter',
             'ipk.max' => 'Masukan IPK Dengan Benar',

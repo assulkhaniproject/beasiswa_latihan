@@ -21,9 +21,8 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
-                        <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Isi Data
-                                    Beasiswa</b>
+                        <div class="col-xl-12 col-md-6 col-sm-6 col-6">
+                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Data Beasiswa</b>
                             </h3>
                         </div>
                         {{--alert--}}
@@ -138,7 +137,7 @@
                             </a>
                         </div>--}}
 
-                        <div class="form-group row mb-4">
+                       {{-- <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Agama</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <select name="agama" class="form-control text-black {{$errors->has('agama') ? 'is-invalid':''}}"
@@ -174,7 +173,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Kode Pos</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="kode_pos" value="{{old('kode_pos')}}" type="number" maxlength="5"
+                                <input name="kode_pos" value="" type="number" maxlength="5"
                                        class="form-control text-black {{$errors->has('kode_pos')?'is-invalid':''}}"
                                        id="kode_pos" placeholder="" required>
                                 @if ($errors->has('kode_pos'))
@@ -324,7 +323,7 @@
                         </div>
 
                         <hr class="mt-5 mb-5">
-                        {{--Data Orang Tua--}}
+                        --}}{{--Data Orang Tua--}}{{--
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama Orang
                                 Tua</label>
@@ -371,7 +370,7 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">No. Hp
                                 Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp_ortu" value="{{old('no_hp_ortu')}}" type="number"
+                                <input name="no_hp_ortu" value="{{$user->no_hp_ortu}}" type="number"
                                        class="form-control text-black {{$errors->has('no_hp_ortu') ? 'is-invalid':''}}"
                                        maxlength="13"
                                        id="defaultconfig" placeholder="" required>
@@ -386,8 +385,7 @@
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Penghasilan
                                 Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <label>Rp.</label>
-                                <input name="penghasilan_ortu" value="{{old('penghasilan_ortu')}}" type="text"
+                                <input name="penghasilan_ortu" value="" type="text"
                                        class="form-control text-black {{$errors->has('penghasilan_ortu') ? 'is-invalid':''}}"
                                        id="penghasilan_ortu" placeholder="" required>
                                 @if ($errors->has('penghasilan_ortu'))
@@ -444,7 +442,7 @@
                         </div>
 
                         <hr class="mt-5 mb-5">
-                        {{--Data Rekening Bank--}}
+                        --}}{{--Data Rekening Bank--}}{{--
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama Bank</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
@@ -517,16 +515,16 @@
                                 @endif
                             </div>
                         </div>
-                        {{--end form pengajuan--}}
-
-                        <div class="form-group row">
+                        --}}{{--end form pengajuan--}}{{--
+--}}
+                      {{--  <div class="form-group row">
                             <div class="col-sm-10">
                                 <button class="btn btn-warning mt-3 mr-2 ml-5 px-5" type="button"
                                         onclick="history.back()">Batal
                                     <button type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
                                 </button>
                             </div>
-                        </div>
+                        </div>--}}
                     </form>
                 </div>
             </div>

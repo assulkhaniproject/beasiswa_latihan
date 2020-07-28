@@ -12,7 +12,7 @@ class Prodi extends Authenticatable
 
     public function mahasiswa()
     {
-        return $this->belongsTo(Mahasiswa::class, 'id_mahasiswa', 'id');
+        return $this->hasMany(Mahasiswa::class, 'id_prodi', 'id');
     }
     public function kategori()
     {

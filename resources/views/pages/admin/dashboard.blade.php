@@ -93,4 +93,136 @@
                     </div>
                 </div>
             </div>
-                @endsection
+@endsection
+@section('script')
+<script>
+    const url = '{{config("app.url")}}'
+    function getData() {
+        return fetch(url+'admin/chart').then(res => res.json()).then(res => res);
+    }
+
+    (async function showChart() {
+        const data = await getData();
+        const program_study = data.map(d => d.program_study);
+        const mahasiswa = data.map(d => d.mahasiswa_count);
+
+
+        var options = {
+            chart: {
+                type: 'donut',
+                width: 100,
+            },
+            colors: ["#F3B415", "#F27036", "#663F59", "#6A6E94", "#4E88B4", "#00A7C6", "#18D8D8", '#A9D794',
+                '#46AF78', '#A93F55', '#8C5E58', '#2176FF', '#33A1FD', '#7A918D', '#BAFF29'
+            ],
+            dataLabels: {
+                enabled: false
+            },
+            // legend: {
+            //
+            //     fontSize: '12px',
+            //     markers: {
+            //         width: 15,
+            //         height: 15,
+            //     },
+            //     itemMargin: {
+            //         horizontal: 0,
+            //         vertical: 8
+            //     }
+            // },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '75%',
+                        background: 'transparent',
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: '20px',
+                                fontFamily: 'Nunito, sans-serif',
+                                color: undefined,
+                                offsetY: -10,
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '26px',
+                                fontFamily: 'Nunito, sans-serif',
+                                color: '20',
+                                offsetY: 16,
+                                formatter: function (val) {
+                                    const value = val.toString()
+                                    return value
+                                }
+                            },
+                            total: {
+                                show: true,
+                                showAlways: true,
+                                label: 'Total',
+                                color: '#888ea8',
+                                formatter: function (w) {
+                                    return w.globals.seriesTotals.reduce( function(a, b) {
+                                        return a + b
+                                    }, 0) + ' Mahasiswa'
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            stroke: {
+                show: true,
+                width: 25,
+            },
+            series: mahasiswa,
+            labels: program_study,
+            tooltip: {
+                y: {
+                    formatter: function(value) {
+                        return value + " Mahasiswa";
+                    }
+                }
+            },
+            responsive: [{
+                breakpoint: 1599,
+                options: {
+                    chart: {
+                        width: '400px',
+                        height: '400px'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+
+                breakpoint: 1439,
+                options: {
+                    chart: {
+                        width: '500px',
+                        height: '450px'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    },
+                    plotOptions: {
+                        pie: {
+                            donut: {
+                                size: '75%',
+                            }
+                        }
+                    }
+                },
+            }]
+        }
+
+        var chart = new ApexCharts(
+            document.querySelector("#chart-2"),
+            options
+        );
+
+        chart.render();
+    }())
+
+
+</script>
+@endsection

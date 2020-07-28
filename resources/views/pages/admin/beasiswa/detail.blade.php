@@ -115,7 +115,7 @@
                         <div class="col-xl-7">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/khs/'.$beasiswa->scan_khs)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/khs/'.$beasiswa->scan_khs)}}" alt="image-gallery">
                                 </a>
@@ -127,7 +127,7 @@
                         <div class="col-xl-6 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/krs/'.$beasiswa->scan_krs)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/krs/'.$beasiswa->scan_krs)}}" alt="image-gallery">
                                 </a>
@@ -160,7 +160,7 @@
                         <div class="col-xl-6 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/ktm/'.$beasiswa->scan_ktm)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/ktm/'.$beasiswa->scan_ktm)}}" alt="image-gallery">
                                 </a>
@@ -172,7 +172,7 @@
                         <div class="col-xl-6 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/ktp/'.$beasiswa->scan_ktp)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/ktp/'.$beasiswa->scan_ktp)}}" alt="image-gallery">
                                 </a>
@@ -183,7 +183,7 @@
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Foto Mahasiswa</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
-                                <a class="img-1" href="{{asset('uploads/foto/'.$beasiswa->foto)}}" data-size="1600x1068"
+                                <a class="img-1" href="{{asset('uploads/foto/'.$beasiswa->foto)}}" data-size="683x1024"
                                    data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/foto/'.$beasiswa->foto)}}" alt="image-gallery">
@@ -238,7 +238,7 @@
                         <div class="col-xl-7 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/penghasilan/'.$beasiswa->scan_penghasilan)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="683x1024"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/penghasilan/'.$beasiswa->scan_penghasilan)}}"
                                          alt="image-gallery">
@@ -258,7 +258,7 @@
                         <div class="col-xl-7 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/kk/'.$beasiswa->scan_kk)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/kk/'.$beasiswa->scan_kk)}}" alt="image-gallery">
                                 </a>
@@ -304,7 +304,7 @@
                         <div class="col-xl-7 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
                                 <a class="img-1" href="{{asset('uploads/bt/'.$beasiswa->scan_bt)}}"
-                                   data-size="1600x1068" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                   data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/bt/'.$beasiswa->scan_bt)}}" alt="image-gallery">
                                 </a>

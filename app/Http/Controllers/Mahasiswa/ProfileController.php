@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mahasiswa;
 
 use App\Http\Controllers\Controller;
 use App\Kategori;
+use App\Mahasiswa;
 use Illuminate\Http\Request;
 use App\Beasiswa;
 use Auth;
@@ -69,9 +70,10 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $user = Auth::guard('mahasiswa')->user();
-        $kategori = Kategori::where('status', true)->first();
+        $datas = Beasiswa::find($id);
         $beasiswas = Beasiswa::where('id_mahasiswa', Auth::user()->id)->orderBy('id', 'DESC')->paginate(6);
-        return view('pages.mahasiswa.edit', compact('beasiswas', 'user', $kategori));
+        $kategori = Kategori::where('status', true)->first();
+        return view('pages.mahasiswa.edit', compact('datas', 'kategori', $beasiswas, 'user'));
     }
 
     /**

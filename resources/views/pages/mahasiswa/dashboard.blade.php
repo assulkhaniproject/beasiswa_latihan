@@ -12,6 +12,9 @@
     <link href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('admin/assets/css/main.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('admin/assets/css/pages/faq/faq.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('admin/plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/css/components/custom-sweetalert.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 </head>
 <body>
@@ -32,7 +35,7 @@
                             <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                                 <div class="">
                                     <div class="dropdown-item">
-                                        <a class="" href="#">
+                                        <a class="" href="{{route('password.change')}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                  viewBox="0 0 24 24"
                                                  fill="none" stroke="currentColor" stroke-width="2"
@@ -514,6 +517,17 @@
 
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 <script src="{{asset('admin/assets/js/pages/faq/faq.js')}}"></script>
+<script src="{{asset('admin/plugins/sweetalerts/sweetalert2.min.js')}}"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+<script>
+@if(Session::has('success'))
+    swal({
+        title: 'Berhasil!',
+        text: "{{Session::get('success')}}",
+        type: 'success',
+        padding: '2em'
+    })
+    @endif
+</script>
 </body>
 </html>

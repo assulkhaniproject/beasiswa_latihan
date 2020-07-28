@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/login', 'Admin\AuthAdminController@login')->name('admin.login');
     Route::post('/logout', 'Admin\AuthAdminController@logout')->name('admin.logout');
     Route::get('dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
+    Route::get('chart', 'Admin\DashboardController@chart');
 
     Route::get('mahasiswa', 'Admin\MahasiswaController@index')->name('mahasiswa.index');
     Route::get('mahasiswa/create', 'Admin\MahasiswaController@create')->name('mahasiswa.create');
@@ -84,7 +85,7 @@ Route::group(['prefix' => 'mahasiswa'], function () {
     Route::get('profile', 'Mahasiswa\ProfileController@index')->name('mahasiswa.profile');
     Route::get('edit/{id}', 'Mahasiswa\ProfileController@edit')->name('mahasiswas.edit');
 
-    Route::get('password/{id}','Mahasiswa\PasswordController@change')->name('mahasiswa.changepassword');
-    Route::put('password/update/{id}','Mahasiswa\PasswordController@update')->name('mahasiswa.updatepassword');
+    Route::get('password','Mahasiswa\PasswordController@change')->name('password.change');
+    Route::put('password','Mahasiswa\PasswordController@update')->name('mahasiswa.updatepassword');
 
 });
