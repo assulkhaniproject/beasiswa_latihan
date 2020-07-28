@@ -108,6 +108,8 @@
         const program_study = data.map(d => d.program_study);
         const mahasiswa = data.map(d => d.mahasiswa_count);
 
+        console.log(mahasiswa)
+
         var options = {
             chart: {
                 type: 'donut',
