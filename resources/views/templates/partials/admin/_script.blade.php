@@ -16,7 +16,6 @@
     <!-- END GLOBAL MANDATORY SCRIPTS -->
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="{{asset('admin/plugins/apex/apexcharts.min.js')}}"></script>
-{{--    <script src="{{asset('admin/assets/js/dashboard/dash_1.js')}}"></script>--}}
 
     <script src="{{asset('admin/plugins/table/datatable/datatables.js')}}"></script>
 
@@ -58,7 +57,6 @@
 
 <script src="{{asset('admin/assets/js/scrollspyNav.js')}}"></script>
 <script src="{{asset('admin/plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
-
 @yield('script')
 
 
