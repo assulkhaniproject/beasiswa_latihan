@@ -96,6 +96,8 @@
 @endsection
 @section('script')
 <script>
+    "use strict";
+
     const url = '{{config("app.url")}}'
     function getData() {
         return fetch(url+'admin/chart').then(res => res.json()).then(res => res);
