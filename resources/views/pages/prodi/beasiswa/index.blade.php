@@ -55,7 +55,7 @@
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->kategori}}</td>
                                 <td>
-                                        @if($data->status === 1)
+                                        @if($data->status === '1')
                                             <button class="btn btn-success" data-target="#modalPembatalan{{$data->id}}"
                                                     data-toggle="modal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -68,7 +68,7 @@
                                                 </svg><span class="icon-name">
                                                      Diterima</span>
                                             </button>
-                                        @elseif($data->status === 0)
+                                        @elseif($data->status === '0')
                                             <button class="btn btn-danger">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                      viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -217,14 +217,13 @@
                                 <td>${beasiswa.email}</td>
                                 <td>${beasiswa.kategori}</td>
                                 <td>
-
                                             ${beasiswa.status === 1 ? `
                                             <button class="btn btn-success" data-target="#modalPembatalan${beasiswa.id}" data-toggle="modal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg><span class="icon-name">
                                                      Diterima</span>
                                             </button>
                                             ` : ''}
-                                             ${beasiswa.status == 0 ? `<button class="btn btn-danger">
+                                             ${beasiswa.status === 0 ? `<button class="btn btn-danger">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg><span class="icon-name">
                                                      Ditolak</span>
                                         </button>` : ''}
