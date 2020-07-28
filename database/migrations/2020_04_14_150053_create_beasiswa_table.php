@@ -15,7 +15,7 @@ class CreateBeasiswaTable extends Migration
     {
         Schema::create('beasiswa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kategori', 30);
+            $table->string('kategori', 100);
             $table->string('tahun_akademik', 50);
             $table->integer('id_mahasiswa')->unsigned();
             $table->char('jenis_kelamin',9);
