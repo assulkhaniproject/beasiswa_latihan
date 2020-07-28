@@ -208,7 +208,7 @@
              <tr>
                 <td class="checkbox-column text-center">${i + 1}</td>
                     <td class="text-center">
-                      <span><img src="${url}uploads/foto/${beasiswa.foto}" class="profile-img" height="75" width="75" alt="avatar"></span>
+                      <span><img src="{{asset('uploads/foto')}}${'/'+beasiswa.foto}" class="profile-img" height="75" width="75" alt="avatar"></span>
                         </td>
                        <td>${beasiswa.mahasiswa.nim}</td>
                          <td>${beasiswa.mahasiswa.nama}</td>
