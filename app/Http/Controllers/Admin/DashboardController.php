@@ -27,7 +27,7 @@ class DashboardController extends Controller
     public function chart(){
         $prodi = Prodi::select('id','program_study')->withCount(['mahasiswa' => function ($query){
             $query->whereHas('beasiswa');
-        }])->get();
+        }])->orderBy('mahasiswa_count', 'DESC')->get();
 
         return $prodi;
     }
