@@ -103,11 +103,10 @@
         return fetch(url+'admin/chart').then(res => res.json()).then(res => res);
     }
 
-    (async function showChart() {
+    async function showChart() {
         const data = await getData();
         const program_study = data.map(d => d.program_study);
         const mahasiswa = data.map(d => d.mahasiswa_count);
-
 
         var options = {
             chart: {
@@ -223,7 +222,9 @@
         );
 
         chart.render();
-    }())
+    }
+
+    showChart()
 
 
 </script>
