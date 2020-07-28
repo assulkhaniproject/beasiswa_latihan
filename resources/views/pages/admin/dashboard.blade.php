@@ -106,7 +106,7 @@
     async function showChart() {
         const data = await getData();
         const program_study = data.map(d => d.program_study);
-        const mahasiswa = data.map(d => d.mahasiswa_count);
+        const mahasiswa = data.map(d => +d.mahasiswa_count);
 
         console.log(mahasiswa)
 
