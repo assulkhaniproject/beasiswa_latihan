@@ -110,6 +110,8 @@ class BeasiswaController extends Controller
                 ->limit($kuota)
                 ->get();
 
+//            dd($datas);
+
             return view('pages.prodi.beasiswa.index', compact('datas', 'kategori','categories'));
         }
 
