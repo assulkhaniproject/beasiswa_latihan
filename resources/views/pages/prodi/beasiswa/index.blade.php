@@ -55,7 +55,7 @@
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->kategori}}</td>
                                 <td>
-                                        @if($data->status === '1')
+                                        @if($data->status == 1)
                                             <button class="btn btn-success" data-target="#modalPembatalan{{$data->id}}"
                                                     data-toggle="modal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -68,7 +68,7 @@
                                                 </svg><span class="icon-name">
                                                      Diterima</span>
                                             </button>
-                                        @elseif($data->status === '0')
+                                        @elseif($data->status == 0)
                                             <button class="btn btn-danger">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                      viewBox="0 0 24 24" fill="none" stroke="currentColor"
