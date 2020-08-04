@@ -20,9 +20,9 @@ class BeasiswaController extends Controller
     public function index()
     {
 
-        $datas = Beasiswa::whereHas('mahasiswa', function ($query){
+            $datas = Beasiswa::whereHas('mahasiswa', function ($query){
             $query->where('id_prodi',Auth::guard('prodi')->user()->id);
-        })->orderBy('created_at', 'ASC')->get();
+        })->orderBy('created_at', 'DESC')->get();
 
         $kategori = Kategori::where('status', true)->first();
         $categories = Kategori::all();
@@ -43,13 +43,13 @@ class BeasiswaController extends Controller
             }])->whereHas('mahasiswa', function ($query){
                 $query->where('id_prodi',Auth::guard('prodi')->user()->id);
             })->where('kategori', $kategori)
-                ->orderBy('created_at', 'ASC')->get();
+                ->orderBy('created_at', 'DESC')->get();
 
             return $datas;
         }else{
             $datas = Beasiswa::with('mahasiswa')->whereHas('mahasiswa', function ($query){
                 $query->with('prodi')->where('id_prodi',Auth::guard('prodi')->user()->id);
-            })->orderBy('created_at', 'ASC')->get();
+            })->orderBy('created_at', 'DESC')->get();
 
             return $datas;
         }

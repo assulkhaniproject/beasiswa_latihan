@@ -95,6 +95,19 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-12 mb-4">
+                            <label for="fullName">Agama</label>
+                            <input name="agama" type="text"
+                                   class="form-control {{$errors->has('agama')?'is-invalid':''}}"
+                                   placeholder="" value="{{$datas->agama}}" required>
+                            @if ($errors->has('agama'))
+                                <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('agama') }}</b></p>
+                                        </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-4">
                             <label for="fullName">Alamat</label>
                             <input name="alamat" type="text"
                                    class="form-control {{$errors->has('alamat')?'is-invalid':''}}"
@@ -158,10 +171,23 @@
                             @endif
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-4">
+                            <label for="fullName">Nama Orang Tua</label>
+                            <input name="nama_ortu" type="text"
+                                   class="form-control {{$errors->has('nama_ortu')?'is-invalid':''}}"
+                                   placeholder="" value="{{$datas->nama_ortu}}" required>
+                            @if ($errors->has('nama_ortu'))
+                                <span class="invalid-feedback" role="alert">
+                                            <p><b>{{ $errors->first('nama_ortu') }}</b></p>
+                                        </span>
+                            @endif
+                        </div>
+                    </div>
 
-                    <button class="btn btn-primary submit-fn mt-2 float-right" type="submit">Update</button>
-                    <button class="btn btn-warning submit-fn mt-2 mr-2 float-right" type="button"
-                            onclick="history.back()">Cancel
+                    <button class="btn btn-primary submit-fn mt-2" type="submit">Simpan</button>
+                    <button class="btn btn-warning submit-fn mt-2 mr-2" type="button"
+                            onclick="history.back()">Batal
                     </button>
 
                 </form>

@@ -61,7 +61,7 @@ class DetailController extends Controller
             'alamat_ortu' => 'required|min:5',
             'no_hp_ortu' => 'required|min:11|max:13',
             'tanggungan_ortu' => 'required|max:1',
-            'pekerjaan_ortu' => 'required|min:5',
+            'pekerjaan_ortu' => 'required',
             'scan_khs' => 'required|image|max:2048',
             'scan_krs' => 'required|image|max:2048',
             'scan_ktm' => 'required|image|max:2048',

@@ -34,7 +34,7 @@
                         <tbody>
                        @foreach($datas as $data)
                             <tr>
-                                <td>{{$data->id}}</td>
+                                <td class="checkbox-column text-center"> {{$loop->iteration}}</td>
                                 <td>{{$data->kategori}}</td>
                                 <td>{{$data->tahun_akademik}}</td>
                                 <td>{!! $data->status ? '<span class="badge badge-success"> Aktif </span>' : '<span class="badge badge-danger"> Tidak aktif </span>'!!}</td>
@@ -70,7 +70,7 @@
                                                     <label class="col-sm-2 col-form-label">Kategori</label>
                                                     <div class="col-sm-10">
                                                         <select name="kategori" class="form-control  basic" required>
-                                                            <option {{$data->kategori === 'Beasiswa Bidikmisi' ? 'selected' : '' }}>Beasiswa Bidikmisi</option>
+                                                            {{--<option {{$data->kategori === 'Beasiswa Bidikmisi' ? 'selected' : '' }}>Beasiswa Bidikmisi</option>--}}
                                                             <option {{$data->kategori === 'Beasiswa Peningkatan Prestasi Akademik (PPA)' ? 'selected' : '' }}>Beasiswa Peningkatan Prestasi Akademik (PPA)</option>
                                                             <option {{$data->kategori === 'Beasiswa Belajar Mahasiswa (BBM)' ? 'selected' : '' }} >Beasiswa Belajar Mahasiswa (BBM)</option>
                                                             <option {{$data->kategori === 'Lainnya...' ? 'selected' : '' }}>Lainnya...</option>
@@ -133,7 +133,7 @@
                             <div class="col-sm-10">
                                 <select name="kategori" class="form-control  basic" required>
                                     <option selected="selected">Pilih...</option>
-                                    <option>Beasiswa Bidikmisi</option>
+                                    {{--<option>Beasiswa Bidikmisi</option>--}}
                                     <option>Beasiswa Peningkatan Prestasi Akademik (PPA)</option>
                                     <option>Beasiswa Belajar Mahasiswa (BBM)</option>
                                     <option>Lainnya...</option>

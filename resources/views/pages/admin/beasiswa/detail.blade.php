@@ -5,68 +5,68 @@
 @section('content')
     <div class="row layout-top-spacing">
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-content widget-content-area">
+            <div class="statbox widget box box-shadow">
                 <div class="row">
-                    <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                        <h3 class="mb-5 text-center">Detail Data Beasiswa</h3>
+                    <div class="col-xl-12 col-md-12 col-sm-12 col-6">
+                        <h4 class="mb-5 text-center mt-2"><b>Detail Data Beasiswa</b></h4>
                     </div>
                 </div>
                 <form method="post" action="{{route('mahasiswas.store')}}" enctype="multipart/form-data">
                     <div class="form-group row mb-4">
-                        <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kategori/Tahun Akademik*</label>
+                        <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kategori/Tahun Akademik</label>
                         <div class="col-xl-4 col-lg-9 col-sm-10">
                             <input name="kategori" value="{{$kategori ? $kategori->kategori : ''}}" readonly type="text"
-                                   class="form-control" id="kategori" placeholder="" required>
+                                   class="form-control text-black" id="kategori" placeholder="" required>
                         </div>
                         <div class="col-xl-3 col-lg-9 col-sm-10">
                             <input name="tahun_akademik" value="{{$kategori ? $kategori->tahun_akademik : ''}}" readonly
-                                   type="text" class="form-control" id="tahun_akademik" placeholder="">
+                                   type="text" class="form-control text-black" id="tahun_akademik" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nomor Induk Mahasiswa</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="nim" value="{{$beasiswa->mahasiswa->nim}}" type="text" class="form-control"
+                            <input name="nim" value="{{$beasiswa->mahasiswa->nim}}" readonly type="text" class="form-control text-black"
                                    id="program_study" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Mahasiswa</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="nama" value="{{$beasiswa->mahasiswa->nama}}" type="text" class="form-control"
+                            <input name="nama" value="{{$beasiswa->mahasiswa->nama}}" readonly type="text" class="form-control text-black"
                                    id="nama" placeholder="Nama Mahasiswa">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Program Study</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="program_study" value="{{$beasiswa->mahasiswa->prodi->program_study}}"
-                                   type="text" class="form-control" id="program_study" placeholder="">
+                            <input name="program_study" value="{{$beasiswa->mahasiswa->prodi->program_study}}" readonly
+                                   type="text" class="form-control text-black" id="program_study" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Angkatan</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="angkatan" value="{{$beasiswa->mahasiswa->angkatan}}" type="text"
-                                   class="form-control" id="program_study" placeholder="">
+                            <input name="angkatan" value="{{$beasiswa->mahasiswa->angkatan}}" readonly type="text"
+                                   class="form-control text-black" id="program_study" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Tempat/Tanggal Lahir</label>
                         <div class="col-xl-3 col-lg-9 col-sm-10">
-                            <input name="" value="{{$beasiswa->mahasiswa->tempat_lahir}}" type="text"
-                                   class="form-control" id="program_study" placeholder="">
+                            <input name="" value="{{$beasiswa->mahasiswa->tempat_lahir}}" readonly type="text"
+                                   class="form-control text-black" id="program_study" placeholder="">
                         </div>
                         <div class="col-xl-4 col-lg-9 col-sm-8">
-                            <input name="" value="{{$beasiswa->mahasiswa->tanggal_lahir}}" type="date"
-                                   class="form-control" id="program_study" placeholder="">
+                            <input name="" value="{{$beasiswa->mahasiswa->tanggal_lahir}}" readonly type="date"
+                                   class="form-control text-black" id="program_study" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Jenis Kelamin</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="jenis_kelamin" value="{{$beasiswa->jenis_kelamin}}" type="text"
-                                   class="form-control" id="jenis_kelamin" placeholder="">
+                            <input name="jenis_kelamin" value="{{$beasiswa->jenis_kelamin}}" readonly type="text"
+                                   class="form-control text-black" id="jenis_kelamin" placeholder="">
                         </div>
                     </div>
                     {{--<div class="form-group row mb-4">
@@ -85,28 +85,28 @@
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Agama</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="agama" value="{{$beasiswa->agama}}" type="text" class="form-control" id="agama"
+                            <input name="agama" value="{{$beasiswa->agama}}" readonly type="text" class="form-control text-black" id="agama"
                                    placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Alamat</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <textarea name="alamat" value="" type="text" class="form-control" id="alamat"
+                            <textarea name="alamat" value="" readonly type="text" class="form-control text-black" id="alamat"
                                       placeholder="Sesuai Dengan KTP">{{$beasiswa->alamat}}</textarea>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Kode Pos</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="kode_pos" value="{{$beasiswa->kode_pos}}" type="text" class="form-control"
+                            <input name="kode_pos" value="{{$beasiswa->kode_pos}}" readonly type="text" class="form-control text-black"
                                    id="kode_pos" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">IP Komulatif</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="ipk" value="{{$beasiswa->ipk}}" type="text" class="form-control" id="ipk"
+                            <input name="ipk" value="{{$beasiswa->ipk}}" readonly type="text" class="form-control text-black" id="ipk"
                                    placeholder="">
                         </div>
                     </div>
@@ -137,21 +137,21 @@
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Semester</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="semester" value="{{$beasiswa->semester}}" type="text" class="form-control"
+                            <input name="semester" value="{{$beasiswa->semester}}" readonly type="text" class="form-control text-black"
                                    id="semester" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Email</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="email" value="{{$beasiswa->email}}" type="email" class="form-control"
+                            <input name="email" value="{{$beasiswa->email}}" readonly type="email" class="form-control text-black"
                                    id="email" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Mahasiswa</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="no_hp" value="{{$beasiswa->no_hp}}" type="number" class="form-control"
+                            <input name="no_hp" value="{{$beasiswa->no_hp}}" readonly type="number" class="form-control text-black"
                                    id="no_hp" placeholder="">
                         </div>
                     </div>
@@ -193,6 +193,7 @@
                     </div>
 
                     {{--Data Orang Tua--}}
+                    <hr>
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5">
                             <h5></h5>
@@ -201,36 +202,36 @@
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Orang Tua</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="nama_ortu" value="{{$beasiswa->nama_ortu}}" type="text" class="form-control"
+                            <input name="nama_ortu" value="{{$beasiswa->nama_ortu}}" readonly type="text" class="form-control text-black"
                                    id="nama_ortu" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Alamat</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <textarea name="alamat_ortu" value="" type="text" class="form-control" id="alamat_ortu"
+                            <textarea name="alamat_ortu" value="" readonly type="text" class="form-control text-black" id="alamat_ortu"
                                       placeholder="">{{$beasiswa->alamat_ortu}}</textarea>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Pekerjaan</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="pekerjaan_ortu" value="{{$beasiswa->pekerjaan_ortu}}" type="text"
-                                   class="form-control" id="pekerjaan_ortu" placeholder="">
+                            <input name="pekerjaan_ortu" value="{{$beasiswa->pekerjaan_ortu}}" readonly type="text"
+                                   class="form-control text-black" id="pekerjaan_ortu" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Hp Orangtua</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="no_hp_ortu" value="{{$beasiswa->no_hp_ortu}}" type="text" class="form-control"
+                            <input name="no_hp_ortu" value="{{$beasiswa->no_hp_ortu}}" readonly type="text" class="form-control text-black"
                                    id="no_hp_ortu" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Penghasilan</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="no_hp_ortu" value="{{$beasiswa->penghasilan_ortu}}" type="text"
-                                   class="form-control" id="no_hp_ortu" placeholder="">
+                            <input name="no_hp_ortu" value="{{$beasiswa->penghasilan_ortu}}" readonly type="text"
+                                   class="form-control text-black" id="no_hp_ortu" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -249,8 +250,8 @@
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Jumlah Tanggungan</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="tanggungan_ortu" value="{{$beasiswa->tanggungan_ortu}}" type="text"
-                                   class="form-control" id="tanggungan_ortu" placeholder="">
+                            <input name="tanggungan_ortu" value="{{$beasiswa->tanggungan_ortu}}" readonly type="text"
+                                   class="form-control text-black" id="tanggungan_ortu" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
@@ -266,6 +267,7 @@
                         </div>
                     </div>
                     {{--Data Rekening Bank--}}
+                    <hr>
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5">
                             <h5></h5>
@@ -274,28 +276,28 @@
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Lengkap Bank</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="nama_bank" value="{{$beasiswa->nama_bank}}" type="text" class="form-control"
+                            <input name="nama_bank" value="{{$beasiswa->nama_bank}}" readonly type="text" class="form-control text-black"
                                    id="nama_bank" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Cabang Bank</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="cabang_bank" value="{{$beasiswa->cabang_bank}}" type="text"
-                                   class="form-control" id="cabang_bank" placeholder="">
+                            <input name="cabang_bank" value="{{$beasiswa->cabang_bank}}" readonly type="text"
+                                   class="form-control text-black" id="cabang_bank" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Nama Pemegang Rekening</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="nama_rek" value="{{$beasiswa->nama_rek}}" type="text" class="form-control"
+                            <input name="nama_rek" value="{{$beasiswa->nama_rek}}" readonly type="text" class="form-control text-black"
                                    id="nama_rek" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row mb-4">
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">No. Rekening Bank</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
-                            <input name="no.rek" value="{{$beasiswa->no_rek}}" type="text" class="form-control"
+                            <input name="no.rek" value="{{$beasiswa->no_rek}}" readonly type="text" class="form-control text-black"
                                    id="no_rek" placeholder="">
                         </div>
                     </div>
@@ -314,7 +316,7 @@
 
                     <div>
                         <button class="btn btn-info px-5" type="button" onclick="history.back()">OK</button>
-                        <a href="{{route('beasiswa.report', $beasiswa->id)}}" class="btn btn-info px-5" type="button">
+                        <a href="{{route('beasiswa.report', $beasiswa->id)}}" class="btn btn-info px-4" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="feather feather-printer">

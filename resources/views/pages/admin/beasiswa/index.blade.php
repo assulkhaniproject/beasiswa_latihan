@@ -5,13 +5,14 @@
 @section('content')
     <div class="row layout-top-spacing">
         <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
-            <div class="widget-content widget-content-area">
+            <div class="statbox widget box box-shadow">
+            {{--<div class="widget-content widget-content-area">--}}
                 <div class="row">
-                    <div class="col-xl-6 col-md-6 col-sm-6 col-6">
+                    <div class="col-6">
                         <h5 class="text-primary"><b>Data Beasiswa</b></h5>
                     </div>
-                    <div class="col-xl-6 col-md-6 col-sm-6 col-6">
-                        <button type="button" class="btn btn-primary py-1 px-4 float-right mr-3 py-2"
+                    <div class="col-6">
+                        <button type="button" class="btn btn-primary py-2 px-lg-4 float-right mr-3 py-2"
                                 data-toggle="modal" data-target="#exampleModal">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -19,13 +20,13 @@
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                             </svg>
-                            Filter
+                            Filter Data
                         </button>
 
                         <a href="{{ url("admin/export/excel?kategori="
                         .request()->get('kategori')."&program_studi="
                         .request()->get('program_studi')."&status="
-                        .request()->get('status')) }}" class="btn btn-primary py-1 px-4 float-right mr-2 py-2 px-lg-5">
+                        .request()->get('status')) }}" class="btn btn-primary py-1 px-md-4 float-right mr-2 py-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="feather feather-external-link">
@@ -209,6 +210,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
         {{--End Modal Kategori--}}

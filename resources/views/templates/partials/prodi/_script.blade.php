@@ -19,7 +19,7 @@
     <script src="{{asset('admin/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
 
     <script src="{{asset('admin/plugins/apex/apexcharts.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/dashboard/dash_1.js')}}"></script>
+{{--    <script src="{{asset('admin/assets/js/dashboard/dash_1.js')}}"></script>--}}
 
 <script>
     $('#html5-extension').DataTable( {
@@ -47,11 +47,12 @@
     <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="assets/js/pages/helpdesk.js"></script>
+    <script src="{{asset('admin/assets/js/pages/helpdesk.js')}}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{asset('admin/plugins/lightbox/photoswipe.min.js')}}"></script>
     <script src="{{asset('admin/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
     <script src="{{asset('admin/plugins/lightbox/custom-photswipe.js')}}"></script>
+    @yield('script')
     <!-- END PAGE LEVEL SCRIPTS -->
 

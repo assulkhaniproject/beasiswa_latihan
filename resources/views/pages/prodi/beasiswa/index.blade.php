@@ -5,7 +5,7 @@
 @section('content')
     <div class="row layout-top-spacing">
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-content widget-content-area">
+            <div class="statbox widget box box-shadow">
                 <div class="row">
                     <div class="col-xl-6 col-md-6 col-sm-6 col-6">
                         <h5>Data Beasiswa </h5>

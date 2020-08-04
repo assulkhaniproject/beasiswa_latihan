@@ -35,7 +35,7 @@ class BeasiswaController extends Controller
      */
     public function index()
     {
-        $datas = Beasiswa::all();
+        $datas = Beasiswa::orderBy('id','DESC')->get();
         $prodi = Prodi::all();
         $kategori = Kategori::all();
         return view('pages.admin.beasiswa.index', compact('datas', 'prodi', 'kategori'));

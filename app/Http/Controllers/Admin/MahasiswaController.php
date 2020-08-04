@@ -57,9 +57,11 @@ class MahasiswaController extends Controller
             'alamat' => 'required|min:5',
             'angkatan' => 'required|min:4',
             'jenis_kelamin' => 'required|max:9',
+            'agama' => 'required',
             'no_hp' => 'required|min:11|max:13|unique:mahasiswa',
             'jalur' => 'required',
-            'email' => 'required|unique:mahasiswa'
+            'email' => 'required|unique:mahasiswa',
+            'nama_ortu' => 'required'
         ];
         $message = [
             'required' => 'Isi bidang ini.',
@@ -83,10 +85,12 @@ class MahasiswaController extends Controller
             'alamat' => $request->alamat,
             'angkatan' => $request->angkatan,
             'jenis_kelamin' => $request->jenis_kelamin,
+            'agama' => $request->agama,
             'no_hp' => $request->no_hp,
             'email' => $request->email,
             'jalur' => $request->jalur,
-            'password' => bcrypt($request->nim)
+            'password' => bcrypt($request->nim),
+            'nama_ortu' => $request->nama_ortu,
         ]);
         return redirect()->route('mahasiswa.index');
 
@@ -135,9 +139,11 @@ class MahasiswaController extends Controller
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'angkatan' => 'required',
+            'agama' => 'required',
             'no_hp' => 'required|max:13',
             'email' => 'required',
-            'jalur' => 'required'
+            'jalur' => 'required',
+            'nama_ortu' => 'required'
         ]);
 
         $data = Mahasiswa::find($id);
@@ -149,9 +155,11 @@ class MahasiswaController extends Controller
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->alamat = $request->alamat;
         $data->angkatan = $request->angkatan;
+        $data->agama = $request->agama;
         $data->no_hp = $request->no_hp;
         $data->email = $request->email;
         $data->jalur = $request->jalur;
+        $data->nama_ortu = $request->nama_ortu;
 
         $data->update();
         return redirect()->route('mahasiswa.index');
@@ -189,10 +197,12 @@ class MahasiswaController extends Controller
                 'alamat' => $mahasiswa['alamat'],
                 'angkatan' => $mahasiswa['angkatan'],
                 'jenis_kelamin' => $mahasiswa['jenis_kelamin'],
+                'agama' => $mahasiswa['agama'],
                 'no_hp' => $mahasiswa['no_hp'],
                 'email' => $mahasiswa['email'],
                 'jalur' => $mahasiswa['jalur'],
                 'password' => bcrypt($mahasiswa['nim']),
+                'nama_ortu' => $mahasiswa['nama_ortu'],
                 ]);
             }
         }

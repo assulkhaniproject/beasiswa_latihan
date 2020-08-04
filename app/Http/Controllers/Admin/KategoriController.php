@@ -15,7 +15,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $datas = Kategori::all();
+        $datas = Kategori::orderBy('id','DESC')->get();
         return view('pages.admin.kategori.index', compact('datas'));
 
     }
