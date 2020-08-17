@@ -211,6 +211,9 @@
                                        class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
                                        accept="image/png, image/jpeg"
                                        required>
+                                       <span class="invalid-feedback" role="alert">
+                                          <p id="message" class="text-danger"></p>
+                                       </span>
                                 @if ($errors->has('scan_khs'))
                                     <span class="invalid-feedback" role="alert">
                                             <p class="text-danger"><b>{{ $errors->first('scan_khs') }}</b></p>
@@ -226,6 +229,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -283,6 +289,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -294,6 +303,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -305,6 +317,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -406,6 +421,9 @@
                                        class="form-control text-black"
                                        accept="image/*" required>
                                 <small id="emailHelp1" class="form-text text-muted">Slip Gaji/Surat Keterangan Penghasilan Dari Desa</small>
+                                <span class="invalid-feedback" role="alert">
+                                   <p id="message" class="text-danger"></p>
+                                </span>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -432,6 +450,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                               <span class="invalid-feedback" role="alert">
+                                  <p id="message" class="text-danger"></p>
+                               </span>
                             </div>
                         </div>
 
@@ -504,13 +525,16 @@
                                        class="form-control"
                                        accept="image/*"
                                        required>
+                               <span class="invalid-feedback" role="alert">
+                                  <p id="message" class="text-danger"></p>
+                               </span>
                             </div>
                         </div>
                         {{--end form pengajuan--}}
                         <div class="form-group row">
                             <div class="col-sm-10">
                                 <a href="{{route('mahasiswa.dashboard')}}" class="btn btn-warning mt-3 mr-2 ml-5 px-5" type="button">Batal</a>
-                                    <button type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
+                                    <button id="simpan" type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
                             </div>
                         </div>
                     </form>
@@ -543,5 +567,34 @@
 <script src="{{asset('admin/assets/js/custom.js')}}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 <script src="{{asset('admin/assets/js/scrollspyNav.js')}}"></script>
+<script type="text/javascript">
+    const images = document.querySelectorAll('input[type="file"]');
+    const simpan = document.querySelector('#simpan');
+    const message = document.querySelectorAll('#message');
+    const maxfilesize = 1024 * 1024;
+
+    images.forEach((image,i) => {
+      image.addEventListener('change', function(){
+        const file = this.files[0];
+        if(file.type == 'image/jpeg' || file.type == 'image/jpg' || file.type == 'image/png'){
+          if(+file.size > maxfilesize){
+           message[i].innerText = "Gambar yang anda masukan terlalu besar maksimal 1 MB";
+           simpan.disabled = true;
+           this.classList.add('is-invalid');
+       }else {
+         message[i].innerText = '';
+         this.classList.remove('is-invalid');
+         this.classList.add('is-valid');
+         simpan.disabled = false;
+       }
+        }else{
+          simpan.disabled = true;
+          this.classList.add('is-invalid');
+          message[i].innerText = "Gambar yang anda masukan harus JPG,JPEG atau PNG";
+        }
+      })
+    })
+    console.log(images);
+</script>
 </body>
 </html>
