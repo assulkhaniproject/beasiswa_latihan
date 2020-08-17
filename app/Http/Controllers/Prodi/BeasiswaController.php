@@ -219,23 +219,45 @@ class BeasiswaController extends Controller
     public function filtering(Request $request)
     {
 
-        $categories = Kategori::where('id', $request->kategori)->first();
+        $reqData = explode(',', $request->kategori);
+        $kat = $reqData[0];
+        $ta = $reqData[1];
+        $id_prodi = Auth::guard('prodi')->user()->id;
 
-        $prodi = $request->program_studi;
-        $status = $request->status;
+        $datas = Beasiswa::where('kategori', $kat)->where('tahun_akademik', $ta)->whereHas('mahasiswa', function ($query) use ($id_prodi){
+            $query->where('id_prodi', $id_prodi);
+        })->orderBy('created_at', 'DESC')->get();
+//        dd($datas);
+        if($request->status != 'all' && $request->semester > 0){
+            $datas = Beasiswa::where('kategori', $kat)->where('tahun_akademik', $ta)
+            ->where('semester', $request->semester)->where('status', $request->status)
+                ->whereHas('mahasiswa', function ($query) use ($id_prodi){
+                    $query->where('id_prodi', $id_prodi);
+                })->orderBy('created_at', 'DESC')->get();
+//            dd($datas);
+        }elseif($request->status != 'all'){
+            $datas = Beasiswa::where('kategori', $kat)->where('tahun_akademik', $ta)
+                ->where('status', $request->status)->whereHas('mahasiswa', function ($query) use ($id_prodi){
+                    $query->where('id_prodi', $id_prodi);
+                })->orderBy('created_at', 'DESC')->get();
+        }elseif ($request->semester > 0){
+            $datas = Beasiswa::where('kategori', $kat)->where('tahun_akademik', $ta)
+                ->where('semester', $request->semester)
+                ->whereHas('mahasiswa', function ($query) use ($id_prodi){
+                    $query->where('id_prodi', $id_prodi);
+                })->orderBy('created_at', 'DESC')->get();
+        }
 
-        $datas = Beasiswa::whereHas('mahasiswa', function ($query) use ($prodi) {
-            $prodi != null ? $query->where('id_prodi', $prodi) : null;
-        })->whereHas('mahasiswa', function ($query){
-            $query->where('id_prodi',Auth::guard('prodi')->user()->id);
-        })->where('kategori', $categories->kategori)
-            ->where('tahun_akademik', $categories->tahun_akademik)
-            ->where(function ($query) use ($status){
-                $status != 'all' ? $query->where('status', $status) : null;
-            })->get();
+//        dd($datas);
 
-        $prodi = Prodi::all();
+        $kategori = Kategori::where('status', true)->first();
         $categories = Kategori::all();
-        return view('pages.prodi.beasiswa.index', compact('datas', 'prodi', 'categories'));
+        $prodi = Prodi::all();
+
+
+        /*        $categories = Kategori::all();*/
+        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori', 'categories', 'prodi'));
+
+
     }
 }

@@ -30,7 +30,7 @@
                                 </svg>
                                 Seleksi
                             </button>
-                            <button type="submit" class="btn btn-primary float-right mr-1 py-1" data-toggle="modal"
+                            <button type="button" class="btn btn-primary float-right mr-1 py-1" data-toggle="modal"
                                     data-target="#ModalFilter">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -38,7 +38,7 @@
                                     <circle cx="11" cy="11" r="8"></circle>
                                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                 </svg>
-                                Filter Data
+                                Cari Data
                             </button>
                         </form>
                     </div>
@@ -228,7 +228,7 @@
                                         <option value="">...</option>
                                         @foreach($categories as $item)
                                             <option
-                                                value="{{ $item->id }}">{{ $item->kategori . " " . $item->tahun_akademik }}</option>
+                                                value="{{ $item->kategori.",".$item->tahun_akademik }}">{{ $item->kategori . " " . $item->tahun_akademik }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -238,10 +238,22 @@
                                        class="col-sm-2 col-form-label col-form-label-sm text-primary">Status</label>
                                 <div class="col-sm-10">
                                     <select class="form-control form-control-sm text-primary" name="status">
-                                        <option selected="selected" value="all">Status</option>
+                                        <option selected="selected" value="all">Pilih status</option>
                                         <option value="1">Diterima</option>
                                         <option value="0">Ditolak</option>
                                         <option value="">Menunggu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row  mb-4">
+                                <label for="colFormLabelSm"
+                                       class="col-sm-2 col-form-label col-form-label-sm text-primary">Status</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm text-primary" name="semester">
+                                        <option selected="selected" value="">Pilih Semester</option>
+                                        @for($i = 1; $i <= 8; $i++)
+                                        <option value="{{$i}}">Semester {{$i}}</option>
+                                        @endfor
                                     </select>
                                 </div>
                             </div>

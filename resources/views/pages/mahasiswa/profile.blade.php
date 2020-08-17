@@ -45,7 +45,6 @@
                         Selengkapnya</a>
                 </div>
                 {{--status--}}
-                <div class="col-lg-12">
                     @foreach($beasiswas as $beasiswa)
                         <div class="col-4 mt-3">
                             <div class="card component-card_4">
@@ -74,7 +73,6 @@
                         </div>
                     @endforeach
                     {{--end status--}}
-                </div>
                 <div class="col-md-12 mt-5">
                     <div class="pagination-custom_solid">
                         {{$beasiswas->links()}}
