@@ -192,7 +192,7 @@
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">IP
                                 Komulatif</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="ipk" oninput="maxLengthCheck(this)" value="{{old('ipk')}}" type="number" maxlength="4"
+                                <input name="ipk" oninput="maxLengthCheck(this)" value="{{old('ipk')}}" type="tel" maxlength="4"
                                        class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}"
                                        id="ipk"
                                        placeholder=""

@@ -122,7 +122,7 @@
                                 <td>
                                     <div class="icon-container">
                                         <a href="{{route('beasiswas.detail',$data->id)}}"
-                                           class="btn btn-warning btn-sm ">
+                                           class="btn btn-primary btn-sm ">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                  stroke-linecap="round" stroke-linejoin="round"
@@ -218,16 +218,39 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Filter Data</h5>
                     </div>
-                    <div class="modal-body">
-                        <p class="modal-text">Mauris mi tellus, pharetra vel mattis sed, tempus ultrices eros. Phasellus
-                            egestas sit amet velit sed luctus. Orci varius natoque penatibus et magnis dis parturient
-                            montes, nascetur ridiculus mus. Suspendisse potenti. Vivamus ultrices sed urna ac pulvinar.
-                            Ut sit amet ullamcorper mi. </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Batal</button>
-                        <button type="button" class="btn btn-primary">OK</button>
-                    </div>
+                    <form method="get" action="{{route('beasiswa.filtering')}}">
+                        <div class="modal-body">
+                            <div class="form-group row  mb-4">
+                                <label for="colFormLabelSm"
+                                       class="col-sm-2 col-form-label col-form-label-sm text-primary">Kategori</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm text-primary" name="kategori" required>
+                                        <option value="">...</option>
+                                        @foreach($categories as $item)
+                                            <option
+                                                value="{{ $item->id }}">{{ $item->kategori . " " . $item->tahun_akademik }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row  mb-4">
+                                <label for="colFormLabelSm"
+                                       class="col-sm-2 col-form-label col-form-label-sm text-primary">Status</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control form-control-sm text-primary" name="status">
+                                        <option selected="selected" value="all">Status</option>
+                                        <option value="1">Diterima</option>
+                                        <option value="0">Ditolak</option>
+                                        <option value="">Menunggu</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal"><i class="flaticon-cacel-12"></i>Batal</button>
+                            <button type="submit" class="btn btn-primary">OK</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -295,7 +318,7 @@
                                 <td>
                                     <div class="icon-container">
                                          <a href="${url}prodi/beasiswa/detail/${beasiswa.id}"
-                                            class="btn btn-warning btn-sm ">
+                                            class="btn btn-primary btn-sm ">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                                             <span class="icon-name">
                                                      Lihat</span>

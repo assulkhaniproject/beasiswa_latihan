@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Prodi;
 use App\Beasiswa;
 use App\Http\Controllers\Controller;
 use App\Kategori;
+use App\Prodi;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
@@ -26,11 +27,13 @@ class BeasiswaController extends Controller
 
         $kategori = Kategori::where('status', true)->first();
         $categories = Kategori::all();
+        $prodi = Prodi::all();
 
 
         /*        $categories = Kategori::all();*/
-        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori', 'categories'));
+        return view('pages.prodi.beasiswa.index', compact('datas', 'kategori', 'categories', 'prodi'));
     }
+
 
     public function filterAkademik(Request $request){
 //        $tahun_akademik = $request->k;
@@ -211,5 +214,26 @@ class BeasiswaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function filtering(Request $request)
+    {
+
+        $categories = Kategori::where('id', $request->kategori)->first();
+
+        $prodi = $request->program_studi;
+        $status = $request->status;
+
+        $datas = Beasiswa::whereHas('mahasiswa', function ($query) use ($prodi) {
+            $prodi != null ? $query->where('id_prodi', $prodi) : null;
+        })->where('kategori', $categories->kategori)
+            ->where('tahun_akademik', $categories->tahun_akademik)
+            ->where(function ($query) use ($status){
+                $status != 'all' ? $query->where('status', $status) : null;
+            })->get();
+
+        $prodi = Prodi::all();
+        $categories = Kategori::all();
+        return view('pages.prodi.beasiswa.index', compact('datas', 'prodi', 'categories'));
     }
 }
