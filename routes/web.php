@@ -65,7 +65,7 @@ Route::group(['prefix' => 'prodi'], function () {
     Route::get('mahasiswa', 'Prodi\MahasiswaController@index')->name('mahasiswas.index');
 
     Route::get('beasiswa', 'Prodi\BeasiswaController@index')->name('beasiswas.index');
-    Route::get('beasiswa/filter', 'Prodi\BeasiswaController@filtering')->name('beasiswa.filtering');
+    Route::get('beasiswa/filtering', 'Prodi\BeasiswaController@filtering')->name('beasiswa.filtering');
     Route::post('beasiswa/tahun-akademik', 'Prodi\BeasiswaController@filterAkademik');
     Route::get('beasiswa/seleksi', 'Prodi\BeasiswaController@filter')->name('prodi.beasiswa.filter');
     Route::get('beasiswa/detail/{id}', 'Prodi\BeasiswaController@show')->name('beasiswas.detail');

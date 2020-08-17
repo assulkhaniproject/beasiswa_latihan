@@ -226,6 +226,8 @@ class BeasiswaController extends Controller
 
         $datas = Beasiswa::whereHas('mahasiswa', function ($query) use ($prodi) {
             $prodi != null ? $query->where('id_prodi', $prodi) : null;
+        })->whereHas('mahasiswa', function ($query){
+            $query->where('id_prodi',Auth::guard('prodi')->user()->id);
         })->where('kategori', $categories->kategori)
             ->where('tahun_akademik', $categories->tahun_akademik)
             ->where(function ($query) use ($status){
