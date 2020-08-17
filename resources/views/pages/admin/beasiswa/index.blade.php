@@ -12,16 +12,16 @@
                         <h5 class="text-primary"><b>Data Beasiswa</b></h5>
                     </div>
                     <div class="col-6">
-                        <button type="button" class="btn btn-primary py-2 px-lg-4 float-right mr-3 py-2"
-                                data-toggle="modal" data-target="#exampleModal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="feather feather-search">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                            Filter Data
-                        </button>
+                            <button type="button" class="btn btn-primary py-2 px-lg-4 float-right mr-3 py-2"
+                                    data-toggle="modal" data-target="#exampleModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-search">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Filter Data
+                            </button>
 
                         <a href="{{ url("admin/export/excel?kategori="
                         .request()->get('kategori')."&program_studi="
@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        {{--Modal Kategori--}}
+        {{--Modal Filtering--}}
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -145,23 +145,6 @@
                     </div>
                     <form method="get" action="{{route('beasiswa.filter')}}">
                         <div class="modal-body">
-                            {{--                        <div class="form-group row  mb-4">--}}
-                            {{--                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-primary">Tahun Akademik</label>--}}
-                            {{--                            <div class="col-sm-10">--}}
-                            {{--                                <select class="form-control form-control-sm text-primary" name="tahun_akademik" required>--}}
-                            {{--                                    <option value="">...</option>--}}
-                            {{--                                    <option>2022/2023 - Genap</option>--}}
-                            {{--                                    <option>2022/2023 - Ganjil</option>--}}
-                            {{--                                    <option>2021/2022 - Genap</option>--}}
-                            {{--                                    <option>2021/2022 - Ganjil</option>--}}
-                            {{--                                    <option>2020/2021 - Genap</option>--}}
-                            {{--                                    <option>2020/2021 - Ganjil</option>--}}
-                            {{--                                    <option>2019/2020 - Genap</option>--}}
-                            {{--                                    <option>2019/2020 - Ganjil</option>--}}
-                            {{--                                </select>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
-
                             <div class="form-group row  mb-4">
                                 <label for="colFormLabelSm"
                                        class="col-sm-2 col-form-label col-form-label-sm text-primary">Kategori</label>
@@ -213,6 +196,6 @@
             </div>
             </div>
         </div>
-        {{--End Modal Kategori--}}
+        {{--End Modal Filtering--}}
     </div>
 @endsection

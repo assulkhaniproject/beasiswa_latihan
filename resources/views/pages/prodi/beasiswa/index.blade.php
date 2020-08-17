@@ -17,10 +17,29 @@
                                     name="kategori" required>
                                 <option value="">...</option>
                                 @foreach($categories as $item)
-                                    <option value="{{ $item->kategori }}">{{ $item->kategori . " " . $item->tahun_akademik }}</option>
+                                    <option
+                                        value="{{ $item->kategori }}">{{ $item->kategori . " " . $item->tahun_akademik }}</option>
                                 @endforeach
                             </select>
-                            <button type="submit" class="btn btn-primary float-right mr-2 py-1">Seleksi</button>
+                            <button type="submit" class="btn btn-primary float-right mr-1 py-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-edit-3">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Seleksi
+                            </button>
+                            <button type="submit" class="btn btn-primary float-right mr-1 py-1" data-toggle="modal"
+                                    data-target="#ModalFilter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-search">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Filter Data
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -55,19 +74,20 @@
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->kategori}}</td>
                                 <td>
-                                        @if($data->status == 1)
-                                            <button class="btn btn-success" data-target="#modalPembatalan{{$data->id}}"
-                                                    data-toggle="modal">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                     class="feather feather-user-check">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <polyline points="17 11 19 13 23 9"></polyline>
-                                                </svg><span class="icon-name">
+                                    @if($data->status == 1)
+                                        <button class="btn btn-success" data-target="#modalPembatalan{{$data->id}}"
+                                                data-toggle="modal">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                 class="feather feather-user-check">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="8.5" cy="7" r="4"></circle>
+                                                <polyline points="17 11 19 13 23 9"></polyline>
+                                            </svg>
+                                            <span class="icon-name">
                                                      Diterima</span>
-                                            </button>
+                                        </button>
                                     @elseif($data->status === null)
                                         <button class="btn btn-info" data-target="#modalPersetujuan{{$data->id}}"
                                                 data-toggle="modal">
@@ -77,25 +97,27 @@
                                                  class="feather feather-check-circle">
                                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                            </svg><span class="icon-name">
+                                            </svg>
+                                            <span class="icon-name">
                                                      Menunggu</span>
                                         </button>
-                                        @elseif($data->status == 0)
-                                            <button class="btn btn-danger">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                     class="feather feather-x-octagon">
-                                                    <polygon
-                                                        points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                                                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                                                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                                                </svg><span class="icon-name">
+                                    @elseif($data->status == 0)
+                                        <button class="btn btn-danger">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                 class="feather feather-x-octagon">
+                                                <polygon
+                                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                                            </svg>
+                                            <span class="icon-name">
                                                      Ditolak</span>
-                                            </button>
+                                        </button>
 
                                         @endif
-                                    </label>
+                                        </label>
                                 </td>
                                 <td>
                                     <div class="icon-container">
@@ -176,6 +198,40 @@
                 </div>
             </div>
         </div>
+        {{--Modal Filtering--}}
+
+        Basic
+        Vertically Centered
+        Remove animation
+        Optional sizes
+        Video
+        Animation Style Modal
+        Custom
+        Basic
+        Basic Bootastap 4 Modal.
+
+        <!-- Modal Filtering -->
+        <div class="modal fade" id="ModalFilter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Filter Data</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="modal-text">Mauris mi tellus, pharetra vel mattis sed, tempus ultrices eros. Phasellus
+                            egestas sit amet velit sed luctus. Orci varius natoque penatibus et magnis dis parturient
+                            montes, nascetur ridiculus mus. Suspendisse potenti. Vivamus ultrices sed urna ac pulvinar.
+                            Ut sit amet ullamcorper mi. </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Batal</button>
+                        <button type="button" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{--End Modal Filtering--}}
     </div>
 
 
@@ -209,12 +265,12 @@
              <tr>
                 <td class="checkbox-column text-center">${i + 1}</td>
                     <td class="text-center">
-                      <span><img src="{{asset('uploads/foto')}}${'/'+beasiswa.foto}" class="profile-img" height="75" width="75" alt="avatar"></span>
+                      <span><img src="{{asset('uploads/foto')}}${'/' + beasiswa.foto}" class="profile-img" height="75" width="75" alt="avatar"></span>
                         </td>
                        <td>${beasiswa.mahasiswa.nim}</td>
                          <td>${beasiswa.mahasiswa.nama}</td>
                                 {{-- <td>{{$data->mahasiswa->tempat_lahir}}, {{$data->mahasiswa->tanggal_lahir}}</td>--}}
-                         <td>${beasiswa.mahasiswa.prodi.program_study}</td>
+            <td>${beasiswa.mahasiswa.prodi.program_study}</td>
                                 <td>${beasiswa.email}</td>
                                 <td>${beasiswa.kategori}</td>
                                 <td>
