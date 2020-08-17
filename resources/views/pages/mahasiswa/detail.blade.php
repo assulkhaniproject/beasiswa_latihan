@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -211,6 +212,9 @@
                                        class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
                                        accept="image/png, image/jpeg"
                                        required>
+                                       <span class="invalid-feedback" role="alert">
+                                          <p id="message" class="text-danger"></p>
+                                       </span>
                                 @if ($errors->has('scan_khs'))
                                     <span class="invalid-feedback" role="alert">
                                             <p class="text-danger"><b>{{ $errors->first('scan_khs') }}</b></p>
@@ -223,7 +227,12 @@
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan KRS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_krs" value="" type="file"
-                                       class="form-control text-black" accept="image/*" required>
+                                       class="form-control text-black"
+                                       accept="image/*"
+                                       required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -282,6 +291,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -293,6 +305,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -304,6 +319,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                                 <span class="invalid-feedback" role="alert">
+                                    <p id="message" class="text-danger"></p>
+                                 </span>
                             </div>
                         </div>
 
@@ -405,8 +423,10 @@
                                 <input name="scan_penghasilan" value="" type="file"
                                        class="form-control text-black"
                                        accept="image/*" required>
-                                <small id="emailHelp1" class="form-text text-muted">Slip Gaji/Surat Keterangan
-                                    Penghasilan Dari Desa</small>
+                                <small id="emailHelp1" class="form-text text-muted">Slip Gaji/Surat Keterangan Penghasilan Dari Desa</small>
+                                <span class="invalid-feedback" role="alert">
+                                   <p id="message" class="text-danger"></p>
+                                </span>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -433,6 +453,9 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
+                               <span class="invalid-feedback" role="alert">
+                                  <p id="message" class="text-danger"></p>
+                               </span>
                             </div>
                         </div>
 
@@ -486,10 +509,10 @@
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">No. Rekening
                                 Bank</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_rek" oninput="maxLengthCheck(this)" value="{{old('no_rek')}}" type="number"
+                                <input name="no_rek" value="{{old('no_rek')}}" type="text"
                                        class="form-control text-black {{$errors->has('no_rek') ? 'is-invalid':''}}"
                                        id="no_rek"
-                                       placeholder="" maxlength="15" required>
+                                       placeholder="" required>
                                 @if ($errors->has('no_rek'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('no_rek') }}</b></p>
@@ -505,14 +528,16 @@
                                        class="form-control"
                                        accept="image/*"
                                        required>
+                               <span class="invalid-feedback" role="alert">
+                                  <p id="message" class="text-danger"></p>
+                               </span>
                             </div>
                         </div>
                         {{--end form pengajuan--}}
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <a href="{{route('mahasiswa.dashboard')}}" class="btn btn-warning mt-3 mr-2 ml-5 px-5"
-                                   type="button">Batal</a>
-                                <button type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
+                                <a href="{{route('mahasiswa.dashboard')}}" class="btn btn-warning mt-3 mr-2 ml-5 px-5" type="button">Batal</a>
+                                    <button id="simpan" type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
                             </div>
                         </div>
                     </form>
