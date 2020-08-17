@@ -544,12 +544,40 @@
 <script src="{{asset('admin/assets/js/custom.js')}}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 <script src="{{asset('admin/assets/js/scrollspyNav.js')}}"></script>
-<script>
+<script type="text/javascript">
+    const images = document.querySelectorAll('input[type="file"]');
+    const simpan = document.querySelector('#simpan');
+    const message = document.querySelectorAll('#message');
+    const maxfilesize = 1024 * 1024;
+
+    images.forEach((image,i) => {
+      image.addEventListener('change', function(){
+        const file = this.files[0];
+        if(file.type == 'image/jpeg' || file.type == 'image/jpg' || file.type == 'image/png'){
+          if(+file.size > maxfilesize){
+           message[i].innerText = "Gambar yang anda masukan terlalu besar maksimal 1 MB";
+           simpan.disabled = true;
+           this.classList.add('is-invalid');
+       }else {
+         message[i].innerText = '';
+         this.classList.remove('is-invalid');
+         this.classList.add('is-valid');
+         simpan.disabled = false;
+       }
+        }else{
+          simpan.disabled = true;
+          this.classList.add('is-invalid');
+          message[i].innerText = "Gambar yang anda masukan harus JPG,JPEG atau PNG";
+        }
+      })
+    });
+
     function maxLengthCheck(object)
     {
         if (object.value.length > object.maxLength)
             object.value = object.value.slice(0, object.maxLength)
     }
+
 </script>
 </body>
 </html>
