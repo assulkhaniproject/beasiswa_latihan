@@ -201,9 +201,10 @@
                             @endif
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2 px-4">Simpan</button>
                     <button class="btn btn-warning submit-fn mt-2 mr-2 px-4" type="button"
-                            onclick="history.back()">Batal</button>
+                            onclick="history.back()">Batal
+                    </button>
+                    <button type="submit" class="btn btn-primary mt-2 px-4">Simpan</button>
                 </form>
             </div>
         </div>

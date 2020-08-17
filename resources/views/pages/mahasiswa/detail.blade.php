@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                             <h2 class="mt-3 mb-3 mr-5 text-center text-primary">
-                                <b class="text-center">Form Pengajuan Beasiswa</b>
+                                <b class="text-center">Formulir Pengajuan Beasiswa</b>
                             </h2>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <form method="post" action="{{route('mahasiswas.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Kategori/Tahun
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Kategori/Tahun
                                 Akademik*</label>
                             <div class="col-xl-4 col-lg-9 col-sm-10">
                                 <input name="kategori" value="{{$kategori ? $kategori->kategori : ''}}" readonly
@@ -75,7 +75,8 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nomor Induk
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black float-right">Nomor
+                                Induk
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nim" value="{{$user->nim}}" readonly type="text"
@@ -85,7 +86,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Nama
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nama" value="{{$user->nama}}" readonly type="text"
@@ -95,7 +96,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Program
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Program
                                 Studi</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="program_study" value="{{$user->prodi->program_study}}" readonly type="text"
@@ -104,7 +105,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Angkatan</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Angkatan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="program_study" value="{{$user->angkatan}}" readonly type="text"
                                        class="form-control text-black" id="program_study" placeholder="">
@@ -112,7 +113,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Tempat/Tanggal
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Tempat/Tanggal
                                 Lahir</label>
                             <div class="col-xl-3 col-lg-9 col-sm-10">
                                 <input name="program_study" value="{{$user->tempat_lahir}}" readonly type="text"
@@ -125,7 +126,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Jenis
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Jenis
                                 Kelamin</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="jenis_kelamin" value="{{$user->jenis_kelamin}}" readonly type="text"
@@ -146,7 +147,7 @@
                         </div>--}}
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Agama</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Agama</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="agama" value="{{$user->agama}}" readonly type="text"
                                        class="form-control text-black" id="program_study" placeholder="">
@@ -159,7 +160,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Alamat</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Alamat</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <textarea name="alamat" value="" type="text"
                                           class="form-control text-black {{$errors->has('alamat') ? 'is-invalid':''}}"
@@ -174,9 +175,9 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Kode Pos</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Kode Pos</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="kode_pos" value="{{old('kode_pos')}}" type="number" maxlength="5"
+                                <input name="kode_pos" oninput="maxLengthCheck(this)" value="{{old('kode_pos')}}" type="number" maxlength="5"
                                        class="form-control text-black {{$errors->has('kode_pos')?'is-invalid':''}}"
                                        id="kode_pos" placeholder="" required>
                                 @if ($errors->has('kode_pos'))
@@ -188,10 +189,10 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">IP
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">IP
                                 Komulatif</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="ipk" value="{{old('ipk')}}" type="float"
+                                <input name="ipk" oninput="maxLengthCheck(this)" value="{{old('ipk')}}" type="number" maxlength="4"
                                        class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}"
                                        id="ipk"
                                        placeholder=""
@@ -205,7 +206,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KHS</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan KHS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_khs" value="" type="file"
                                        class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
@@ -223,7 +224,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KRS</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan KRS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_krs" value="" type="file"
                                        class="form-control text-black"
@@ -236,12 +237,12 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Semester</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Semester</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="semester" value="{{old('semester')}}" type="number"
+                                <input name="semester" oninput="maxLengthCheck(this)" value="{{old('semester')}}" type="number"
                                        class="form-control text-black {{$errors->has('semester') ? 'is-invalid':''}}"
                                        id="semester"
-                                       placeholder="" required>
+                                       placeholder="" maxlength="1" required>
                                 @if ($errors->has('semester'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('semester') }}</b></p>
@@ -251,7 +252,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Email</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Email</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="email" value="{{$user->email}}" type="email"
                                        class="form-control text-black {{$errors->has('email') ? 'is-invalid':''}}"
@@ -266,12 +267,13 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">No. Hp
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">No. Hp
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp" value="{{$user->no_hp}}" type="number" maxlength="13"
+                                <input name="no_hp" oninput="maxLengthCheck(this)"
+                                       value="{{$user->no_hp}}" type="number" maxlength="13"
                                        class="form-control text-black {{$errors->has('no_hp') ? 'is-invalid':''}}"
-                                       id="no_hp"
+                                       id="check"
                                        required>
                                 @if ($errors->has('no_hp'))
                                     <span class="invalid-feedback" role="alert">
@@ -282,7 +284,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan Kartu Tanda
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan Kartu Tanda
                                 Mahasiswa (KTM)</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_ktm" value="" type="file"
@@ -296,7 +298,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan Kartu Tanda
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan Kartu Tanda
                                 Penduduk (KTP)</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_ktp" value="" type="file"
@@ -310,7 +312,7 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Foto
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Foto
                                 Mahasiswa</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="foto" value="" type="file"
@@ -326,7 +328,7 @@
                         <hr class="mt-5 mb-5">
                         {{--Data Orang Tua--}}
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama Orang
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Nama Orang
                                 Tua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nama_ortu" value="{{$user->nama_ortu}}" type="text" readonly
@@ -341,7 +343,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Alamat</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Alamat</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <textarea name="alamat_ortu" value="" type="text"
                                           class="form-control text-black {{$errors->has('alamat_ortu') ? 'is-invalid':''}}"
@@ -355,10 +357,10 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">No. Hp
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">No. Hp
                                 Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp_ortu" value="{{old('no_hp_ortu')}}" type="number"
+                                <input name="no_hp_ortu" oninput="maxLengthCheck(this)" value="{{old('no_hp_ortu')}}" type="number"
                                        class="form-control text-black {{$errors->has('no_hp_ortu') ? 'is-invalid':''}}"
                                        maxlength="13"
                                        id="defaultconfig" placeholder="" required>
@@ -370,9 +372,9 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Pekerjaan</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Pekerjaan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <select name="pekerjaan_ortu" class="form-control  basic">
+                                <select name="pekerjaan_ortu" class="form-control basic">
                                     <option selected="selected">-Pilih-</option>
                                     <option>Belum/Tidak Bekerja</option>
                                     <option>Mengurus Rumah Tangga</option>
@@ -401,7 +403,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Penghasilan
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Penghasilan
                                 Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="penghasilan_ortu" value="{{old('penghasilan_ortu')}}" type="text"
@@ -415,7 +417,8 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan Keterangan Penghasilan</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan Keterangan
+                                Penghasilan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_penghasilan" value="" type="file"
                                        class="form-control text-black"
@@ -427,13 +430,13 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Jumlah
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Jumlah
                                 Tanggungan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="tanggungan_ortu" value="{{old('tanggungan_ortu')}}" type="number"
+                                <input name="tanggungan_ortu" oninput="maxLengthCheck(this)" value="{{old('tanggungan_ortu')}}" type="number"
                                        class="form-control text-black {{$errors->has('tanggungan_ortu') ? 'is-invalid':''}}"
                                        id="tanggungan_ortu"
-                                       placeholder="" required>
+                                       placeholder="" maxlength="2" required>
                                 <small id="emailHelp1" class="form-text text-muted">Sesuai Dengan Kartu Keluarga</small>
                                 @if ($errors->has('tanggungan_ortu'))
                                     <span class="invalid-feedback" role="alert">
@@ -443,7 +446,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan Kartu
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan Kartu
                                 Keluarga</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_kk" value="" type="file"
@@ -459,7 +462,7 @@
                         <hr class="mt-5 mb-5">
                         {{--Data Rekening Bank--}}
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama Bank</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Nama Bank</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nama_bank" value="Bank Negara Indonesia (BNI)" type="text"
                                        class="form-control text-black {{$errors->has('nama_bank') ? 'is-invalid':''}}"
@@ -474,7 +477,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Cabang Bank</label>
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Cabang Bank</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="cabang_bank" value="{{old('cabang_bank')}}" type="text"
                                        class="form-control text-black {{$errors->has('cabang_bank') ? 'is-invalid':''}}"
@@ -488,7 +491,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Nama Pemegang
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Nama Pemegang
                                 Rekening</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="nama_rek" value="{{$user->nama}}" type="text"
@@ -503,7 +506,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">No. Rekening
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">No. Rekening
                                 Bank</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="no_rek" value="{{old('no_rek')}}" type="text"
@@ -518,7 +521,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan Buku
+                            <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Scan Buku
                                 Tabungan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_bt" value="" type="file"
@@ -551,7 +554,6 @@
     <!--  END CONTENT AREA  -->
 </div>
 <!-- END MAIN CONTAINER -->
-
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
 <script src="{{asset('admin/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
 <script src="{{asset('admin/bootstrap/js/popper.min.js')}}"></script>
@@ -593,8 +595,14 @@
           message[i].innerText = "Gambar yang anda masukan harus JPG,JPEG atau PNG";
         }
       })
-    })
-    console.log(images);
+    });
+
+    function maxLengthCheck(object)
+    {
+        if (object.value.length > object.maxLength)
+            object.value = object.value.slice(0, object.maxLength)
+    }
+
 </script>
 </body>
 </html>

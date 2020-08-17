@@ -14,7 +14,7 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href="{{asset('admin/assets/css/pages/helpdesk.css')}}" rel="stylesheet" type="text/css"/>
-    <!--  END CUSTOM STYLE FILE  -->admin
+    <!--  END CUSTOM STYLE FILE  -->
 <body>
 <div class="helpdesk container">
     <nav class="navbar navbar-expand navbar-light">
