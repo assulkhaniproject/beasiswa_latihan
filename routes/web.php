@@ -84,6 +84,7 @@ Route::group(['prefix' => 'mahasiswa'], function () {
     Route::post('detail/store', 'Mahasiswa\DetailController@store')->name('mahasiswas.store');
 
     Route::get('profile', 'Mahasiswa\ProfileController@index')->name('mahasiswa.profile');
+    Route::get('detail/{id}', 'Mahasiswa\ProfileController@show')->name('mahasiswas.detailprofile');
     Route::get('edit/{id}', 'Mahasiswa\ProfileController@edit')->name('mahasiswas.edit');
 
     Route::get('password','Mahasiswa\PasswordController@change')->name('password.change');

@@ -58,7 +58,11 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-
+        $user = Auth::guard('mahasiswa')->user();
+        $datas = Beasiswa::find($id);
+        $beasiswas = Beasiswa::where('id_mahasiswa', Auth::user()->id)->orderBy('id', 'DESC')->paginate(6);
+        $kategori = Kategori::where('status', true)->first();
+        return view('pages.mahasiswa.detail_profile', compact('datas', 'kategori', $beasiswas, 'user'));
     }
 
     /**

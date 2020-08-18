@@ -41,7 +41,7 @@
                              class="rounded-circle"/>
                     </div>
                     <h5 class="text-white">{{$user->nama}}</h5>
-                    <a href="{{route('mahasiswas.edit',$user->id)}}" class="text-center btn btn-primary mt-3">Lihat
+                    <a href="{{route('mahasiswas.detailprofile',$user->id)}}" class="text-center btn btn-primary mt-3">Lihat
                         Selengkapnya</a>
                 </div>
                 {{--status--}}
@@ -68,6 +68,7 @@
                                             <span>Menunggu</span>
                                         </button>
                                     @endif
+                                <a href="{{route('mahasiswas.edit',$user->id)}}" class="btn btn-primary btn-lg float-right" id="btn-edit">Edit Data</a>
                                 </div>
                             </div>
                         </div>
