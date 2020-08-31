@@ -498,6 +498,7 @@
                                        class="form-control text-black {{$errors->has('nama_rek') ? 'is-invalid':''}}"
                                        id="nama_rek"
                                        placeholder="" required>
+                                <small id="emailHelp1" class="form-text text-muted">Nama Sesuai Dengan Data Pemohon</small>
                                 @if ($errors->has('nama_rek'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('nama_rek') }}</b></p>
