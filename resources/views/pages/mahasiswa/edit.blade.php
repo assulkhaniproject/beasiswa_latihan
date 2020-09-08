@@ -22,7 +22,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-6 col-sm-6 col-6">
-                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Data Beasiswa</b>
+                            <h3 class="mt-5 mb-5 mr-5 text-center text-primary"><b class="text-center">Edit Data Beasiswa</b>
                             </h3>
                         </div>
                         {{--alert--}}
@@ -40,6 +40,7 @@
                 <div class="widget-content widget-content-area">
                     <form method="post" action="{{route('mahasiswas.store')}}" enctype="multipart/form-data">
                         @csrf
+                        {{method_field('patch')}}
                         <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Kategori/Tahun
                                 Akademik*</label>
@@ -125,34 +126,14 @@
                             </div>
                         </div>
 
-                        {{--<div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Jenis Kelamin</label>
-                            <div class="new-control new-radio radio-primary ml-3">
-                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1">
-                                <span class="new-control-indicator"></span>Laki-Laki
-                            </div>
-                            <a class="new-control new-radio radio-primary ml-3">
-                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1">
-                                <span class="new-control-indicator"></span>Perempuan
-                            </a>
-                        </div>--}}
-
-                       {{-- <div class="form-group row mb-4">
+                      <div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Agama</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <select name="agama" class="form-control text-black {{$errors->has('agama') ? 'is-invalid':''}}"
-                                        required>
-                                    <option selected="selected" value="">-Pilih-</option>
-                                    <option>Islam</option>
-                                    <option>Kristen</option>
-                                    <option>Budha</option>
-                                    <option>Hindu</option>
-                                </select>
-                                @if ($errors->has('agama'))
+                                <input name="agama" value="{{$user->agama}}" readonly type="text"
+                                       class="form-control text-black" id="agama" placeholder="">
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('agama') }}</b></p>
                                         </span>
-                                @endif
                             </div>
                         </div>
 
@@ -161,7 +142,7 @@
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <textarea name="alamat" value="" type="text"
                                           class="form-control text-black {{$errors->has('alamat') ? 'is-invalid':''}}" id="alamat"
-                                          placeholder="" required>{{old('alamat')}}</textarea>
+                                          placeholder="" required>{{$user->alamat}}</textarea>
                                 @if ($errors->has('alamat'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('alamat') }}</b></p>
@@ -170,52 +151,50 @@
                             </div>
                         </div>
 
+                       <div class="form-group row mb-4">
+                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Kode Pos</label>
+                             <div class="col-xl-6 col-lg-9 col-sm-10">
+                                 <input name="kode_pos" value="" type="number" maxlength="5"
+                                        class="form-control text-black {{$errors->has('kode_pos')?'is-invalid':''}}"
+                                        id="kode_pos" placeholder="" required>
+                                 @if ($errors->has('kode_pos'))
+                                     <span class="invalid-feedback" role="alert">
+                                             <p><b>{{ $errors->first('kode_pos') }}</b></p>
+                                         </span>
+                                 @endif
+                             </div>
+                         </div>
+
                         <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Kode Pos</label>
-                            <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="kode_pos" value="" type="number" maxlength="5"
-                                       class="form-control text-black {{$errors->has('kode_pos')?'is-invalid':''}}"
-                                       id="kode_pos" placeholder="" required>
-                                @if ($errors->has('kode_pos'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('kode_pos') }}</b></p>
-                                        </span>
-                                @endif
+                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">IP
+                                 Komulatif</label>
+                             <div class="col-xl-6 col-lg-9 col-sm-10">
+                                 <input name="ipk" value="{{old('ipk')}}" type="float"
+                                        class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}" id="ipk"
+                                        placeholder=""
+                                        required>
+                                 @if ($errors->has('ipk'))
+                                     <span class="invalid-feedback" role="alert">
+                                             <p><b>{{ $errors->first('ipk') }}</b></p>
+                                         </span>
+                                 @endif
+                             </div>
+                         </div>
+
+                        <div class="form-group row mb-4">
+                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Scan KHS</label>
+                            <div class="col-xl-7">
+                                <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+                                    <a class="img-1" href=""
+                                       data-size="683x1024" data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
+                                       data-author="Samuel Rohl">
+                                        <img src="" alt="image-gallery">
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">IP
-                                Komulatif</label>
-                            <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="ipk" value="{{old('ipk')}}" type="float"
-                                       class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}" id="ipk"
-                                       placeholder=""
-                                       required>
-                                @if ($errors->has('ipk'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('ipk') }}</b></p>
-                                        </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KHS</label>
-                            <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="scan_khs" value="" type="file"
-                                       class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
-                                       accept="image/*"
-                                       required>
-                                @if ($errors->has('scan_khs'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <p><b>{{ $errors->first('scan_khs') }}</b></p>
-                                        </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-4">
+                        {{--<div class="form-group row mb-4">
                             <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Scan KRS</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="scan_krs" value="" type="file"

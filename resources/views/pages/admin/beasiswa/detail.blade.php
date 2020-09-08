@@ -183,7 +183,7 @@
                         <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5">Foto Mahasiswa</label>
                         <div class="col-xl-7 col-lg-9 col-sm-10">
                             <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
-                                <a class="img-1" href="{{asset('uploads/foto/'.$beasiswa->foto)}}" data-size="472x354"
+                                <a class="img-1" href="{{asset('uploads/foto/'.$beasiswa->foto)}}" data-size="354x472"
                                    data-med="assets/img/lightbox-1.jpg" data-med-size="1024x683"
                                    data-author="Samuel Rohl">
                                     <img src="{{asset('uploads/foto/'.$beasiswa->foto)}}" alt="image-gallery">

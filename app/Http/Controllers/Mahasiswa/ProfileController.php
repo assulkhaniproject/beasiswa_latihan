@@ -77,7 +77,7 @@ class ProfileController extends Controller
         $datas = Beasiswa::find($id);
         $beasiswas = Beasiswa::where('id_mahasiswa', Auth::user()->id)->orderBy('id', 'DESC')->paginate(6);
         $kategori = Kategori::where('status', true)->first();
-        return view('pages.mahasiswa.edit', compact('datas', 'kategori', $beasiswas, 'user'));
+        return view('pages.mahasiswa.edit', compact('datas', 'kategori', "beasiswas", 'user'));
     }
 
     /**

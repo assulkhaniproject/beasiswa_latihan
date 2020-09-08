@@ -132,7 +132,7 @@
                             <label class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">
                                 <select name="kategori" class="form-control  basic" required>
-                                    <option selected="selected">Pilih...</option>
+                                    <option selected="selected" value="">Pilih...</option>
                                     {{--<option>Beasiswa Bidikmisi</option>--}}
                                     <option>Beasiswa Peningkatan Prestasi Akademik (PPA)</option>
                                     <option>Beasiswa Belajar Mahasiswa (BBM)</option>
@@ -144,7 +144,7 @@
                             <label class="col-sm-2 col-form-label">Tahun Akademik</label>
                             <div class="col-sm-10">
                                 <select name="tahun_akademik" class="form-control  basic" required>
-                                    <option selected="selected">Pilih...</option>
+                                    <option selected="selected" value="">Pilih...</option>
                                     <option>2022/2023 - Genap</option>
                                     <option>2022/2023 - Ganjil</option>
                                     <option>2021/2022 - Genap</option>
@@ -166,7 +166,5 @@
         </div>
     </div>
     {{-- End Modal Kategori--}}
-
-
     {{--End Modal Edit--}}
 @endsection

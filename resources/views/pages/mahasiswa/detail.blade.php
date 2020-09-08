@@ -133,24 +133,11 @@
                                        class="form-control text-black" id="program_study" placeholder="">
                             </div>
                         </div>
-
-                        {{--<div class="form-group row mb-4">
-                            <label class="col-xl-2 col-sm-3 col-sm-2 col-form-label ml-5 text-black">Jenis Kelamin</label>
-                            <div class="new-control new-radio radio-primary ml-3">
-                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1">
-                                <span class="new-control-indicator"></span>Laki-Laki
-                            </div>
-                            <a class="new-control new-radio radio-primary ml-3">
-                                <input type="radio" class="new-control-input mt-2" name="custom-radio-1">
-                                <span class="new-control-indicator"></span>Perempuan
-                            </a>
-                        </div>--}}
-
                         <div class="form-group row mb-4">
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Agama</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
                                 <input name="agama" value="{{$user->agama}}" readonly type="text"
-                                       class="form-control text-black" id="program_study" placeholder="">
+                                       class="form-control text-black" id="agama" placeholder="">
                                 @if ($errors->has('agama'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('agama') }}</b></p>
@@ -177,7 +164,8 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Kode Pos</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="kode_pos" oninput="maxLengthCheck(this)" value="{{old('kode_pos')}}" type="number" maxlength="5"
+                                <input name="kode_pos" oninput="maxLengthCheck(this)" value="{{old('kode_pos')}}"
+                                       type="number" maxlength="5"
                                        class="form-control text-black {{$errors->has('kode_pos')?'is-invalid':''}}"
                                        id="kode_pos" placeholder="" required>
                                 @if ($errors->has('kode_pos'))
@@ -192,7 +180,8 @@
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">IP
                                 Komulatif</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="ipk" oninput="maxLengthCheck(this)" value="{{old('ipk')}}" type="tel" maxlength="4"
+                                <input name="ipk" oninput="maxLengthCheck(this)" value="{{old('ipk')}}" type="tel"
+                                       maxlength="4"
                                        class="form-control text-black {{$errors->has('ipk') ? 'is-invalid':''}}"
                                        id="ipk"
                                        placeholder=""
@@ -212,7 +201,7 @@
                                        class="form-control text-black {{$errors->has('scan_khs') ? 'is-invalid':''}}"
                                        accept="image/png, image/jpeg"
                                        required>
-                                       <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                           <p id="message" class="text-danger"></p>
                                        </span>
                                 @if ($errors->has('scan_khs'))
@@ -230,7 +219,7 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                 <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <p id="message" class="text-danger"></p>
                                  </span>
                             </div>
@@ -239,7 +228,8 @@
                         <div class="form-group row mb-4">
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Semester</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="semester" oninput="maxLengthCheck(this)" value="{{old('semester')}}" type="number"
+                                <input name="semester" oninput="maxLengthCheck(this)" value="{{old('semester')}}"
+                                       type="number"
                                        class="form-control text-black {{$errors->has('semester') ? 'is-invalid':''}}"
                                        id="semester"
                                        placeholder="" maxlength="1" required>
@@ -291,7 +281,7 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                 <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <p id="message" class="text-danger"></p>
                                  </span>
                             </div>
@@ -305,7 +295,7 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                 <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <p id="message" class="text-danger"></p>
                                  </span>
                             </div>
@@ -319,7 +309,7 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
-                                 <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <p id="message" class="text-danger"></p>
                                  </span>
                             </div>
@@ -360,7 +350,8 @@
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">No. Hp
                                 Orangtua</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="no_hp_ortu" oninput="maxLengthCheck(this)" value="{{old('no_hp_ortu')}}" type="number"
+                                <input name="no_hp_ortu" oninput="maxLengthCheck(this)" value="{{old('no_hp_ortu')}}"
+                                       type="number"
                                        class="form-control text-black {{$errors->has('no_hp_ortu') ? 'is-invalid':''}}"
                                        maxlength="13"
                                        id="defaultconfig" placeholder="" required>
@@ -423,7 +414,8 @@
                                 <input name="scan_penghasilan" value="" type="file"
                                        class="form-control text-black"
                                        accept="image/*" required>
-                                <small id="emailHelp1" class="form-text text-muted">Slip Gaji/Surat Keterangan Penghasilan Dari Desa</small>
+                                <small id="emailHelp1" class="form-text text-muted">Slip Gaji/Surat Keterangan
+                                    Penghasilan Dari Desa</small>
                                 <span class="invalid-feedback" role="alert">
                                    <p id="message" class="text-danger"></p>
                                 </span>
@@ -433,7 +425,8 @@
                             <label class="col-xl-3 col-sm-3 col-sm-3 col-form-label ml-5 text-black">Jumlah
                                 Tanggungan</label>
                             <div class="col-xl-6 col-lg-9 col-sm-10">
-                                <input name="tanggungan_ortu" oninput="maxLengthCheck(this)" value="{{old('tanggungan_ortu')}}" type="number"
+                                <input name="tanggungan_ortu" oninput="maxLengthCheck(this)"
+                                       value="{{old('tanggungan_ortu')}}" type="number"
                                        class="form-control text-black {{$errors->has('tanggungan_ortu') ? 'is-invalid':''}}"
                                        id="tanggungan_ortu"
                                        placeholder="" maxlength="2" required>
@@ -453,7 +446,7 @@
                                        class="form-control text-black"
                                        accept="image/*"
                                        required>
-                               <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                   <p id="message" class="text-danger"></p>
                                </span>
                             </div>
@@ -498,7 +491,8 @@
                                        class="form-control text-black {{$errors->has('nama_rek') ? 'is-invalid':''}}"
                                        id="nama_rek"
                                        placeholder="" required>
-                                <small id="emailHelp1" class="form-text text-muted">Nama Sesuai Dengan Data Pemohon</small>
+                                <small id="emailHelp1" class="form-text text-muted">Nama Sesuai Dengan Data
+                                    Pemohon</small>
                                 @if ($errors->has('nama_rek'))
                                     <span class="invalid-feedback" role="alert">
                                             <p><b>{{ $errors->first('nama_rek') }}</b></p>
@@ -529,7 +523,7 @@
                                        class="form-control"
                                        accept="image/*"
                                        required>
-                               <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                   <p id="message" class="text-danger"></p>
                                </span>
                             </div>
@@ -537,8 +531,9 @@
                         {{--end form pengajuan--}}
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <a href="{{route('mahasiswa.dashboard')}}" class="btn btn-warning mt-3 mr-2 ml-5 px-5" type="button">Batal</a>
-                                    <button id="simpan" type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
+                                <a href="{{route('mahasiswa.dashboard')}}" class="btn btn-warning mt-3 mr-2 ml-5 px-5"
+                                   type="button">Batal</a>
+                                <button id="simpan" type="submit" class="btn btn-primary mt-3 px-5">Simpan</button>
                             </div>
                         </div>
                     </form>
@@ -576,30 +571,29 @@
     const message = document.querySelectorAll('#message');
     const maxfilesize = 1024 * 1024;
 
-    images.forEach((image,i) => {
-      image.addEventListener('change', function(){
-        const file = this.files[0];
-        if(file.type == 'image/jpeg' || file.type == 'image/jpg' || file.type == 'image/png'){
-          if(+file.size > maxfilesize){
-           message[i].innerText = "Gambar yang anda masukan terlalu besar maksimal 1 MB";
-           simpan.disabled = true;
-           this.classList.add('is-invalid');
-       }else {
-         message[i].innerText = '';
-         this.classList.remove('is-invalid');
-         this.classList.add('is-valid');
-         simpan.disabled = false;
-       }
-        }else{
-          simpan.disabled = true;
-          this.classList.add('is-invalid');
-          message[i].innerText = "Gambar yang anda masukan harus JPG,JPEG atau PNG";
-        }
-      })
+    images.forEach((image, i) => {
+        image.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file.type == 'image/jpeg' || file.type == 'image/jpg' || file.type == 'image/png') {
+                if (+file.size > maxfilesize) {
+                    message[i].innerText = "Gambar yang anda masukan terlalu besar maksimal 1 MB";
+                    simpan.disabled = true;
+                    this.classList.add('is-invalid');
+                } else {
+                    message[i].innerText = '';
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    simpan.disabled = false;
+                }
+            } else {
+                simpan.disabled = true;
+                this.classList.add('is-invalid');
+                message[i].innerText = "Gambar yang anda masukan harus JPG,JPEG atau PNG";
+            }
+        })
     });
 
-    function maxLengthCheck(object)
-    {
+    function maxLengthCheck(object) {
         if (object.value.length > object.maxLength)
             object.value = object.value.slice(0, object.maxLength)
     }
