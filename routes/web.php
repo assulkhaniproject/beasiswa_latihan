@@ -54,6 +54,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('kategori/destroy/{id}', 'Admin\KategoriController@destroy')->name('kategori.destroy');
     Route::get('export/excel', 'Admin\BeasiswaController@exportExcel')->name('admin.export-excel');
 
+    Route::get('notify','Admin\DashboardController@notify');
+
 });
 Route::group(['prefix' => 'prodi'], function () {
 
@@ -72,6 +74,7 @@ Route::group(['prefix' => 'prodi'], function () {
     Route::patch('beasiswa/konfirmasi/{id}', 'Prodi\BeasiswaController@update')->name('beasiswa.konfirmasi');
     Route::patch('beasiswa/pembatalan/{id}', 'Prodi\BeasiswaController@edit')->name('beasiswa.pembatalan');
 
+    Route::get('notify','Prodi\DashboardController@notify');
 });
 
 Route::group(['prefix' => 'mahasiswa'], function () {
@@ -89,5 +92,4 @@ Route::group(['prefix' => 'mahasiswa'], function () {
 
     Route::get('password','Mahasiswa\PasswordController@change')->name('password.change');
     Route::put('password','Mahasiswa\PasswordController@update')->name('mahasiswa.updatepassword');
-
 });

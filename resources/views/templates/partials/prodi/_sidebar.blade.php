@@ -26,4 +26,3 @@
         <div class="shadow-bottom"></div>
     </nav>
 </div>
-<!--  END SIDEBAR  -->

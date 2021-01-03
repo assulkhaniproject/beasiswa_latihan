@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Prodi;
-use Illuminate\Http\Request;
 use DB;
+use App\Prodi;
+use App\Beasiswa;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -30,6 +32,22 @@ class DashboardController extends Controller
         }])->orderBy('mahasiswa_count', 'DESC')->get();
 
         return $prodi;
+    }
+
+    public function notify()
+    {
+        //$authProdi = Auth::guard('prodi')->user()->id;
+        // $beasiswas = Beasiswa::whereHas('mahasiswa', function($mhs) use($authProdi) {
+        //     $mhs->where('id_prodi', $authProdi);
+        // })->where('status', null)->get();
+
+        $beasiswas = Beasiswa::where('status', null)->get();
+
+        $item = [
+            'beasiswas' => $beasiswas,
+            'count' => $beasiswas->count()
+        ];
+        return $item;
     }
 
     /**

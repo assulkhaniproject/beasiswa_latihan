@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\NewBeasiswaEvent;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -35,5 +36,6 @@ class Mahasiswa extends Authenticatable
     {
         return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
     }
+
 
 }

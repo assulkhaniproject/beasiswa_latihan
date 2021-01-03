@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\NewBeasiswaEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class Beasiswa extends Model
@@ -23,4 +24,6 @@ class Beasiswa extends Model
     {
         return $this->belongsTo(Kategori::class, 'id_kategori', 'id');
     }
+
+    
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Prodi;
 
+use App\Beasiswa;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -19,6 +21,23 @@ class DashboardController extends Controller
     public function index()
     {
         return view('pages.prodi.dashboard');
+    }
+
+
+    public function notify()
+    {
+        $authProdi = Auth::guard('prodi')->user()->id;
+        // $beasiswas = Beasiswa::whereHas('mahasiswa', function($mhs) use($authProdi) {
+        //     $mhs->where('id_prodi', $authProdi);
+        // })->where('status', null)->get();
+
+        $beasiswas = Beasiswa::where('status', null)->get();
+
+        $item = [
+            'beasiswas' => $beasiswas,
+            'count' => $beasiswas->count()
+        ];
+        return $item;
     }
 
     /**

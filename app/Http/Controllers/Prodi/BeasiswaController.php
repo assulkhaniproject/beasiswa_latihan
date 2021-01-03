@@ -18,6 +18,12 @@ class BeasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth:prodi');
+     }
+
     public function index()
     {
 
@@ -102,9 +108,9 @@ class BeasiswaController extends Controller
                 DB::raw('(round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * (0.2) as skorTanggungan'),
                 DB::raw('(ipk / ' . $cekIpkTerbesar . ') * 0.6  as skorIpk'),
                 DB::raw('SUM(
-            CAST(' . str_replace(".", "", $cekPenghasilanTerkecil) . '/ (replace(penghasilan_ortu,".","")) * 0.2 as decimal(5, 2)) 
-            + CAST((round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * 0.2 as decimal(5, 2)) 
-            + ((ipk / ' . $cekIpkTerbesar . ') * 0.6) 
+            CAST(' . str_replace(".", "", $cekPenghasilanTerkecil) . '/ (replace(penghasilan_ortu,".","")) * 0.2 as decimal(5, 2))
+            + CAST((round(tanggungan_ortu /' . $cekTanggunganTerbesar . ', 2) ) * 0.2 as decimal(5, 2))
+            + ((ipk / ' . $cekIpkTerbesar . ') * 0.6)
             ) * 100 as total'))
                 ->where('tahun_akademik', $tahun_akademik)
                 ->where('kategori', $kategori)

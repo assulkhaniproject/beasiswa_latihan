@@ -53,6 +53,56 @@
     <script src="{{asset('admin/plugins/lightbox/photoswipe.min.js')}}"></script>
     <script src="{{asset('admin/plugins/lightbox/photoswipe-ui-default.min.js')}}"></script>
     <script src="{{asset('admin/plugins/lightbox/custom-photswipe.js')}}"></script>
+
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+    <script>
+
+        Pusher.logToConsole = true;
+        //const notif = document.querySelector('#notif');
+        const notify = document.querySelector('#notify');
+        //const notifDropdown = document.querySelector('#notif-dropdown');
+
+        async function notification() {
+
+            let item  = ``;
+            const notifyData = await getNotify();
+            // notif.innerHTML = showNotif(notifyData['count'])
+
+            notify.innerText = notifyData['count']
+
+            const pusher = new Pusher('6ea04fea348ffbcb0ed0', {
+                cluster: 'ap1',
+                encrypted : true,
+            });
+            const channel = pusher.subscribe('beasiswa-channel');
+            channel.bind('beasiswa-event',async function(data) {
+
+                const newNotifyData = await getNotify();
+                console.log(newNotifyData);
+                notify.innerText = newNotifyData['count']
+
+                // swal({
+                //     title: "Pemilik baru telah hadir",
+                //     allowOutsideClick: false
+                // },function() {
+                //     window.location = url+'notif';
+                // });
+            });
+        }
+        function  getNotify() {
+            const url = '{{config("app.url")}}';
+            return fetch(url+'prodi/notify').then(res => res.json()).then(res => res);
+        }
+
+        function showNotif(count){
+            return `<a href="{{ route('beasiswas.index') }}">
+                    <span class="badge badge-danger" id="notify">${count}</span>
+                </a>`;
+        }
+
+        notification()
+    </script>
+
     @yield('script')
-    <!-- END PAGE LEVEL SCRIPTS -->
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mahasiswa;
 
 use App\Beasiswa;
+use App\Events\NewBeasiswaEvent;
 use App\Http\Controllers\Controller;
 use App\Kategori;
 use App\Mahasiswa;
@@ -100,46 +101,6 @@ class DetailController extends Controller
             return redirect()->back()->with('error', 'Anda sudah terdaftar pada beasiswa ini');
         }else{
             try{
-                $scan_khs = $request->file('scan_khs');
-                $filename_khs = time().'khs'.'.'. $scan_khs->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/khs');
-                $scan_khs->move($destinationPath, $filename_khs);
-
-                $scan_krs = $request->file('scan_krs');
-                $filename_krs = time().'krs'.'.'. $scan_krs->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/krs');
-                $scan_krs->move($destinationPath, $filename_krs);
-
-                $scan_penghasilan = $request->file('scan_penghasilan');
-                $filename_penghasilan = time().'penghasilan'.'.'. $scan_penghasilan->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/penghasilan');
-                $scan_penghasilan->move($destinationPath, $filename_penghasilan);
-
-                $scan_kk = $request->file('scan_kk');
-                $filename_kk = time().'kk'.'.'. $scan_kk->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/kk');
-                $scan_kk->move($destinationPath, $filename_kk);
-
-                $scan_bt = $request->file('scan_bt');
-                $filename_bt = time().'bt'.'.'. $scan_bt->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/bt');
-                $scan_bt->move($destinationPath, $filename_bt);
-
-                $foto = $request->file('foto');
-                $filename_foto = time().'foto'.'.'. $foto->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/foto');
-                $foto->move($destinationPath, $filename_foto);
-
-                $scan_ktm = $request->file('scan_ktm');
-                $filename_ktm =time().'ktm'.'.'. $scan_ktm->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/ktm');
-                $scan_ktm->move($destinationPath, $filename_ktm);
-
-                $scan_ktp = $request->file('scan_ktp');
-                $filename_ktp =time().'ktp'.'.'. $scan_ktp->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads/ktp');
-                $scan_ktp->move($destinationPath, $filename_ktp);
-
 
                 $data = new Beasiswa();
                 $data->id_mahasiswa = Auth::user()->id;
@@ -166,15 +127,59 @@ class DetailController extends Controller
                 $data->nama_rek = $request->nama_rek;
                 $data->no_rek = $request->no_rek;
 
-                $data->foto = $filename_foto;
-                $data->scan_ktm = $filename_ktm;
-                $data->scan_ktp = $filename_ktp;
-                $data->scan_khs = $filename_khs;
-                $data->scan_kk = $filename_kk;
-                $data->scan_krs = $filename_krs;
-                $data->scan_penghasilan = $filename_penghasilan;
-                $data->scan_bt = $filename_bt;
+                $data->foto = $this->uploadPhoto($request->file('foto'), 'foto');
+                $data->scan_ktm = $this->uploadPhoto($request->file('scan_ktm'), 'scan_ktm');
+                $data->scan_ktp = $this->uploadPhoto($request->file('scan_ktp'), 'scan_ktp');
+                $data->scan_khs = $this->uploadPhoto($request->file('scan_khs'), 'scan_khs');
+                $data->scan_kk = $this->uploadPhoto($request->file('scan_kk'), 'scan_kk');
+                $data->scan_krs = $this->uploadPhoto($request->file('scan_krs'), 'scan_krs');
+                $data->scan_penghasilan = $this->uploadPhoto($request->file('scan_penghasilan'), 'scan_penghasilan');
+                $data->scan_bt = $this->uploadPhoto($request->file('scan_bt'), 'scan_bt');
+
+                $data->status = null;
                 $data->save();
+
+                // $scan_khs = $request->file('scan_khs');
+                // $filename_khs = time().'khs'.'.'. $scan_khs->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/khs');
+                // $scan_khs->move($destinationPath, $filename_khs);
+
+                // $scan_krs = $request->file('scan_krs');
+                // $filename_krs = time().'krs'.'.'. $scan_krs->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/krs');
+                // $scan_krs->move($destinationPath, $filename_krs);
+
+                // $scan_penghasilan = $request->file('scan_penghasilan');
+                // $filename_penghasilan = time().'penghasilan'.'.'. $scan_penghasilan->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/penghasilan');
+                // $scan_penghasilan->move($destinationPath, $filename_penghasilan);
+
+                // $scan_kk = $request->file('scan_kk');
+                // $filename_kk = time().'kk'.'.'. $scan_kk->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/kk');
+                // $scan_kk->move($destinationPath, $filename_kk);
+
+                // $scan_bt = $request->file('scan_bt');
+                // $filename_bt = time().'bt'.'.'. $scan_bt->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/bt');
+                // $scan_bt->move($destinationPath, $filename_bt);
+
+                // $foto = $request->file('foto');
+                // $filename_foto = time().'foto'.'.'. $foto->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/foto');
+                // $foto->move($destinationPath, $filename_foto);
+
+                // $scan_ktm = $request->file('scan_ktm');
+                // $filename_ktm =time().'ktm'.'.'. $scan_ktm->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/ktm');
+                // $scan_ktm->move($destinationPath, $filename_ktm);
+
+                // $scan_ktp = $request->file('scan_ktp');
+                // $filename_ktp =time().'ktp'.'.'. $scan_ktp->getClientOriginalExtension();
+                // $destinationPath = public_path('/uploads/ktp');
+                // $scan_ktp->move($destinationPath, $filename_ktp);
+
+                event(new NewBeasiswaEvent('success'));
 
                 return redirect()->route('mahasiswa.dashboard')->with('success', 'Data Tersimpan');
              }catch (\Exception $e){
@@ -182,6 +187,15 @@ class DetailController extends Controller
             }
         }
     }
+
+    private function uploadPhoto($photo, $key)
+    {
+        $filename =time().$key.'.'. $photo->getClientOriginalExtension();
+        $destinationPath = public_path('/uploads/'.$key);
+        $photo->move($destinationPath, $filename);
+        return $filename;
+    }
+
 
     /**
      * Display the specified resource.

@@ -47,7 +47,7 @@ class CreateBeasiswaTable extends Migration
             $table->string('nama_rek', 50);
             $table->string('scan_bt', 30);
 
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(null);
             $table->timestamps();
 
             $table->foreign('id_mahasiswa')->references('id')->on('mahasiswa')->onDelete('cascade');

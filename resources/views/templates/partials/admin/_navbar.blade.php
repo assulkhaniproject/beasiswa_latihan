@@ -62,6 +62,12 @@
             {{--                </div>--}}
             {{--            </li>--}}
 
+            <li class="nav-item dropdown user-profile-dropdown" id="notif-admin">
+                <a href="{{ route('beasiswa.index') }}">
+                    <span class="badge badge-danger" id="notify-admin">0</span>
+                </a>
+            </li>
+
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
